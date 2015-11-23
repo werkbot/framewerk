@@ -1,0 +1,133 @@
+/* UTILITY */
+.clear {
+	clear:both;
+}
+/* SPACING */
+.space{
+  padding: $spacing;
+	&.noleft{
+		padding-left: 0;
+	}
+	&.noright{
+		padding-right: 0;
+	}
+	&.halfleft{
+		padding-left: $spacing / 2;
+	}
+	&.halfright{
+		padding-right: $spacing / 2;
+	}
+	&.notop{
+		padding-top: 0;
+	}
+	&.nobottom{
+		padding-bottom: 0;
+	}
+	&.halftop{
+		padding-top: $spacing / 2;
+	}
+	&.halfbottom{
+		padding-bottom: $spacing / 2;
+	}
+}
+/* PERCENTAGES */
+.half{
+  float: left;
+  width: 0.5%;
+}
+.five{
+	float:left;
+	width:5%;
+}
+.ten{
+	float:left;
+	width:10%;
+}
+.fifteen{
+	float: left;
+	width: 15%;
+}
+.twenty{
+	float:left;
+	width:20%;
+}
+.twenty-five {
+	float:left;
+	width:25%;
+}
+.thirty {
+	float:left;
+	width:30%;
+}
+.thirty-three {
+	float:left;
+	width:33%;
+}
+.thirty-four {
+	float:left;
+	width:34%;
+}
+.thirty-five {
+	float:left;
+	width:35%;
+}
+.forty {
+	float:left;
+	width:40%;
+}
+.forty-five {
+	float:left;
+	width:45%;
+}
+.fifty {
+	float:left;
+	width:50%;
+}
+.fifty-five {
+	float:left;
+	width:55%;
+}
+.sixty {
+	float:left;
+	width:60%;
+}
+.sixty-five {
+	float:left;
+	width:65%;
+}
+.sixty-six {
+	float:left;
+	width:66%;
+}
+.seventy {
+	float:left;
+	width:70%;
+}
+.sixty-seven {
+	float:left;
+	width:67%;
+}
+.seventy-five {
+	float:left;
+	width:75%;
+}
+.eighty {
+	float:left;
+	width:80%;
+}
+.eighty-five {
+	float:left;
+	width:85%;
+}
+.ninety {
+	float:left;
+	width:90%;
+}
+.ninety-five {
+	float:left;
+	width:95%;
+}
+.full{
+	float:left;
+	width:100%;
+}
