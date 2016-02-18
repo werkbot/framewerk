@@ -4,7 +4,7 @@
 }
 /* SPACING */
 .space{
-  padding: $spacing;
+  padding:  $spacing/2 $spacing;
 	&.noleft{
 		padding-left: 0;
 	}
@@ -34,6 +34,7 @@
 .half{
   float: left;
   width: 0.5%;
+	min-height: 1px;
 }
 .five{
 	float:left;
@@ -135,4 +136,104 @@
 img.responsive{
 	width: 100%;
 	height: auto;
+}
+/* SPECIAL CASE FOR THREE IMAGES IN A ROW */
+.thirty-three.image{
+	&:nth-child(2){
+		.space{
+			&.halfright{
+				padding-left: $spacing;
+			}
+		}
+	}
+	&:nth-child(3){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing - $spacing/5;
+				padding-right: $spacing - $spacing/5;
+			}
+		}
+	}
+	&:nth-child(4){
+		.space{
+			&.halfleft{
+				padding-right: $spacing;
+			}
+		}
+	}
+}
+/* SPECIAL CASE FOR FOUR IMAGES IN A ROW */
+.twenty-five.image{
+	&:nth-child(1){
+		.space{
+			&.halfright{
+				padding-left: $spacing;
+			}
+		}
+	}
+	&:nth-child(2){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing - $spacing/4;
+				padding-right: $spacing - $spacing/4;
+			}
+		}
+	}
+	&:nth-child(3){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing - $spacing/4;
+				padding-right: $spacing - $spacing/4;
+			}
+		}
+	}
+	&:nth-child(4){
+		.space{
+			&.halfleft{
+				padding-right: $spacing;
+			}
+		}
+	}
+}
+
+/* SPECIAL CASE FOR FIVE IMAGES IN A ROW */
+.twenty.image{
+	&:nth-child(1){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing;
+			}
+		}
+	}
+	&:nth-child(2){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing - $spacing/4;
+				padding-right: $spacing - $spacing/4;
+			}
+		}
+	}
+	&:nth-child(3){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing - $spacing/4;
+				padding-right: $spacing - $spacing/4;
+			}
+		}
+	}
+	&:nth-child(4){
+		.space{
+			&.halfleft.halfright{
+				padding-left: $spacing - $spacing/4;
+				padding-right: $spacing - $spacing/4;
+			}
+		}
+	}
+	&:nth-child(5){
+		.space{
+			&.halfleft.halfright{
+				padding-right: $spacing;
+			}
+		}
+	}
 }
