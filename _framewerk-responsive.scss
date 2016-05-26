@@ -4,6 +4,7 @@
   .five,
 	.ten,
 	.fifteen,
+	.sixteen,
 	.twenty,
 	.twenty-five,
 	.thirty,
@@ -66,6 +67,10 @@
   width:10%;
 }
 .fifteen.noresponsive{
+  float: left;
+  width: 15%;
+}
+.sixteen.noresponsive{
   float: left;
   width: 15%;
 }
