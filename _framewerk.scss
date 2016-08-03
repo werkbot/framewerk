@@ -2,6 +2,12 @@
 .clear {
 	clear:both;
 }
+.forceright{
+  float: right !important;
+}
+.forceleft{
+  float: left !important;
+}
 /* SPACING */
 .space{
   padding:  $spacing/2 $spacing;

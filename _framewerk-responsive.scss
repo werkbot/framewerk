@@ -1,4 +1,13 @@
 @media handheld, only screen and (max-width: $responsive-tablet-breakpoint) {
+  .five,
+	.ten,
+	.fifteen,
+	.sixteen,
+	.twenty,
+	.twenty-five{
+		float:left;
+		width:50%;
+	}
 }
 @media handheld, only screen and (max-width: $responsive-phone-breakpoint) {
   .five,
@@ -6,7 +15,10 @@
 	.fifteen,
 	.sixteen,
 	.twenty,
-	.twenty-five,
+	.twenty-five{
+		float:left;
+		width:50%;
+	}
 	.thirty,
 	.thirty-three,
 	.thirty-four,
