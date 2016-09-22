@@ -1,4 +1,20 @@
 @media handheld, only screen and (max-width: $responsive-tablet-breakpoint) {
+  .tablet-twentyfive{
+		float:left;
+		width:25%;
+  }
+  .tablet-fifty{
+		float:left;
+		width:50%;
+  }
+  .tablet-seventyfive{
+		float:left;
+		width:75%;
+  }
+  .tablet-full{
+		float:left;
+		width:100%;
+  }
 }
 @media handheld, only screen and (max-width: $responsive-phone-breakpoint) {
   .five,
