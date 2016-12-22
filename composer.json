@@ -1,0 +1,7 @@
+{
+  "name": "werkbot/framewerk",
+  "description": "",
+  "require": {
+    "silverstripe/framework": ">=3.5"
+  }
+}
