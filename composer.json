@@ -1,5 +1,5 @@
 {
-  "name": "werkbot/framewerk",
+  "name": "werkbot-frontend/framewerk",
   "description": "",
   "require": {
     "silverstripe/framework": ">=3.5"
