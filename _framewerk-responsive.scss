@@ -1,19 +1,83 @@
 @media handheld, only screen and (max-width: $responsive-tablet-breakpoint) {
-  .tablet-twentyfive{
-		float:left;
-		width:25%;
+  /* PERCENTAGES */
+  .tablet-half{
+    width: 0.5%;
+  	min-height: 1px;
   }
-  .tablet-fifty{
-		float:left;
-		width:50%;
+  .tablet-five{
+  	width:5%;
   }
-  .tablet-seventyfive{
-		float:left;
-		width:75%;
+  .tablet-ten{
+  	width:10%;
+  }
+  .tablet-fifteen{
+  	width: 15%;
+  }
+  .tablet-sixteen{
+  	width: 16%;
+  }
+  .tablet-twenty{
+  	width:20%;
+  }
+  .tablet-twenty-five {
+  	width:25%;
+  }
+  .tablet-thirty {
+  	width:30%;
+  }
+  .tablet-thirty-three {
+  	width:33%;
+  }
+  .tablet-thirty-four {
+  	width:34%;
+  }
+  .tablet-thirty-five {
+  	width:35%;
+  }
+  .tablet-forty {
+  	width:40%;
+  }
+  .tablet-forty-five {
+  	width:45%;
+  }
+  .tablet-fifty {
+  	width:50%;
+  }
+  .tablet-fifty-five {
+  	width:55%;
+  }
+  .tablet-sixty {
+  	width:60%;
+  }
+  .tablet-sixty-five {
+  	width:65%;
+  }
+  .tablet-sixty-six {
+  	width:66%;
+  }
+  .tablet-seventy {
+  	width:70%;
+  }
+  .tablet-sixty-seven {
+  	width:67%;
+  }
+  .tablet-seventy-five {
+  	width:75%;
+  }
+  .tablet-eighty {
+  	width:80%;
+  }
+  .tablet-eighty-five {
+  	width:85%;
+  }
+  .tablet-ninety {
+  	width:90%;
+  }
+  .tablet-ninety-five {
+  	width:95%;
   }
   .tablet-full{
-		float:left;
-		width:100%;
+  	width:100%;
   }
 }
 @media handheld, only screen and (max-width: $responsive-phone-breakpoint) {
@@ -44,21 +108,85 @@
 		float:left;
 		width:100%;
 	}
-  .phone-twentyfive{
-		float:left;
-		width:25%;
+  /* PERCENTAGES */
+  .phone-half{
+    width: 0.5%;
+  	min-height: 1px;
   }
-  .phone-fifty{
-		float:left;
-		width:50%;
+  .phone-five{
+  	width:5%;
   }
-  .phone-seventyfive{
-		float:left;
-		width:75%;
+  .phone-ten{
+  	width:10%;
+  }
+  .phone-fifteen{
+  	width: 15%;
+  }
+  .phone-sixteen{
+  	width: 16%;
+  }
+  .phone-twenty{
+  	width:20%;
+  }
+  .phone-twenty-five {
+  	width:25%;
+  }
+  .phone-thirty {
+  	width:30%;
+  }
+  .phone-thirty-three {
+  	width:33%;
+  }
+  .phone-thirty-four {
+  	width:34%;
+  }
+  .phone-thirty-five {
+  	width:35%;
+  }
+  .phone-forty {
+  	width:40%;
+  }
+  .phone-forty-five {
+  	width:45%;
+  }
+  .phone-fifty {
+  	width:50%;
+  }
+  .phone-fifty-five {
+  	width:55%;
+  }
+  .phone-sixty {
+  	width:60%;
+  }
+  .phone-sixty-five {
+  	width:65%;
+  }
+  .phone-sixty-six {
+  	width:66%;
+  }
+  .phone-seventy {
+  	width:70%;
+  }
+  .phone-sixty-seven {
+  	width:67%;
+  }
+  .phone-seventy-five {
+  	width:75%;
+  }
+  .phone-eighty {
+  	width:80%;
+  }
+  .phone-eighty-five {
+  	width:85%;
+  }
+  .phone-ninety {
+  	width:90%;
+  }
+  .phone-ninety-five {
+  	width:95%;
   }
   .phone-full{
-		float:left;
-		width:100%;
+  	width:100%;
   }
   /* ADJUST SPACING FOR 100% */
 	.space{
