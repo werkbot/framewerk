@@ -1,5 +1,8 @@
 @media handheld, only screen and (max-width: $responsive-tablet-breakpoint) {
   /* PERCENTAGES */
+  .table-hide{
+    display: none;
+  }
   .tablet-half{
     width: 0.5%;
   	min-height: 1px;
@@ -109,6 +112,9 @@
 		width:100%;
 	}
   /* PERCENTAGES */
+  .phone-hide{
+    display: none;
+  }
   .phone-half{
     width: 0.5%;
   	min-height: 1px;
