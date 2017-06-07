@@ -1,13 +1,22 @@
 /* UTILITY */
-.clear {
-	clear:both;
+.flex-container{
+	display: flex;
+  flex-flow: row wrap;
+  max-width: $container-size;
+  margin: 0 auto;
 }
-.forceright{
-  float: right !important;
+.flex-item {
 }
-.forceleft{
-  float: left !important;
-}
+	/* DEPRECIATED ? MAYBE */
+	.clear {
+		clear:both;
+	}
+	.forceright{
+	  float: right !important;
+	}
+	.forceleft{
+	  float: left !important;
+	}
 /* SPACING */
 .space{
   padding:  $spacing/2 $spacing;
@@ -36,110 +45,84 @@
 		padding-bottom: $spacing / 2;
 	}
 }
-/* PERCENTAGES */
-.half{
-  float: left;
+/* DEFAULT PERCENTAGES */
+.d-half{
   width: 0.5%;
 	min-height: 1px;
 }
-.five{
-	float:left;
+.d-five{
 	width:5%;
 }
-.ten{
-	float:left;
+.d-ten{
 	width:10%;
 }
-.fifteen{
-	float: left;
+.d-fifteen{
 	width: 15%;
 }
-.sixteen{
-	float: left;
+.d-sixteen{
 	width: 16%;
 }
-.twenty{
-	float:left;
+.d-twenty{
 	width:20%;
 }
-.twenty-five {
-	float:left;
+.d-twenty-five {
 	width:25%;
 }
-.thirty {
-	float:left;
+.d-thirty {
 	width:30%;
 }
-.thirty-three {
-	float:left;
+.d-thirty-three {
 	width:33%;
 }
-.thirty-four {
-	float:left;
+.d-thirty-four {
 	width:34%;
 }
-.thirty-five {
-	float:left;
+.d-thirty-five {
 	width:35%;
 }
-.forty {
-	float:left;
+.d-forty {
 	width:40%;
 }
-.forty-five {
-	float:left;
+.d-forty-five {
 	width:45%;
 }
-.fifty {
-	float:left;
+.d-fifty {
 	width:50%;
 }
-.fifty-five {
-	float:left;
+.d-fifty-five {
 	width:55%;
 }
-.sixty {
-	float:left;
+.d-sixty {
 	width:60%;
 }
-.sixty-five {
-	float:left;
+.d-sixty-five {
 	width:65%;
 }
-.sixty-six {
-	float:left;
+.d-sixty-six {
 	width:66%;
 }
-.seventy {
-	float:left;
+.d-seventy {
 	width:70%;
 }
-.sixty-seven {
-	float:left;
+.d-sixty-seven {
 	width:67%;
 }
-.seventy-five {
-	float:left;
+.d-seventy-five {
 	width:75%;
 }
-.eighty {
-	float:left;
+.d-eighty {
 	width:80%;
 }
-.eighty-five {
-	float:left;
+.d-eighty-five {
 	width:85%;
 }
-.ninety {
-	float:left;
+.d-ninety {
 	width:90%;
 }
-.ninety-five {
-	float:left;
+.d-ninety-five {
 	width:95%;
 }
-.full{
-	float:left;
+.d-full{
 	width:100%;
 }
 /* IMAGES */

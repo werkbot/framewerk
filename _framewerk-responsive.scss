@@ -1,6 +1,6 @@
 @media handheld, only screen and (max-width: $responsive-tablet-breakpoint) {
   /* PERCENTAGES */
-  .table-hide{
+  .tablet-hide{
     display: none;
   }
   .tablet-half{
@@ -84,31 +84,30 @@
   }
 }
 @media handheld, only screen and (max-width: $responsive-phone-breakpoint) {
-  .five,
-	.ten,
-	.fifteen,
-	.sixteen,
-	.twenty,
-	.twenty-five,
-	.thirty,
-	.thirty-three,
-	.thirty-four,
-	.thirty-five,
-	.forty,
-	.forty-five,
-	.fifty,
-	.fifty-five,
-	.sixty,
-	.sixty-five,
-	.sixty-six,
-	.sixty-seven,
-	.seventy,
-	.seventy-five,
-	.eighty,
-	.eighty-five,
-	.ninety,
-	.ninety-five{
-		float:left;
+  .d-five,
+	.d-ten,
+	.d-fifteen,
+	.d-sixteen,
+	.d-twenty,
+	.d-twenty-five,
+	.d-thirty,
+	.d-thirty-three,
+	.d-thirty-four,
+	.d-thirty-five,
+	.d-forty,
+	.d-forty-five,
+	.d-fifty,
+	.d-fifty-five,
+	.d-sixty,
+	.d-sixty-five,
+	.d-sixty-six,
+	.d-sixty-seven,
+	.d-seventy,
+	.d-seventy-five,
+	.d-eighty,
+	.d-eighty-five,
+	.d-ninety,
+	.d-ninety-five{
 		width:100%;
 	}
   /* PERCENTAGES */
@@ -225,11 +224,9 @@
 }
 /* NO RESPONSIVE */
 .five.noresponsive{
-  float:left;
   width:5%;
 }
 .ten.noresponsive{
-  float:left;
   width:10%;
 }
 .fifteen.noresponsive{
@@ -241,86 +238,65 @@
   width: 15%;
 }
 .twenty.noresponsive{
-  float:left;
   width:20%;
 }
 .twenty-five.noresponsive{
-  float:left;
   width:25%;
 }
 .thirty.noresponsive{
-  float:left;
   width:30%;
 }
 .thirty-three.noresponsive{
-  float:left;
   width:33%;
 }
 .thirty-four.noresponsive{
-  float:left;
   width:34%;
 }
 .thirty-five.noresponsive{
-  float:left;
   width:35%;
 }
 .forty.noresponsive{
-  float:left;
   width:40%;
 }
 .forty-five.noresponsive{
-  float:left;
   width:45%;
 }
 .fifty.noresponsive{
-  float:left;
   width:50%;
 }
 .fifty-five.noresponsive{
-  float:left;
   width:55%;
 }
 .sixty.noresponsive{
-  float:left;
   width:60%;
 }
 .sixty-five.noresponsive{
-  float:left;
   width:65%;
 }
 .sixty-six.noresponsive{
-  float:left;
   width:66%;
 }
 .seventy.noresponsive{
-  float:left;
   width:70%;
 }
 .sixty-seven.noresponsive{
-  float:left;
   width:67%;
 }
 .seventy-five.noresponsive{
-  float:left;
   width:75%;
 }
 .eighty.noresponsive{
-  float:left;
   width:80%;
 }
 .eighty-five.noresponsive{
-  float:left;
   width:85%;
 }
 .ninety.noresponsive{
-  float:left;
   width:90%;
 }
 .ninety-five.noresponsive{
-  float:left;
   width:95%;
 }
 .full{
-  float:left;
   width:100%;
 }
