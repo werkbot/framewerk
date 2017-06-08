@@ -1,25 +1,39 @@
-/* UTILITY */
+/*
+---------------------------------------------------------------------
+FLEX BOX
+---------------------------------------------------------------------
+Flex Container - all items should be wrapped with .flex-container
+Flex Itme - all items should be tagged with the class .flex-item
+*/
 .flex-container{
-	display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   flex-flow: row wrap;
-  max-width: $container-size;
-  margin: 0 auto;
+	justify-content: flex-start;
 }
 .flex-item {
+	align-self: flex-start;
 }
-	/* DEPRECIATED ? MAYBE */
-	.clear {
-		clear:both;
-	}
-	.forceright{
-	  float: right !important;
-	}
-	.forceleft{
-	  float: left !important;
-	}
-/* SPACING */
+.flex-image {
+  width: 100%;
+  height: auto;
+}
+.flex-half{
+  width: 0.5%;
+  min-height: 1px;
+}
+/*
+---------------------------------------------------------------------
+SPACING
+---------------------------------------------------------------------
+$spacing variable is defined in _framewerk_variables.scss
+Can be overridden as well in a separate sass file if need be
+*/
 .space{
-  padding:  $spacing/2 $spacing;
+  padding: $spacing;
 	&.noleft{
 		padding-left: 0;
 	}
@@ -45,188 +59,28 @@
 		padding-bottom: $spacing / 2;
 	}
 }
-/* DEFAULT PERCENTAGES */
-.d-half{
-  width: 0.5%;
-	min-height: 1px;
+/*
+---------------------------------------------------------------------
+DEFAULT DESKTOP
+---------------------------------------------------------------------
+If no breakpoints are defined, these will be the fallback width percentages
+*/
+@for $i from 0 through 100 {
+  .desktop-#{$i} {
+    width : round(percentage($i/100));
+  }
 }
-.d-five{
-	width:5%;
-}
-.d-ten{
-	width:10%;
-}
-.d-fifteen{
-	width: 15%;
-}
-.d-sixteen{
-	width: 16%;
-}
-.d-twenty{
-	width:20%;
-}
-.d-twenty-five {
-	width:25%;
-}
-.d-thirty {
-	width:30%;
-}
-.d-thirty-three {
-	width:33%;
-}
-.d-thirty-four {
-	width:34%;
-}
-.d-thirty-five {
-	width:35%;
-}
-.d-forty {
-	width:40%;
-}
-.d-forty-five {
-	width:45%;
-}
-.d-fifty {
-	width:50%;
-}
-.d-fifty-five {
-	width:55%;
-}
-.d-sixty {
-	width:60%;
-}
-.d-sixty-five {
-	width:65%;
-}
-.d-sixty-six {
-	width:66%;
-}
-.d-seventy {
-	width:70%;
-}
-.d-sixty-seven {
-	width:67%;
-}
-.d-seventy-five {
-	width:75%;
-}
-.d-eighty {
-	width:80%;
-}
-.d-eighty-five {
-	width:85%;
-}
-.d-ninety {
-	width:90%;
-}
-.d-ninety-five {
-	width:95%;
-}
-.d-full{
-	width:100%;
-}
-/* IMAGES */
-img.responsive{
-	width: 100%;
-	height: auto;
-}
-/* SPECIAL CASE FOR THREE IMAGES IN A ROW */
-.thirty-three.image{
-	&:nth-child(2){
-		.space{
-			&.halfright{
-				padding-left: $spacing;
-			}
-		}
-	}
-	&:nth-child(3){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing - $spacing/5;
-				padding-right: $spacing - $spacing/5;
-			}
-		}
-	}
-	&:nth-child(4){
-		.space{
-			&.halfleft{
-				padding-right: $spacing;
-			}
-		}
-	}
-}
-/* SPECIAL CASE FOR FOUR IMAGES IN A ROW */
-.twenty-five.image{
-	&:nth-child(1){
-		.space{
-			&.halfright{
-				padding-left: $spacing;
-			}
-		}
-	}
-	&:nth-child(2){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing - $spacing/4;
-				padding-right: $spacing - $spacing/4;
-			}
-		}
-	}
-	&:nth-child(3){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing - $spacing/4;
-				padding-right: $spacing - $spacing/4;
-			}
-		}
-	}
-	&:nth-child(4){
-		.space{
-			&.halfleft{
-				padding-right: $spacing;
-			}
-		}
-	}
-}
-
-/* SPECIAL CASE FOR FIVE IMAGES IN A ROW */
-.twenty.image{
-	&:nth-child(1){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing;
-			}
-		}
-	}
-	&:nth-child(2){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing - $spacing/4;
-				padding-right: $spacing - $spacing/4;
-			}
-		}
-	}
-	&:nth-child(3){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing - $spacing/4;
-				padding-right: $spacing - $spacing/4;
-			}
-		}
-	}
-	&:nth-child(4){
-		.space{
-			&.halfleft.halfright{
-				padding-left: $spacing - $spacing/4;
-				padding-right: $spacing - $spacing/4;
-			}
-		}
-	}
-	&:nth-child(5){
-		.space{
-			&.halfleft.halfright{
-				padding-right: $spacing;
-			}
-		}
-	}
+/*
+---------------------------------------------------------------------
+DESKTOP BREAKPOINTS
+---------------------------------------------------------------------
+*/
+@each $label, $breakpoint in $fw-desktop-breakpoints{
+  @media screen and (min-width: $breakpoint) {
+    @for $i from 0 through 100 {
+      .#{$label}-#{$i} {
+        width : round(percentage($i/100));
+      }
+    }
+  }
 }
