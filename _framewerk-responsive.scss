@@ -8,7 +8,7 @@ breakpoint defiend.
 */
 @each $label, $breakpoint in $fw-responsive-breakpoints{
   @media handheld, only screen and (max-width: $breakpoint) {
-    @for $i from 0 through 100 {
+    @for $i from 1 through 100 {
       .#{$label}-#{$i} {
         width : round(percentage($i/100));
       }

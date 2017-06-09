@@ -65,7 +65,7 @@ DEFAULT DESKTOP
 ---------------------------------------------------------------------
 If no breakpoints are defined, these will be the fallback width percentages
 */
-@for $i from 0 through 100 {
+@for $i from 1 through 100 {
   .desktop-#{$i} {
     width : round(percentage($i/100));
   }
@@ -83,7 +83,7 @@ DESKTOP BREAKPOINTS
 */
 @each $label, $breakpoint in $fw-desktop-breakpoints{
   @media screen and (min-width: $breakpoint) {
-    @for $i from 0 through 100 {
+    @for $i from 1 through 100 {
       .#{$label}-#{$i} {
         width : round(percentage($i/100));
       }
