@@ -70,6 +70,12 @@ If no breakpoints are defined, these will be the fallback width percentages
     width : round(percentage($i/100));
   }
 }
+.flex-container.desktop-ltr{
+  flex-direction: row;
+}
+.flex-container.desktop-rtl{
+  flex-direction: row-reverse;
+}
 /*
 ---------------------------------------------------------------------
 DESKTOP BREAKPOINTS
@@ -81,6 +87,18 @@ DESKTOP BREAKPOINTS
       .#{$label}-#{$i} {
         width : round(percentage($i/100));
       }
+    }
+    .flex-container.#{$label}-ltr{
+      flex-direction: row;
+    }
+    .flex-container.#{$label}-rtl{
+      flex-direction: row-reverse;
+    }
+    .flex-container.#{$label}-ttb{
+      flex-direction: column;
+    }
+    .flex-container.#{$label}-btt{
+      flex-direction: column-reverse;
     }
   }
 }
