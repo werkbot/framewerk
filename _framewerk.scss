@@ -76,6 +76,9 @@ If no breakpoints are defined, these will be the fallback width percentages
 .flex-container.desktop-rtl{
   flex-direction: row-reverse;
 }
+.desktop-hide{
+  display: none;
+}
 /*
 ---------------------------------------------------------------------
 DESKTOP BREAKPOINTS

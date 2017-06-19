@@ -25,5 +25,8 @@ breakpoint defiend.
     .flex-container.#{$label}-btt{
       flex-direction: column-reverse;
     }
+    .#{$label}-hide{
+      display: none;
+    }
   }
 }
