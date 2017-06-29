@@ -34,6 +34,12 @@ Can be overridden as well in a separate sass file if need be
 */
 .space{
   padding: $spacing;
+  &.three-forths{
+    padding: $spacing * 0.75;
+  }
+  &.half{
+    padding: $spacing / 2;
+  }
 	&.noleft{
 		padding-left: 0;
 	}

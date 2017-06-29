@@ -1,4 +1,3 @@
-
 /*
 ---------------------------------------------------------------------
 RESPONSIVE BREAKPOINTS
@@ -27,6 +26,12 @@ breakpoint defiend.
     }
     .#{$label}-hide{
       display: none;
+    }
+    /* SPACING */
+    .space{
+      &.#{$label}-space-reset{
+        padding: $spacing;
+      }
     }
   }
 }
