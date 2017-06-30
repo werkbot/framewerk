@@ -25,6 +25,12 @@ Flex Itme - all items should be tagged with the class .flex-item
   width: 0.5%;
   min-height: 1px;
 }
+.flex-iframe{
+  width: 100%;
+  iframe{
+    width: 100%;
+  }
+}
 /*
 ---------------------------------------------------------------------
 SPACING
