@@ -40,6 +40,9 @@ Can be overridden as well in a separate sass file if need be
 */
 .space{
   padding: $spacing;
+  &.one-forth{
+    padding: $spacing * 0.25;
+  }
   &.three-forths{
     padding: $spacing * 0.75;
   }
