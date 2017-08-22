@@ -40,6 +40,9 @@ Can be overridden as well in a separate sass file if need be
 */
 .space{
   padding: $spacing;
+  &.double{
+    padding: $spacing * 2;
+  }
   &.one-forth{
     padding: $spacing * 0.25;
   }
