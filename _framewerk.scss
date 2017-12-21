@@ -100,6 +100,9 @@ If no breakpoints are defined, these will be the fallback width percentages
 .desktop-auto{
   width: auto;
 }
+.desktop-show{
+  display: inherit;
+}
 /*
 ---------------------------------------------------------------------
 DESKTOP BREAKPOINTS
