@@ -9,7 +9,7 @@ breakpoint defiend.
   @media handheld, only screen and (max-width: $breakpoint) {
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
-        width : round(percentage($i/100));
+        width: round(percentage($i/100));
       }
     }
     .flex-container.#{$label}-ltr{
@@ -26,6 +26,9 @@ breakpoint defiend.
     }
     .#{$label}-hide{
       display: none;
+    }
+    .#{$label}-auto{
+      width: auto;
     }
     /* SPACING */
     .space{
