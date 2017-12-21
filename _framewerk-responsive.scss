@@ -27,6 +27,9 @@ breakpoint defiend.
     .#{$label}-hide{
       display: none;
     }
+    .#{$label}-show{
+      display: inherit;
+    }
     /* SPACING */
     .space{
       &.#{$label}-space-reset{
