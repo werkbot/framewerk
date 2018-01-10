@@ -1,9 +1,6 @@
 /*
----------------------------------------------------------------------
-FLEX BOX
----------------------------------------------------------------------
-Flex Container - all items should be wrapped with .flex-container
-Flex Itme - all items should be tagged with the class .flex-item
+  FLEX BOX
+  Flex Container - all flex items should be wrapped with .flex-container
 */
 .flex-container{
   display: -webkit-box;
@@ -14,7 +11,7 @@ Flex Itme - all items should be tagged with the class .flex-item
   flex-flow: row wrap;
 	justify-content: flex-start;
 }
-.flex-item {
+.flex-item { /* DEPRECIATED */
 	align-self: flex-start;
 }
 .flex-image {
@@ -31,12 +28,10 @@ Flex Itme - all items should be tagged with the class .flex-item
     width: 100%;
   }
 }
+
 /*
----------------------------------------------------------------------
-SPACING
----------------------------------------------------------------------
-$spacing variable is defined in _framewerk_variables.scss
-Can be overridden as well in a separate sass file if need be
+  SPACING
+  $spacing variable is defined in _framewerk_variables.scss
 */
 .space{
   padding: $spacing;
@@ -78,10 +73,8 @@ Can be overridden as well in a separate sass file if need be
 	}
 }
 /*
----------------------------------------------------------------------
-DEFAULT DESKTOP
----------------------------------------------------------------------
-If no breakpoints are defined, these will be the fallback width percentages
+  DEFAULT DESKTOP
+  If no breakpoints are defined, these will be the fallback width percentages
 */
 @for $i from 1 through 100 {
   .desktop-#{$i} {
@@ -104,9 +97,8 @@ If no breakpoints are defined, these will be the fallback width percentages
   display: inherit;
 }
 /*
----------------------------------------------------------------------
-DESKTOP BREAKPOINTS
----------------------------------------------------------------------
+  DESKTOP BREAKPOINTS
+  Loop through each desktop defined breakpoint
 */
 @each $label, $breakpoint in $fw-desktop-breakpoints{
   @media screen and (min-width: $breakpoint) {
