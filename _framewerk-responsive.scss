@@ -9,16 +9,16 @@
         width: round(percentage($i/100));
       }
     }
-    .flex-container.#{$label}-ltr{
+    .flex-container.#{$label}-ltr{ /* DEPRECIATED */
       flex-direction: row;
     }
-    .flex-container.#{$label}-rtl{
+    .flex-container.#{$label}-rtl{ /* DEPRECIATED */
       flex-direction: row-reverse;
     }
-    .flex-container.#{$label}-ttb{
+    .flex-container.#{$label}-ttb{ /* DEPRECIATED */
       flex-direction: column;
     }
-    .flex-container.#{$label}-btt{
+    .flex-container.#{$label}-btt{ /* DEPRECIATED */
       flex-direction: column-reverse;
     }
     .#{$label}-hide{

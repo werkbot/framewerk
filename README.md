@@ -11,6 +11,9 @@ Include the partials in your main sass file in the following order:
 @import '../../../vendor/werkbot/framewerk/framewerk';
 @import '../../../vendor/werkbot/framewerk/framewerk-responsive';
 
+## Documentation
+* [Further documentation here](docs/en/README.md)
+
 ## Issues
 Report all issues in the "Framewerk" jira project: http://jira.werkbot.com/projects/FR
 
