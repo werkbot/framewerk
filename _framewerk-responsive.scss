@@ -4,22 +4,17 @@
 */
 @each $label, $breakpoint in $fw-responsive-breakpoints{
   @media handheld, only screen and (max-width: $breakpoint) {
+    .#{$label}-half{
+      width: 0.5%;
+      min-height: 1px;
+    }
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
         width: round(percentage($i/100));
       }
     }
-    .flex-container.#{$label}-ltr{ /* DEPRECIATED */
-      flex-direction: row;
-    }
-    .flex-container.#{$label}-rtl{ /* DEPRECIATED */
-      flex-direction: row-reverse;
-    }
-    .flex-container.#{$label}-ttb{ /* DEPRECIATED */
-      flex-direction: column;
-    }
-    .flex-container.#{$label}-btt{ /* DEPRECIATED */
-      flex-direction: column-reverse;
+    .#{$label}-auto{
+      width: auto;
     }
     .#{$label}-hide{
       display: none;
@@ -27,8 +22,20 @@
     .#{$label}-show{
       display: inherit;
     }
-    .#{$label}-auto{
-      width: auto;
+    /* Flex Container Direction */
+    .flex-container{
+      &.#{$label}-ltr{
+        flex-direction: row;
+      }
+      &.#{$label}-rtl{
+        flex-direction: row-reverse;
+      }
+      &.#{$label}-ttb{
+        flex-direction: column;
+      }
+      &.#{$label}-btt{
+        flex-direction: column-reverse;
+      }
     }
     /* SPACING RESET */
     .space{

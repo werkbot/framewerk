@@ -11,18 +11,18 @@
   flex-flow: row wrap;
 	justify-content: flex-start;
 }
-.flex-item { /* DEPRECIATED */
+.flex-item { /* DEPRECIATED - Never used, should be handled by a custom class */
 	align-self: flex-start;
 }
-.flex-image { /* DEPRECIATED */
+.flex-image {
   width: 100%;
   height: auto;
 }
-.flex-half{
+.flex-half{ /* DEPRECIATED - replaced with breakpoint specific */
   width: 0.5%;
   min-height: 1px;
 }
-.flex-iframe{ /* DEPRECIATED */
+.flex-iframe{
   width: 100%;
   iframe{
     width: 100%;
@@ -41,11 +41,11 @@
   &.one-forth{
     padding: $spacing * 0.25;
   }
-  &.three-forths{
-    padding: $spacing * 0.75;
-  }
   &.half{
     padding: $spacing / 2;
+  }
+  &.three-forths{
+    padding: $spacing * 0.75;
   }
 	&.noleft{
 		padding-left: 0;
@@ -76,16 +76,14 @@
   DEFAULT DESKTOP
   If no breakpoints are defined, these will be the fallback width percentages
 */
+.desktop-half{
+  width: 0.5%;
+  min-height: 1px;
+}
 @for $i from 1 through 100 {
   .desktop-#{$i} {
     width : round(percentage($i/100));
   }
-}
-.flex-container.desktop-ltr{ /* DEPRECIATED */
-  flex-direction: row;
-}
-.flex-container.desktop-rtl{ /* DEPRECIATED */
-  flex-direction: row-reverse;
 }
 .desktop-hide{
   display: none;
@@ -96,28 +94,58 @@
 .desktop-show{
   display: inherit;
 }
+.flex-container{
+  &.desktop-ltr{
+    flex-direction: row;
+  }
+  &.desktop-rtl{
+    flex-direction: row-reverse;
+  }
+  &.desktop-ttb{
+    flex-direction: column;
+  }
+  &.desktop-btt{
+    flex-direction: column-reverse;
+  }
+}
 /*
   DESKTOP BREAKPOINTS
   Loop through each desktop defined breakpoint
 */
 @each $label, $breakpoint in $fw-desktop-breakpoints{
   @media screen and (min-width: $breakpoint) {
+    .#{$label}-half{
+      width: 0.5%;
+      min-height: 1px;
+    }
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
         width : round(percentage($i/100));
       }
     }
-    .flex-container.#{$label}-ltr{ /* DEPRECIATED */
-      flex-direction: row;
+    .#{$label}-auto{
+      width: auto;
     }
-    .flex-container.#{$label}-rtl{ /* DEPRECIATED */
-      flex-direction: row-reverse;
+    .#{$label}-hide{
+      display: none;
     }
-    .flex-container.#{$label}-ttb{ /* DEPRECIATED */
-      flex-direction: column;
+    .#{$label}-show{
+      display: inherit;
     }
-    .flex-container.#{$label}-btt{ /* DEPRECIATED */
-      flex-direction: column-reverse;
+    /* Flex Container Direction */
+    .flex-container{
+      &.#{$label}-ltr{
+        flex-direction: row;
+      }
+      &.#{$label}-rtl{
+        flex-direction: row-reverse;
+      }
+      &.#{$label}-ttb{
+        flex-direction: column;
+      }
+      &.#{$label}-btt{
+        flex-direction: column-reverse;
+      }
     }
   }
 }
