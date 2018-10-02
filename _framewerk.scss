@@ -10,6 +10,7 @@
   display: flex;
   flex-flow: row wrap;
 	justify-content: flex-start;
+  align-content: flex-start;
 }
 .flex-item { /* DEPRECIATED - Never used, should be handled by a custom class */
 	align-self: flex-start;
