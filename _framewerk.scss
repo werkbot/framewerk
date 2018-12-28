@@ -38,6 +38,18 @@
 .flex-vertical-bottom {
   align-items: flex-end;
 }
+.flex-vertical-stretch {
+  align-items: stretch;
+}
+.flex-horizontal-left {
+  justify-content: flex-start;
+}
+.flex-horizontal-center {
+  justify-content: center;
+}
+.flex-horizontal-right {
+  justify-content: flex-end;
+}
 
 /*
   SPACING
