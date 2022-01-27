@@ -1,0 +1,48 @@
+/*
+  Space
+  $fw-space variable is defined in _fw-variables.scss
+  Used for consistent margins and gutters throughout the defined content
+*/
+.fw-space,
+.space{
+  padding: $fw-space;
+  &.double{
+    padding: $fw-space * 2;
+  }
+  &.triple{
+    padding: $fw-space * 3;
+  }
+  &.one-forth{
+    padding: $fw-space * 0.25;
+  }
+  &.half{
+    padding: $fw-space / 2;
+  }
+  &.three-forths{
+    padding: $fw-space * 0.75;
+  }
+	&.noleft{
+		padding-left: 0;
+	}
+	&.noright{
+		padding-right: 0;
+	}
+	&.halfleft{
+		padding-left: $fw-space / 2;
+	}
+	&.halfright{
+		padding-right: $fw-space / 2;
+	}
+	&.notop{
+		padding-top: 0;
+	}
+	&.nobottom{
+		padding-bottom: 0;
+	}
+	&.halftop{
+		padding-top: $fw-space / 2;
+	}
+	&.halfbottom{
+		padding-bottom: $fw-space / 2;
+	}
+}

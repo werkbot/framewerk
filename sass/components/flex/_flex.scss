@@ -1,0 +1,45 @@
+/*
+  Flex
+  Classes with default flex properties defined and inline flex helpers
+*/
+.flex-container{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+	justify-content: flex-start;
+  align-content: flex-start;
+}
+.flex-image {
+  width: 100%;
+  height: auto;
+}
+.flex-iframe{
+  width: 100%;
+  iframe{
+    width: 100%;
+  }
+}
+.flex-vertical-top {
+  align-items: flex-start;
+}
+.flex-vertical-center {
+  align-items: center;
+}
+.flex-vertical-bottom {
+  align-items: flex-end;
+}
+.flex-vertical-stretch {
+  align-items: stretch;
+}
+.flex-horizontal-left {
+  justify-content: flex-start;
+}
+.flex-horizontal-center {
+  justify-content: center;
+}
+.flex-horizontal-right {
+  justify-content: flex-end;
+}
