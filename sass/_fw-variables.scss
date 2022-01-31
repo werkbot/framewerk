@@ -14,6 +14,16 @@ $fw-responsive-breakpoints: (
   phone : 600px
 );
 
+// Default site color variables
+$sitecolor-black: #000;
+$sitecolor-white: #fff;
+$sitecolor-lightgrey: #eee;
+$sitecolor-primary: #803f98;
+
+// Default site font variables
+$sitefont-header: "Montserrat";
+$sitefont-text: "Roboto";
+
 /* Depreciated Variables - These will be removed in a future version */
 $spacing: $fw-space; // Replaced by $fw-space
 $container-size: $fw-container-size; // Replaced by $fw-container-size

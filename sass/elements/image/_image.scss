@@ -1,0 +1,57 @@
+/*
+  Image
+  Generic image classes
+  These classes are set from silverstripe html editor
+*/
+img{
+  &.left{
+  	float: left;
+  	padding-right: $spacing;
+  	padding-bottom: $spacing;
+  	max-width: 100%;
+    height: auto;
+  }
+  &.right{
+  	float: right;
+  	padding-left: $spacing;
+  	padding-bottom: $spacing;
+  	max-width: 100%;
+    height: auto;
+  }
+  &.center{
+  	display: block;
+  	margin: 0 auto;
+  	text-align: center;
+  	padding: $spacing 0;
+  	max-width: 100%;
+    height: auto;
+  }
+  &.leftAlone{
+  	display: block;
+  	text-align: left;
+  	padding: $spacing 0;
+  	max-width: 100%;
+    height: auto;
+  }
+}
+@media handheld, only screen and (max-width: map-get($fw-responsive-breakpoints, tablet)) {  img{
+    &.left,
+    &.right,
+    &.center,
+    &.leftAlone{
+    	max-width: 100%;
+      height: auto;
+    }
+  }
+}
+@media handheld, only screen and (max-width: map-get($fw-responsive-breakpoints, phone)) {
+  img{
+    &.left,
+    &.right,
+    &.center,
+    &.leftAlone{
+    	width: 100%;
+      height: auto;
+    }
+  }
+}

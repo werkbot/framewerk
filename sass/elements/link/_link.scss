@@ -1,0 +1,20 @@
+/*
+  Link
+  Default link styles
+*/
+a{
+  color: $sitecolor-primary;
+  text-decoration: underline;
+  &:link{
+    color: $sitecolor-primary;
+  }
+  &:visited{
+    color: $sitecolor-primary;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+  &:active{
+    color: $sitecolor-primary;
+  }
+}

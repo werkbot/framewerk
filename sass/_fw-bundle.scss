@@ -1,5 +1,15 @@
+/* Components */
 @import 'components/reset/reset';
-@import 'components/html/html';
 @import 'components/space/space';
 @import 'components/flex/flex';
 @import 'components/layout/layout';
+
+/* Elements */
+@import 'elements/html/html';
+@import 'elements/body/body';
+@import 'elements/hr/hr';
+@import 'elements/image/image';
+@import 'elements/link/link';
+@import 'elements/table/table';
+@import 'elements/list/list';
+@import 'elements/typography/typography';
