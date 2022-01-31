@@ -1,0 +1,57 @@
+// Space variable, used here: space/_space.scss
+$fw-space: 20px;
+
+// Used by the default site container
+$fw-container-size: 1366px;
+
+// Layout Break Points
+$fw-desktop-breakpoints: (
+  desktop : 1366px
+);
+$fw-responsive-breakpoints: (
+  desktopsmall: 1366px,
+  tablet: 1024px,
+  phone : 600px
+);
+
+/* Depreciated Variables - These will be removed in a future version */
+$spacing: $fw-space; // Replaced by $fw-space
+$container-size: $fw-container-size; // Replaced by $fw-container-size
+
+/*
+  Theme Properties
+*/
+$themeProperties: (
+  primary: #999999,
+  secondary: #333333,
+  tertiary: #cccccc,
+  backgroundColorLight: #ffffff,
+  backgroundColorDark: #333333,
+  textColorLight: #9b8a8a,
+  textColorDark: #333333,
+);
+
+/*
+  getThemeProperty
+  Returns the property value requested, either with the $hemeProperties or the passed in $properties
+  - $key - The map element to lookup
+  - $properties - a map of properties to use instead of the default $themeProperties
+  - ex:
+    `color: getThemeProperty(primary)`;
+*/
+@function getThemeProperty($key, $properties:()) {
+  @if(length($properties) > 0){ // Check to see if any properties were passed in
+    @if(map-get($properties, $key)){ // Check if the key exists in the properties
+      @return map-get($properties, $key);
+    }@else{
+      @return getThemeProperty($key); // Fall back to the theme properties
+    }
+  }@else{
+    @if(map-get($themeProperties, $key)){
+      @return map-get($themeProperties, $key);
+    }@else{
+      @return #00ff00; // The key was not found, so we return this color as an error
+    }
+  }
+}
+
