@@ -15,5 +15,5 @@ $fw-responsive-breakpoints: (
 );
 
 /* Depreciated Variables - These will be removed in a future version */
-$spacing: 20px; // Replaced by $fw-space
-$container-size: 1366px; // Replaced by $fw-container-size
+$spacing: $fw-space; // Replaced by $fw-space
+$container-size: $fw-container-size; // Replaced by $fw-container-size
