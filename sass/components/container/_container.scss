@@ -1,0 +1,9 @@
+/*
+  CONTAINER
+  Site wide generic container class. Will center all content within it's max-width
+*/
+.container,
+.fw-container{
+  max-width: $container-size;
+  margin: 0 auto;
+}
