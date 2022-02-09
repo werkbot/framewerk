@@ -1,0 +1,25 @@
+.form-modern{
+  .field.text{
+    label{
+      display: block;
+      transform: translate(20px, 45px);
+      transform-origin: left;
+      transition: transform .25s ease;
+      color: $formmodern-label-color;
+      pointer-events: none;
+      margin: 0;
+      &.valid{
+        transform: scale(.7) translate(30px, 40px);
+      }
+    }
+    input{
+      padding: 30px 20px 10px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid $formmodern-border-color;
+      &.valid{
+        padding: 30px 20px 10px 20px;
+      }
+    }
+  }
+}

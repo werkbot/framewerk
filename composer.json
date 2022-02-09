@@ -3,7 +3,7 @@
   "description": "Werkbot's css framework, based on the flexbox layout",
   "extra": {
     "expose": [
-        "css"
+        "dist"
     ]
   }
 }

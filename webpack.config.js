@@ -1,13 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
 	entry: [
+		path.resolve(__dirname, 'js/form.js'),
 		path.resolve(__dirname, 'sass/_fw-bundle.scss'),
 	],
 	output: {
-		path: path.resolve(__dirname, 'css'),
+		filename: 'framewerk.js',
+		path: path.resolve(__dirname, 'dist')
 	},
 	mode: 'production',
 	devtool: 'source-map',
@@ -16,7 +19,7 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [
-					MiniCssExtractPlugin.loader,
+					devMode ? "style-loader" : MiniCssExtractPlugin.loader,
 					{
 						loader: 'css-loader',
 						options: {
