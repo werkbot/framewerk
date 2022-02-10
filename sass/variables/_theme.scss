@@ -1,0 +1,41 @@
+/*
+  Theme Properties
+*/
+$default-theme-properties: (
+  primaryColor: #999999,
+  secondaryColor: #000000,
+  tertiaryColor: #cccccc,
+  backgroundColorLight: #ffffff,
+  backgroundColorDark: #333333,
+  textColorLight: #ffffff,
+  textColorDark: #333333,
+);
+// If $theme-properties is set, lets merge into our defaults
+$theme-properties: $default-theme-properties !default;
+@if($theme-properties){
+  $theme-properties: map-merge($default-theme-properties, $theme-properties);
+}
+
+/*
+  getThemeProperty
+  Returns the property value requested, either with the $theme-properties or the passed in $properties
+  - $key - The map element to lookup
+  - $properties - a map of properties to use instead of the default $theme-properties
+  - ex:
+    `color: getThemeProperty(primaryColor)`;
+*/
+@function getThemeProperty($key, $properties:()) {
+  @if(length($properties) > 0){ // Check to see if any properties were passed in
+    @if(map-get($properties, $key)){ // Check if the key exists in the properties
+      @return map-get($properties, $key);
+    }@else{
+      @return getThemeProperty($key); // Fall back to the theme properties
+    }
+  }@else{
+    @if(map-get($theme-properties, $key)){
+      @return map-get($theme-properties, $key);
+    }@else{
+      @return #00ff00; // The key was not found, so we return this color as an error
+    }
+  }
+}

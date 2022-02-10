@@ -14,10 +14,9 @@ $default-component-button-properties:(
   borderRadius: 5px
 );
 // If $component-button-properties is set, lets merge into our defaults
+$component-button-properties: $default-component-button-properties !default;
 @if($component-button-properties){
   $component-button-properties: map-merge($default-component-button-properties, $component-button-properties);
-}@else{
-  $component-button-properties: $default-component-button-properties;
 }
 
 // Button Mixin
