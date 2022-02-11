@@ -1,31 +1,31 @@
 // General Variables
-$formmodern-icon-family: "Font Awesome 5 Pro";
-$formmodern-label-color: #cccccc;
-$formmodern-border-color: #cccccc;
+$formmodern-icon-family: "Font Awesome 5 Pro" !default;
+$formmodern-label-color: #cccccc !default;
+$formmodern-border-color: #cccccc !default;
 
 // Checkbox Variables
-$formmodern-checkbox-icon-background: #ffffff;
-$formmodern-checkbox-icon-checked: "\f14a";
-$formmodern-checkbox-icon-checked-color: #000000;
-$formmodern-checkbox-icon-not-checked: "\f0c8";
-$formmodern-checkbox-icon-not-checked-color: #cccccc;
+$formmodern-checkbox-icon-background: #ffffff !default;
+$formmodern-checkbox-icon-checked: "\f14a" !default;
+$formmodern-checkbox-icon-checked-color: #000000 !default;
+$formmodern-checkbox-icon-not-checked: "\f0c8" !default;
+$formmodern-checkbox-icon-not-checked-color: #cccccc !default;
 
 // Numeric Variables
-$formmodern-numeric-border-color: #efefef;
-$formmodern-numeric-color: #ffffff;
-$formmodern-numeric-background-color: #efefef;
-$formmodern-numeric-background-color-hover: #ff0000;
-$formmodern-numeric-background-color-readonly: #cccccc;
+$formmodern-numeric-border-color: #efefef !default;
+$formmodern-numeric-color: #ffffff !default;
+$formmodern-numeric-background-color: #efefef !default;
+$formmodern-numeric-background-color-hover: #ff0000 !default;
+$formmodern-numeric-background-color-readonly: #cccccc !default;
 
 // Radio Variables
-$formmodern-radio-icon-background: #ffffff;
-$formmodern-radio-icon-checked: "\f192";
-$formmodern-radio-icon-checked-color: #000000;
-$formmodern-radio-icon-not-checked: "\f111";
-$formmodern-radio-icon-not-checked-color: #cccccc;
+$formmodern-radio-icon-background: #ffffff !default;
+$formmodern-radio-icon-checked: "\f192" !default;
+$formmodern-radio-icon-checked-color: #000000 !default;
+$formmodern-radio-icon-not-checked: "\f111" !default;
+$formmodern-radio-icon-not-checked-color: #cccccc !default;
 
 // Select Variables
-$formmodern-select-background-color: #ffffff;
-$formmodern-select-color: #000000;
-$formmodern-select-icon: "\f078";
-$formmodern-select-icon-color: #000000;
+$formmodern-select-background-color: #ffffff !default;
+$formmodern-select-color: #000000 !default;
+$formmodern-select-icon: "\f078" !default;
+$formmodern-select-icon-color: #000000 !default;
