@@ -13,7 +13,7 @@ JS\
 `require('./node_modules/framewerk/js/form.js');`\
 Sass\
 `@import './node_modules/framewerk/sass/fw-variables';`\
-`@import './node_modules/framewerk/sass/fw-bundle';`\
+`@import './node_modules/framewerk/sass/fw-bundle';`
 
 ## Build
 #### Creates a new distribution file (./dist/framewerk.js)
