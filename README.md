@@ -21,5 +21,23 @@ Sass\
 - `npm run watch`
 
 ## Documentation
-* [Further flex-container documentation here](docs/en/flex-container.md)
-* [Further form documentation here](docs/en/form.md)
+
+### Setup
+Include `fw-bundle` in your sass build, preferably at the top:
+`@import '../../vendor/werkbot/framewerk/sass/fw-bundle';`
+
+#### Configure
+Define configuration options (colors, component properties, etc...) before the `fw-bundle` in your sass build:
+```
+/* Config */
+@import 'colors';
+
+/* Framewerk */
+@import '../../vendor/werkbot/framewerk/sass/fw-bundle';
+...
+...
+...
+```
+
+### Further Documentation
+* [Further documentation here](docs/en/README.md)
