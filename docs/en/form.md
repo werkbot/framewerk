@@ -24,7 +24,6 @@ Adds Font Awesome icon buttons to increase / decrease quantity
   $formmodern-numeric-background-color: #efefef;
   $formmodern-numeric-background-color-hover: #ff0000;
   $formmodern-numeric-background-color-readonly: #cccccc;
-
 ```
 
 ## Radio

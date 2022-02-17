@@ -28,14 +28,6 @@ module.exports = {
 					},
 					{
 						loader: 'sass-loader',
-					},
-					{
-					loader: 'sass-resources-loader',
-						options: {
-							resources: [
-								path.resolve(__dirname, 'sass/_fw-variables.scss'),
-							],
-						},
 					}
 				]
 			}

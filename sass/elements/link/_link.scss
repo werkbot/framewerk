@@ -3,18 +3,18 @@
   Default link styles
 */
 a{
-  color: $sitecolor-primary;
+  color: getThemeProperty(primaryColor);
   text-decoration: underline;
   &:link{
-    color: $sitecolor-primary;
+    color: getThemeProperty(primaryColor);
   }
   &:visited{
-    color: $sitecolor-primary;
+    color: getThemeProperty(primaryColor);
   }
   &:hover{
     text-decoration: none;
   }
   &:active{
-    color: $sitecolor-primary;
+    color: getThemeProperty(primaryColor);
   }
 }
