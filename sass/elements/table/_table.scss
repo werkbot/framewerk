@@ -1,0 +1,52 @@
+table{
+  width: 100%;
+  th,
+  td{
+    padding: 10px;
+  }
+  thead{
+    position: sticky;
+    top: 0;
+    tr{
+      table-layout: fixed;
+      width: 100%;
+    }
+    th{
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 15px;
+      font-weight: 700;
+      font-size: 1.25em;
+      line-height: 1em;
+    }
+  }
+  tbody{
+    table-layout: fixed;
+    tr{
+      &:nth-child(odd){
+        background: #f3f3f5;
+        border-radius: 3px;
+      }
+    }
+    td{
+      padding: 10px 15px;
+    }
+  }
+  tfoot{
+    font-size: 0.8em;
+    line-height: 1em;
+    td{
+    }
+  }
+}
+@media handheld, only screen and (max-width: map-get($fw-responsive-breakpoints, tablet)) {
+}
+@media handheld, only screen and (max-width: map-get($fw-responsive-breakpoints, phone)) {
+  table{
+    font-size: 0.8em;
+    th,
+    td{
+      padding: 5px;
+    }
+  }
+}

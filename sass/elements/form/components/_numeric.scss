@@ -1,0 +1,66 @@
+.form-modern{
+	.field.numeric{
+		position: relative;
+    margin: 0;
+    label{
+      transform: none;
+      margin: 2px 0;
+      &.valid{
+        transform: none;
+      }
+    }
+		input, input[type='number']{
+			width: 100%;
+			height: 44px;
+      padding: 9px;
+      padding-left: 45px;
+			padding-right: 31px;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 5px;
+      border-style: solid;
+      border-color: $formmodern-numeric-border-color;
+      background: #ffffff;
+      outline: none;
+			border: 1px solid $formmodern-border-color;
+		}
+		~ .subtract-qty, .subtract-qty, ~ .add-qty, .add-qty{
+			position: absolute;
+			top: 20px;
+			height: 43px;
+			width: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+			box-sizing: border-box;
+			font-weight: 900;
+			color: $formmodern-numeric-color;
+			background-color: $formmodern-numeric-background-color;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color .25s ease;
+			&:hover{
+				background-color: $formmodern-numeric-background-color-hover;
+			}
+			i{
+				font-size: 1.2em;
+			}
+		}
+		~ .subtract-qty, .subtract-qty{
+			left: 0;
+			border-radius: 5px 0 0 5px;
+		}
+		~ .add-qty, .add-qty{
+			right: 0;
+			border-radius: 0 5px 5px 0;
+    }
+    &.readonly{
+      ~ .subtract-qty, .subtract-qty,
+      ~ .add-qty, .add-qty{
+        background-color: $formmodern-numeric-background-color-readonly;
+        cursor: default;
+      }
+    }
+	}
+}

@@ -1,0 +1,39 @@
+.form-modern{
+  fieldset.field div, .field.optionset div, ul.optionset li{  
+    position: relative;
+    input[type='radio']{
+      width: max-content;
+      border: none;
+      -moz-appearance: initial; // Enables pseudo elements in FireFox
+      min-width: 13px; // Does not inherit width in Firefox. Used for spacing
+      &::before{
+        font-family: $formmodern-icon-family;
+        content: $formmodern-radio-icon-not-checked;
+        font-weight: 400;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 2em;
+        line-height: 1;
+        cursor: pointer;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+        color: $formmodern-radio-icon-not-checked-color; // Background color of the radio
+        background: $formmodern-radio-icon-background; // Color behind the circle
+      }
+      &:checked::before{
+        content: $formmodern-radio-icon-checked;
+        color: $formmodern-radio-icon-checked-color; // Background color of the radio
+      }
+      + label{
+        display: inline-flex;
+        align-items: center;
+        width: max-content;
+        margin: 10px 0;
+        padding-left: 20px;
+        line-height: 1;
+        cursor: pointer;
+      }
+    }
+  }
+}
