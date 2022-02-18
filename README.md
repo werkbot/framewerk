@@ -12,7 +12,7 @@ Werkbot's css framework.
 JS\
 `require('./node_modules/framewerk/js/form.js');`\
 Sass\
-`@import '../../vendor/werkbot/framewerk/sass/fw-bundle';`\
+`@import './node_modules/framewerk/sass/fw-bundle';`
 
 #### Configure
 Define configuration options (colors, component properties, etc...) before the `fw-bundle` in your sass build:
