@@ -1,3 +1,19 @@
+// Default form select Properties
+$default-component-form-select-properties:(
+  backgroundColor: getThemeProperty(backgroundColorLight),
+  textColor: getThemeProperty(textColorDark),
+  icon: "\f078",
+  iconFontFamily: getThemeProperty(formInputIconFontFamily),
+  iconTextColor: getThemeProperty(textColorDark),
+  borderColor: getThemeProperty(formInputBorderColor),
+  shiftingLabelColor: getThemeProperty(formInputShiftingLabelColor),
+);
+// If $component-form-select-properties is set, lets merge into our defaults
+$component-form-select-properties: $default-component-form-select-properties !default;
+@if($component-form-select-properties){
+  $component-form-select-properties: map-merge($default-component-form-select-properties, $component-form-select-properties);
+}
+
 .form-modern{
   .field.dropdown{
     position: relative;
@@ -6,7 +22,7 @@
       transform: translate(20px, 45px);
       transform-origin: left;
       transition: transform .25s ease;
-      color: $formmodern-label-color;
+      color: getThemeProperty(shiftingLabelColor, $component-form-select-properties);
       pointer-events: none;
       margin: 0;
       &.valid{
@@ -20,23 +36,23 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background-color: $formmodern-select-background-color;
-      border: 1px solid $formmodern-border-color;
+      background-color: getThemeProperty(backgroundColor, $component-form-select-properties);
+      border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
       &.valid{
         padding: 30px 20px 10px 19px;
-        color: $formmodern-select-color;
+        color: getThemeProperty(textColor, $component-form-select-properties);
       }
       optgroup{
-        color: $formmodern-select-color;
+        color: getThemeProperty(textColor, $component-form-select-properties);
       }
     }
     &:after{
       position: absolute;
       right: 10px;
       top: 50%;
-      content: $formmodern-select-icon;
-      font-family: $formmodern-icon-family;
-      color: $formmodern-select-icon-color;
+      content: getThemeProperty(icon, $component-form-select-properties);
+      font-family: getThemeProperty(iconFontFamily, $component-form-select-properties);
+      color: getThemeProperty(iconTextColor, $component-form-select-properties);
     }
   }
 }

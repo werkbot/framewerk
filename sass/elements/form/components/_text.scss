@@ -1,3 +1,14 @@
+// Default form text Properties
+$default-component-form-text-properties:(
+  borderColor: getThemeProperty(formInputBorderColor),
+  shiftingLabelColor: getThemeProperty(formInputShiftingLabelColor),
+);
+// If $component-form-text-properties is set, lets merge into our defaults
+$component-form-text-properties: $default-component-form-text-properties !default;
+@if($component-form-text-properties){
+  $component-form-text-properties: map-merge($default-component-form-text-properties, $component-form-text-properties);
+}
+
 .form-modern{
   .field.text{
     label{
@@ -5,7 +16,7 @@
       transform: translate(20px, 45px);
       transform-origin: left;
       transition: transform .25s ease;
-      color: $formmodern-label-color;
+      color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
       pointer-events: none;
       margin: 0;
       &.valid{
@@ -16,7 +27,7 @@
       padding: 30px 20px 10px 20px;
       width: 100%;
       box-sizing: border-box;
-      border: 1px solid $formmodern-border-color;
+      border: 1px solid getThemeProperty(borderColor, $component-form-text-properties);
       &.valid{
         padding: 30px 20px 10px 20px;
       }

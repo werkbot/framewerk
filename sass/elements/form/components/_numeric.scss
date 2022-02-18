@@ -1,3 +1,18 @@
+// Default form numeric Properties
+$default-component-form-numeric-properties:(
+  backgroundColor: getThemeProperty(backgroundColorLight),
+  iconBackgroundColor: getThemeProperty(backgroundColorDark),
+  iconTextColor: getThemeProperty(textColorLight),
+  iconHoverBackgroundColor: getThemeProperty(primaryColor),
+  borderColor: getThemeProperty(formInputBorderColor),
+  readonlyIconBackgroundColor: #cccccc,
+);
+// If $component-form-numeric-properties is set, lets merge into our defaults
+$component-form-numeric-properties: $default-component-form-numeric-properties !default;
+@if($component-form-numeric-properties){
+  $component-form-numeric-properties: map-merge($default-component-form-numeric-properties, $component-form-numeric-properties);
+}
+
 .form-modern{
 	.field.numeric{
 		position: relative;
@@ -19,13 +34,14 @@
       text-align: center;
       border-radius: 5px;
       border-style: solid;
-      border-color: $formmodern-numeric-border-color;
-      background: #ffffff;
+      background: getThemeProperty(backgroundColor, $component-form-numeric-properties);
       outline: none;
-			border: 1px solid $formmodern-border-color;
+      border-color: getThemeProperty(borderColor, $component-form-numeric-properties);
+			border: 1px solid getThemeProperty(borderColor, $component-form-numeric-properties);
 		}
 		~ .subtract-qty, .subtract-qty, ~ .add-qty, .add-qty{
 			position: absolute;
+			z-index: 1; // Behaves strangely in FireFox without this
 			top: 20px;
 			height: 43px;
 			width: 50px;
@@ -35,13 +51,13 @@
 			padding: 10px;
 			box-sizing: border-box;
 			font-weight: 900;
-			color: $formmodern-numeric-color;
-			background-color: $formmodern-numeric-background-color;
+			color: getThemeProperty(iconTextColor, $component-form-numeric-properties);
+			background-color: getThemeProperty(iconBackgroundColor, $component-form-numeric-properties);
 			border-radius: 5px;
 			cursor: pointer;
 			transition: background-color .25s ease;
 			&:hover{
-				background-color: $formmodern-numeric-background-color-hover;
+				background-color: getThemeProperty(iconHoverBackgroundColor, $component-form-numeric-properties);
 			}
 			i{
 				font-size: 1.2em;
@@ -58,7 +74,7 @@
     &.readonly{
       ~ .subtract-qty, .subtract-qty,
       ~ .add-qty, .add-qty{
-        background-color: $formmodern-numeric-background-color-readonly;
+        background-color: getThemeProperty(readonlyIconBackgroundColor, $component-form-numeric-properties);
         cursor: default;
       }
     }

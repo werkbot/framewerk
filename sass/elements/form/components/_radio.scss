@@ -1,3 +1,18 @@
+// Default form radio Properties
+$default-component-form-radio-properties:(
+  backgroundColor: getThemeProperty(backgroundColorLight),
+  checkedIcon: "\f192",
+  checkedTextColor: getThemeProperty(textColorDark),
+  notCheckedIcon: "\f111",
+  notCheckedTextColor: getThemeProperty(textColorDark),
+  iconFontFamily: getThemeProperty(formInputIconFontFamily),
+);
+// If $component-form-radio-properties is set, lets merge into our defaults
+$component-form-radio-properties: $default-component-form-radio-properties !default;
+@if($component-form-radio-properties){
+  $component-form-radio-properties: map-merge($default-component-form-radio-properties, $component-form-radio-properties);
+}
+
 .form-modern{
   fieldset.field div, .field.optionset div, ul.optionset li{  
     position: relative;
@@ -7,8 +22,8 @@
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
       &::before{
-        font-family: $formmodern-icon-family;
-        content: $formmodern-radio-icon-not-checked;
+        font-family: getThemeProperty(iconFontFamily, $component-form-radio-properties);
+        content: getThemeProperty(notCheckedIcon, $component-form-radio-properties);
         font-weight: 400;
         position: absolute;
         top: 0;
@@ -18,12 +33,12 @@
         cursor: pointer;
         -webkit-transition: all .2s;
         transition: all .2s;
-        color: $formmodern-radio-icon-not-checked-color; // Background color of the radio
-        background: $formmodern-radio-icon-background; // Color behind the circle
+        color: getThemeProperty(notCheckedTextColor, $component-form-radio-properties);
+        background: getThemeProperty(backgroundColor, $component-form-radio-properties);
       }
       &:checked::before{
-        content: $formmodern-radio-icon-checked;
-        color: $formmodern-radio-icon-checked-color; // Background color of the radio
+        content: getThemeProperty(checkedIcon, $component-form-radio-properties);
+        color: getThemeProperty(checkedTextColor, $component-form-radio-properties);
       }
       + label{
         display: inline-flex;
