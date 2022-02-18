@@ -22,16 +22,16 @@ $component-button-properties: $default-component-button-properties !default;
 // Button Mixin
 @mixin button-input-style() {
   background-color: getThemeProperty(backgroundColor, $component-button-properties);
-	border-radius: getThemeProperty(borderRadius, $component-button-properties);
+  border-radius: getThemeProperty(borderRadius, $component-button-properties);
   color: getThemeProperty(textColor, $component-button-properties);
   display: inline-block;
-	position: relative;
-	text-decoration: none;
-	padding: getThemeProperty(padding, $component-button-properties);
+  position: relative;
+  text-decoration: none;
+  padding: getThemeProperty(padding, $component-button-properties);
   margin: getThemeProperty(margin, $component-button-properties);
-	border: none;
-	cursor: pointer;
-	-webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
   -webkit-transition: background-color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out;
   -o-transition: background-color 0.25s ease-out;
