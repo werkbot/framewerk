@@ -6,15 +6,15 @@
 img{
   &.left{
   	float: left;
-  	padding-right: $spacing;
-  	padding-bottom: $spacing;
+  	padding-right: $fw-space;
+  	padding-bottom: $fw-space;
   	max-width: 100%;
     height: auto;
   }
   &.right{
   	float: right;
-  	padding-left: $spacing;
-  	padding-bottom: $spacing;
+  	padding-left: $fw-space;
+  	padding-bottom: $fw-space;
   	max-width: 100%;
     height: auto;
   }
@@ -22,14 +22,14 @@ img{
   	display: block;
   	margin: 0 auto;
   	text-align: center;
-  	padding: $spacing 0;
+  	padding: $fw-space 0;
   	max-width: 100%;
     height: auto;
   }
   &.leftAlone{
   	display: block;
   	text-align: left;
-  	padding: $spacing 0;
+  	padding: $fw-space 0;
   	max-width: 100%;
     height: auto;
   }
