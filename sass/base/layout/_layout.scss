@@ -90,7 +90,7 @@
     /* SPACING RESET */
     .space{
       &.#{$label}-space-reset{
-        padding: $spacing;
+        padding: getThemeProperty(layoutSpace);
       }
     }
   }

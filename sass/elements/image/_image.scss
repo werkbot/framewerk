@@ -34,7 +34,7 @@ img{
     height: auto;
   }
 }
-@media handheld, only screen and (max-width: map-get($fw-responsive-breakpoints, tablet)) {  img{
+@media handheld, only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), tablet)) {  img{
     &.left,
     &.right,
     &.center,
@@ -44,7 +44,7 @@ img{
     }
   }
 }
-@media handheld, only screen and (max-width: map-get($fw-responsive-breakpoints, phone)) {
+@media handheld, only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
   img{
     &.left,
     &.right,
