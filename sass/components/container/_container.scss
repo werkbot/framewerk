@@ -4,6 +4,6 @@
 */
 .container,
 .fw-container{
-  max-width: $fw-container-size;
+  max-width: getThemeProperty(layoutContainerWdth);
   margin: 0 auto;
 }

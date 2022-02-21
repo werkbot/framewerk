@@ -2,6 +2,7 @@
   Theme Properties
 */
 $default-theme-properties: (
+  // Colors
   primaryColor: #999999,
   secondaryColor: #000000,
   tertiaryColor: #cccccc,
@@ -9,10 +10,26 @@ $default-theme-properties: (
   backgroundColorDark: #333333,
   textColorLight: #ffffff,
   textColorDark: #333333,
-  formInputIconFontFamily: "Font Awesome 5 Pro",
-  formInputShiftingLabelColor: #cccccc,
-  formInputBorderColor: #cccccc,
+
+  // Fonts
+  fontHeader: "Montserrat",
+  fontText: "Roboto",
+
+  // Layout
+  layoutSpace: 20px,
+  layoutContainerWdth: 1366px,
+
+  // Breakpoints
+  breakpointDesktop: (
+    desktop: 1366px
+  ),
+  breakpointResponsive: (
+    desktopsmall: 1366px,
+    tablet: 1024px,
+    phone : 600px
+  ),
 );
+
 // If $theme-properties is set, lets merge into our defaults
 $theme-properties: $default-theme-properties !default;
 @if($theme-properties){
