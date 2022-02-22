@@ -1,3 +1,18 @@
+// Default form checkbox Properties
+$default-component-form-checkbox-properties:(
+  backgroundColor: getThemeProperty(backgroundColorLight),
+  checkedIcon: "\f14a",
+  checkedTextColor: getThemeProperty(textColorDark),
+  notCheckedIcon: "\f0c8",
+  notCheckedTextColor: getThemeProperty(textColorDark),
+  iconFontFamily: getThemeProperty(formInputIconFontFamily),
+);
+// If $component-form-checkbox-properties is set, lets merge into our defaults
+$component-form-checkbox-properties: $default-component-form-checkbox-properties !default;
+@if($component-form-checkbox-properties){
+  $component-form-checkbox-properties: map-merge($default-component-form-checkbox-properties, $component-form-checkbox-properties);
+}
+
 .form-modern{
   .checkboxset li, .checkboxset div,
   .field.checkbox{
@@ -5,9 +20,10 @@
     input{
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
+      border: none;
       &::before{
-        font-family: $formmodern-icon-family;
-        content: $formmodern-checkbox-icon-not-checked;
+        font-family: getThemeProperty(iconFontFamily, $component-form-checkbox-properties);
+        content: getThemeProperty(notCheckedIcon, $component-form-checkbox-properties);
         font-weight: 400;
         position: absolute;
         top: 0;
@@ -17,12 +33,12 @@
         cursor: pointer;
         -webkit-transition: all .2s;
         transition: all .2s;
-        color: $formmodern-checkbox-icon-not-checked-color; // Background color of the checkbox
-        background: $formmodern-checkbox-icon-background; // Color behind the box, as well as the Check Mark
+        color: getThemeProperty(notCheckedTextColor, $component-form-checkbox-properties);
+        background: getThemeProperty(backgroundColor, $component-form-checkbox-properties);
       }
       &:checked::before{
-        content: $formmodern-checkbox-icon-checked;
-        color: $formmodern-checkbox-icon-checked-color; // Background color of the checkbox
+        content: getThemeProperty(checkedIcon, $component-form-checkbox-properties);
+        color: getThemeProperty(checkedTextColor, $component-form-checkbox-properties);
       }
       + label{
         display: inline-flex;
