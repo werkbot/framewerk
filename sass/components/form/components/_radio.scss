@@ -5,7 +5,7 @@ $default-component-form-radio-properties:(
   checkedTextColor: getThemeProperty(textColorDark),
   notCheckedIcon: "\f111",
   notCheckedTextColor: getThemeProperty(textColorDark),
-  iconFontFamily: getThemeProperty(formInputIconFontFamily),
+  iconFontFamily: getThemeProperty(fontIcon),
 );
 // If $component-form-radio-properties is set, lets merge into our defaults
 $component-form-radio-properties: $default-component-form-radio-properties !default;
@@ -14,7 +14,7 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
 }
 
 .form-modern{
-  fieldset.field div, .field.optionset div, ul.optionset li{  
+  fieldset.field div, .field.optionset div, ul.optionset li{
     position: relative;
     input[type='radio']{
       width: max-content;
