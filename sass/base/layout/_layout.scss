@@ -24,7 +24,6 @@
   DESKTOP BREAKPOINTS
   Loop through each desktop defined breakpoint
 */
-//@each $label, $breakpoint in $fw-desktop-breakpoints{
 @each $label, $breakpoint in getThemeProperty(breakpointDesktop){
   @media screen and (min-width: $breakpoint) {
     .#{$label}-half{
@@ -51,7 +50,6 @@
   RESPONSIVE BREAKPOINTS
   Simply out puts classes with a width set from 1-100 for each breakpoint defined.
 */
-//@each $label, $breakpoint in $fw-responsive-breakpoints{
 @each $label, $breakpoint in getThemeProperty(breakpointResponsive){
   @media handheld, only screen and (max-width: $breakpoint) {
     .#{$label}-half{

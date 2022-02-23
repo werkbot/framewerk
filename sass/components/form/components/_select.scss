@@ -5,8 +5,8 @@ $default-component-form-select-properties:(
   icon: "\f078",
   iconFontFamily: getThemeProperty(fontIcon),
   iconTextColor: getThemeProperty(textColorDark),
-  borderColor: #cccccc,
-  shiftingLabelColor: #cccccc
+  borderColor: getThemeProperty(borderColor, $component-form-properties),
+  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
 );
 // If $component-form-select-properties is set, lets merge into our defaults
 $component-form-select-properties: $default-component-form-select-properties !default;
