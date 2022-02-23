@@ -5,7 +5,7 @@
 	Define all basic html tags. These can be overridden in but this should be the base.
 */
 body {
-	font: 400 1rem/1rem $sitefont-text;
+	font: 400 1rem/1rem getThemeProperty(fontText);
 }
 /* H1 */
 $h1-font-sizes: (
@@ -15,7 +15,7 @@ $h1-font-sizes: (
 );
 h1{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-header;
+  font-family: getThemeProperty(fontHeader);
   font-weight: 700;
 	@include font-size($h1-font-sizes);
 }
@@ -27,7 +27,7 @@ $h2-font-sizes: (
 );
 h2{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-header;
+  font-family: getThemeProperty(fontHeader);
   font-weight: 700;
 	@include font-size($h2-font-sizes);
 }
@@ -39,7 +39,7 @@ $h3-font-sizes: (
 );
 h3{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-header;
+  font-family: getThemeProperty(fontHeader);
   font-weight: 700;
 	@include font-size($h3-font-sizes);
 }
@@ -51,7 +51,7 @@ $h4-font-sizes: (
 );
 h4{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-header;
+  font-family: getThemeProperty(fontHeader);
 	@include font-size($h4-font-sizes);
 }
 /* H5 */
@@ -62,7 +62,7 @@ $h5-font-sizes: (
 );
 h5{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-header;
+  font-family: getThemeProperty(fontHeader);
 	@include font-size($h5-font-sizes);
 }
 /* H6 */
@@ -73,7 +73,7 @@ $h6-font-sizes: (
 );
 h6{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-header;
+  font-family: getThemeProperty(fontHeader);
 	@include font-size($h6-font-sizes);
 }
 /* P */
@@ -84,13 +84,13 @@ $p-font-sizes: (
 );
 p {
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-text;
+  font-family: getThemeProperty(fontText);
   @include font-size($p-font-sizes);
 }
 /* UL, OL */
 ul,ol {
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-text;
+  font-family: getThemeProperty(fontText);
   @include font-size($p-font-sizes);
 }
 ul{
@@ -104,7 +104,7 @@ input,
 select,
 textarea{
   color: getThemeProperty(textColorDark);
-  font-family: $sitefont-text;
+  font-family: getThemeProperty(fontText);
   @include font-size($p-font-sizes);
 }
 /**/

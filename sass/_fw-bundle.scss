@@ -1,7 +1,4 @@
 /* variables */
-@import 'variables/variables';
-@import 'variables/fonts';
-@import 'variables/breakpoints';
 @import 'variables/theme';
 
 /* base */
@@ -13,7 +10,6 @@
 /* Elements */
 @import 'elements/html/html';
 @import 'elements/body/body';
-@import 'elements/form/form';
 @import 'elements/hr/hr';
 @import 'elements/image/image';
 @import 'elements/link/link';
@@ -24,14 +20,4 @@
 /* components */
 @import 'components/button/button';
 @import 'components/container/container';
-
-/* Elements */
-@import 'elements/html/html';
-@import 'elements/body/body';
-@import 'elements/form/form';
-@import 'elements/hr/hr';
-@import 'elements/image/image';
-@import 'elements/link/link';
-@import 'elements/table/table';
-@import 'elements/list/list';
-@import 'elements/typography/typography';
+@import 'components/form/form';

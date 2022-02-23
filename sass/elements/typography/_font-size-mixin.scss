@@ -1,7 +1,7 @@
 /*
   FONT SIZE
 */
-@mixin font-size($fs-map, $fs-breakpoints: $fw-responsive-breakpoints) {
+@mixin font-size($fs-map, $fs-breakpoints: getThemeProperty(breakpointResponsive)) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == desktop {
       @include make-font-size($fs-font-size);
