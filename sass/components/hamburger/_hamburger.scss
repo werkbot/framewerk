@@ -2,7 +2,6 @@
 
 // Default Hamburger Properties
 $default-component-hamburger-properties:(
-  hamburger-type: slider,
   hamburger-padding-x: 15px,
   hamburger-padding-y: 15px,
   hamburger-layer-width: 40px,
@@ -51,7 +50,37 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 // Types (Remove or comment out what you don’t need)
 // ==================================================
 $hamburger-types: (
-  getThemeProperty(hamburger-type, $component-hamburger-properties)
+  3dx,
+  3dx-r,
+  3dy,
+  3dy-r,
+  3dxy,
+  3dxy-r,
+  arrow,
+  arrow-r,
+  arrowalt,
+  arrowalt-r,
+  arrowturn,
+  arrowturn-r,
+  boring,
+  collapse,
+  collapse-r,
+  elastic,
+  elastic-r,
+  emphatic,
+  emphatic-r,
+  minus,
+  slider,
+  slider-r,
+  spin,
+  spin-r,
+  spring,
+  spring-r,
+  stand,
+  stand-r,
+  squeeze,
+  vortex,
+  vortex-r
 ) !default;
 
 // Base Hamburger (We need this)
@@ -60,4 +89,34 @@ $hamburger-types: (
 
 // Hamburger types
 // ==================================================
+@import "hamburgers/_sass/hamburgers/types/3dx";
+@import "hamburgers/_sass/hamburgers/types/3dx-r";
+@import "hamburgers/_sass/hamburgers/types/3dy";
+@import "hamburgers/_sass/hamburgers/types/3dy-r";
+@import "hamburgers/_sass/hamburgers/types/3dxy";
+@import "hamburgers/_sass/hamburgers/types/3dxy-r";
+@import "hamburgers/_sass/hamburgers/types/arrow";
+@import "hamburgers/_sass/hamburgers/types/arrow-r";
+@import "hamburgers/_sass/hamburgers/types/arrowalt";
+@import "hamburgers/_sass/hamburgers/types/arrowalt-r";
+@import "hamburgers/_sass/hamburgers/types/arrowturn";
+@import "hamburgers/_sass/hamburgers/types/arrowturn-r";
+@import "hamburgers/_sass/hamburgers/types/boring";
+@import "hamburgers/_sass/hamburgers/types/collapse";
+@import "hamburgers/_sass/hamburgers/types/collapse-r";
+@import "hamburgers/_sass/hamburgers/types/elastic";
+@import "hamburgers/_sass/hamburgers/types/elastic-r";
+@import "hamburgers/_sass/hamburgers/types/emphatic";
+@import "hamburgers/_sass/hamburgers/types/emphatic-r";
+@import "hamburgers/_sass/hamburgers/types/minus";
 @import "hamburgers/_sass/hamburgers/types/slider";
+@import "hamburgers/_sass/hamburgers/types/slider-r";
+@import "hamburgers/_sass/hamburgers/types/spin";
+@import "hamburgers/_sass/hamburgers/types/spin-r";
+@import "hamburgers/_sass/hamburgers/types/spring";
+@import "hamburgers/_sass/hamburgers/types/spring-r";
+@import "hamburgers/_sass/hamburgers/types/stand";
+@import "hamburgers/_sass/hamburgers/types/stand-r";
+@import "hamburgers/_sass/hamburgers/types/squeeze";
+@import "hamburgers/_sass/hamburgers/types/vortex";
+@import "hamburgers/_sass/hamburgers/types/vortex-r";
