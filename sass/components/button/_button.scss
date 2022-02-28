@@ -49,7 +49,7 @@ $component-button-properties: $default-component-button-properties !default;
 }
 
 // Applied to `a` elements with the `button` class
-a.button, input.button, button{
+a.button, input.button, button.button{
   @include button-input-style;
 }
 
