@@ -14,54 +14,50 @@ $component-form-select-properties: $default-component-form-select-properties !de
   $component-form-select-properties: map-merge($default-component-form-select-properties, $component-form-select-properties);
 }
 
-.form-modern{
-  .field.dropdown{
-    position: relative;
-    label{
-      display: block;
-      transform: translate(20px, 45px);
-      transform-origin: left;
-      transition: transform .25s ease;
-      color: getThemeProperty(shiftingLabelColor, $component-form-select-properties);
-      pointer-events: none;
-      margin: 0;
-      &.valid{
-        transform: scale(.7) translate(30px, 40px);
-      }
+.field.dropdown{
+  position: relative;
+  label{
+    display: block;
+    transform: translate(20px, 45px);
+    transform-origin: left;
+    transition: transform .25s ease;
+    color: getThemeProperty(shiftingLabelColor, $component-form-select-properties);
+    pointer-events: none;
+    margin: 0;
+    &.valid{
+      transform: scale(.7) translate(30px, 40px);
     }
-    select{
-      width: 100%;
-      padding: 20px 15px;
-      box-sizing:border-box;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background-color: getThemeProperty(backgroundColor, $component-form-select-properties);
-      border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
-      &.valid{
-        padding: 30px 20px 10px 19px;
-        color: getThemeProperty(textColor, $component-form-select-properties);
-      }
-      optgroup{
-        color: getThemeProperty(textColor, $component-form-select-properties);
-      }
+  }
+  select{
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing:border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: getThemeProperty(backgroundColor, $component-form-select-properties);
+    border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
+    &.valid{
+      padding: 30px 20px 10px 19px;
+      color: getThemeProperty(textColor, $component-form-select-properties);
     }
-    &:after{
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      content: getThemeProperty(icon, $component-form-select-properties);
-      font-family: getThemeProperty(iconFontFamily, $component-form-select-properties);
-      color: getThemeProperty(iconTextColor, $component-form-select-properties);
+    optgroup{
+      color: getThemeProperty(textColor, $component-form-select-properties);
     }
+  }
+  &:after{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    content: getThemeProperty(icon, $component-form-select-properties);
+    font-family: getThemeProperty(iconFontFamily, $component-form-select-properties);
+    color: getThemeProperty(iconTextColor, $component-form-select-properties);
   }
 }
 @-moz-document url-prefix() {
-	.form-modern{
-		.field.dropdown{
-			select.valid{
-				padding-left: 15px;
-			}
-		}
-	}
+  .field.dropdown{
+    select.valid{
+      padding-left: 15px;
+    }
+  }
 }
