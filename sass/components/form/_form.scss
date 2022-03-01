@@ -10,11 +10,9 @@ $component-form-properties: $default-component-form-properties !default;
 }
 
 // Components
-.fw-form{
-  @import 'components/radio';
-  @import 'components/checkbox';
-  @import 'components/text';
-  @import 'components/textarea';
-  @import 'components/select';
-  @import 'components/numeric';
-}
+@import 'components/radio';
+@import 'components/checkbox';
+@import 'components/text';
+@import 'components/textarea';
+@import 'components/select';
+@import 'components/numeric';

@@ -9,26 +9,28 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
   $component-form-text-properties: map-merge($default-component-form-text-properties, $component-form-text-properties);
 }
 
-.field.text{
-  label{
-    display: block;
-    transform: translate(20px, 45px);
-    transform-origin: left;
-    transition: transform .25s ease;
-    color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
-    pointer-events: none;
-    margin: 0;
-    &.valid{
-      transform: scale(.7) translate(30px, 40px);
+.fw-form{
+  .field.text{
+    label{
+      display: block;
+      transform: translate(20px, 45px);
+      transform-origin: left;
+      transition: transform .25s ease;
+      color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
+      pointer-events: none;
+      margin: 0;
+      &.valid{
+        transform: scale(.7) translate(30px, 40px);
+      }
     }
-  }
-  input{
-    padding: 30px 20px 10px 20px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid getThemeProperty(borderColor, $component-form-text-properties);
-    &.valid{
+    input{
       padding: 30px 20px 10px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid getThemeProperty(borderColor, $component-form-text-properties);
+      &.valid{
+        padding: 30px 20px 10px 20px;
+      }
     }
   }
 }
