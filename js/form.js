@@ -1,9 +1,18 @@
 window.addEventListener('load', function(){
 
-  // Shrink text field form label
-  document.querySelectorAll('.fw-form .field.text input, .fw-form .field.textarea textarea').forEach(function(inputElement){
+  // Shrink input field form label, textarea field label
+  document.querySelectorAll('.form-modern .field.text input, .form-modern .field.textarea textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
+    // On input, toggle the state
     inputElement.addEventListener('input', function(event){
+      toggleInputState(event.target);
+    });
+    // On focus, shrink the label
+    inputElement.addEventListener('focus', function(event){
+      shrinkLabel(event.target);
+    });
+    // On blur, toggle the state
+    inputElement.addEventListener('blur', function(event){
       toggleInputState(event.target);
     });
   });
@@ -17,26 +26,51 @@ window.addEventListener('load', function(){
     }
   });
 
+  /**
+   * Toggle Input State
+   * Shrinks or unshrinks the label of the element passed in
+   * @param inputElement - The input whose label we want to toggle
+   */
   function toggleInputState(inputElement){
-    var label = inputElement.parentElement.parentElement.querySelector('label');
-    if(label){
-      if(inputElement.value || inputElement.placeholder){
-        label.classList.add('valid');
-        inputElement.classList.add('valid');
-      } else {
-        label.classList.remove('valid');
-        inputElement.classList.remove('valid');
-      }
+    if(inputElement.value || inputElement.placeholder){
+      shrinkLabel(inputElement);
+    } else {
+      unshrinkLabel(inputElement);
     }
   }
 
-  document.querySelectorAll('.fw-form .field.numeric').forEach(function(numericFieldContainer){
+  /**
+   * Shrink Label
+   * Shrinks the label of the element passed in
+   * @param inputElement - The input whose label we want to shrink
+   */
+  function shrinkLabel(inputElement){
+    var label = inputElement.parentElement.parentElement.querySelector('label');
+    if(label){
+      label.classList.add('valid');
+      inputElement.classList.add('valid');
+    }
+  }
 
+  /**
+   * Unshrink Label
+   * Unshrinks the label of the element passed in
+   * @param inputElement - The input whose label we want to unshrink
+   */
+  function unshrinkLabel(inputElement){
+    var label = inputElement.parentElement.parentElement.querySelector('label');
+    if(label){
+      label.classList.remove('valid');
+      inputElement.classList.remove('valid');
+    }
+  }
+
+  // Numeric Field
+  document.querySelectorAll('.form-modern .field.numeric').forEach(function(numericFieldContainer){
     var field = numericFieldContainer.querySelector('input');
     field.type = 'number';
 
     if(!numericFieldContainer.parentElement.querySelector('.subtract-qty')){
-
       // Insert subtract button
       var subtractButton = document.createElement('span');
       subtractButton.classList.add('subtract-qty');
@@ -50,7 +84,6 @@ window.addEventListener('load', function(){
       subtractButton.addEventListener('click', function(){
         incrementQuantity(numericFieldContainer, -1);
       });
-
     }
 
     if(!numericFieldContainer.parentElement.querySelector('.add-qty')){
@@ -67,11 +100,15 @@ window.addEventListener('load', function(){
       addButton.addEventListener('click', function(){
         incrementQuantity(numericFieldContainer, 1);
       });
-
     }
 
   });
 
+  /**
+   * Increment Quantity
+   * @param {*} fieldContainer - The button that was clicked
+   * @param {*} increment - The amount to increment by
+   */
   function incrementQuantity(fieldContainer, increment){
     if(!fieldContainer.classList.contains('.readonly')){
       var field = fieldContainer.querySelector('input');
