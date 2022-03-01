@@ -1,9 +1,8 @@
 ## General
 ```
-$theme-properties: (
-  formInputIconFontFamily: "Font Awesome 5 Pro",
-  formInputShiftingLabelColor: #cccccc,
-  formInputBorderColor: #cccccc,
+$component-form-properties:(
+  borderColor: #cccccc,
+  labelColor: #cccccc,
 );
 ```
 

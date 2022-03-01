@@ -4,15 +4,13 @@ A breakpoint is the width at which we need to adjust the css for that width.
 
 We define two possible arrays of breakpoints, one for desktop breakpoints and one for all responsive breakpoints (phones, tablet, etc...).
 
-More breakpoints can be added by overriding $fw-responsive-breakpoints variable, by either adjusting the widths or adding new breakpoints all together. *It is recommended to leave the default breakpoints as is and either adjust the widths or add new ones altogether.*
-
 ## Classes
 **.flex-container**<br />
 A flex container has default flexbox settings which can easily be overridden. All breakpoint widths should be wrapped in this class.
 
 **.{breakpoint}-{width}**<br />
 *desktop-1, tablet-1, phone-1...desktop-100, tablet-100, phone-100*<br />
-For each breakpoint the width of the element, 1-100
+For each breakpoint the width of the element, 1-100%
 
 **.{breakpoint}-hide**<br />
 *desktop-hide, tablet-hide, phone-hide*<br />
