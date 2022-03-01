@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 
   // Shrink input field form label, textarea field label
-  document.querySelectorAll('.form-modern .field.text input, .form-modern .field.textarea textarea').forEach(function(inputElement){
+  document.querySelectorAll('.fw-form .field.text input, .fw-form .field.textarea textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
     // On input, toggle the state
     inputElement.addEventListener('input', function(event){
@@ -66,7 +66,7 @@ window.addEventListener('load', function(){
   }
 
   // Numeric Field
-  document.querySelectorAll('.form-modern .field.numeric').forEach(function(numericFieldContainer){
+  document.querySelectorAll('.fw-form .field.numeric').forEach(function(numericFieldContainer){
     var field = numericFieldContainer.querySelector('input');
     field.type = 'number';
 
