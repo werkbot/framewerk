@@ -9,7 +9,7 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
   $component-form-textarea-properties: map-merge($default-component-form-textarea-properties, $component-form-textarea-properties);
 }
 
-.form-modern{
+.fw-form{
   .field.textarea{
     label{
       display: block;

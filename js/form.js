@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 
   // Shrink text field form label
-  document.querySelectorAll('.form-modern .field.text input, .form-modern .field.textarea textarea').forEach(function(inputElement){
+  document.querySelectorAll('.fw-form .field.text input, .fw-form .field.textarea textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
     inputElement.addEventListener('input', function(event){
       toggleInputState(event.target);
@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
   });
 
   // Shrink select field form label
-  document.querySelectorAll('.form-modern select').forEach(function(selectElement){
+  document.querySelectorAll('.fw-form select').forEach(function(selectElement){
     selectElement.classList.add('valid');
     var label = selectElement.parentElement.parentElement.querySelector('label');
     if(label){
@@ -30,7 +30,7 @@ window.addEventListener('load', function(){
     }
   }
 
-  document.querySelectorAll('.form-modern .field.numeric').forEach(function(numericFieldContainer){
+  document.querySelectorAll('.fw-form .field.numeric').forEach(function(numericFieldContainer){
 
     var field = numericFieldContainer.querySelector('input');
     field.type = 'number';

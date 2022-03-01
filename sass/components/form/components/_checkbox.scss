@@ -13,8 +13,9 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
   $component-form-checkbox-properties: map-merge($default-component-form-checkbox-properties, $component-form-checkbox-properties);
 }
 
-.form-modern{
-  .checkboxset li, .checkboxset div,
+.fw-form{
+  .checkboxset li,
+  .checkboxset div,
   .field.checkbox{
     position: relative;
     input{

@@ -9,7 +9,7 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
   $component-form-text-properties: map-merge($default-component-form-text-properties, $component-form-text-properties);
 }
 
-.form-modern{
+.fw-form{
   .field.text{
     label{
       display: block;

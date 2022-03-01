@@ -14,7 +14,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
   $component-form-select-properties: map-merge($default-component-form-select-properties, $component-form-select-properties);
 }
 
-.form-modern{
+.fw-form{
   .field.dropdown{
     position: relative;
     label{
@@ -57,11 +57,11 @@ $component-form-select-properties: $default-component-form-select-properties !de
   }
 }
 @-moz-document url-prefix() {
-	.form-modern{
-		.field.dropdown{
-			select.valid{
-				padding-left: 15px;
-			}
-		}
-	}
+  .fw-form{
+    .field.dropdown{
+      select.valid{
+        padding-left: 15px;
+      }
+    }
+  }
 }

@@ -13,7 +13,7 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
   $component-form-radio-properties: map-merge($default-component-form-radio-properties, $component-form-radio-properties);
 }
 
-.form-modern{
+.fw-form{
   fieldset.field div, .field.optionset div, ul.optionset li{
     position: relative;
     input[type='radio']{
