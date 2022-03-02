@@ -1,6 +1,6 @@
 window.addEventListener('load', function(){
 
-  // Shrink input field form label, textarea field label
+  // Shrink input and textarea field labels
   document.querySelectorAll('.fw-form .field.text input, .fw-form .field.textarea textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
     // On input, toggle the state
@@ -17,7 +17,7 @@ window.addEventListener('load', function(){
     });
   });
 
-  // Shrink select field form label
+  // Shrink select field label
   document.querySelectorAll('.fw-form select').forEach(function(selectElement){
     selectElement.classList.add('valid');
     var label = selectElement.parentElement.parentElement.querySelector('label');
@@ -32,7 +32,7 @@ window.addEventListener('load', function(){
    * @param inputElement - The input whose label we want to toggle
    */
   function toggleInputState(inputElement){
-    if(inputElement.value || inputElement.placeholder){
+    if(inputElement.value || inputElement.placeholder || inputElement === document.activeElement){
       shrinkLabel(inputElement);
     } else {
       unshrinkLabel(inputElement);
@@ -106,8 +106,8 @@ window.addEventListener('load', function(){
 
   /**
    * Increment Quantity
-   * @param {*} fieldContainer - The button that was clicked
-   * @param {*} increment - The amount to increment by
+   * @param element fieldContainer - The button that was clicked
+   * @param integer increment - The amount to increment by
    */
   function incrementQuantity(fieldContainer, increment){
     if(!fieldContainer.classList.contains('.readonly')){
