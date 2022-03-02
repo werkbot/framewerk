@@ -1,8 +1,44 @@
 # SASS Configuration
 
-The default properties, located here: `sass\variables\_theme.scss`, are congifurable in your project.
+The sass is built to be configurable per project, we do this by having a default properties map which we refer to as the "theme", its located here: `sass\variables\_theme.scss`. 
 
-To override a theme or component property define the override before include the fw-bundle.scss in your project.
+```
+$default-theme-properties: (
+  // Colors
+  primaryColor: #999999,
+  secondaryColor: #000000,
+  tertiaryColor: #cccccc,
+  backgroundColorLight: #ffffff,
+  backgroundColorDark: #333333,
+  textColorLight: #ffffff,
+  textColorDark: #333333,
+
+  // Fonts
+  fontHeader: "Montserrat",
+  fontText: "Roboto",
+  fontIcon: "Font Awesome 5 Pro",
+
+  // Layout
+  layoutSpace: 20px,
+  layoutContainerWdth: 1366px,
+
+  // Breakpoints
+  breakpointDesktop: (
+    desktop: 1366px
+  ),
+  breakpointResponsive: (
+    desktopsmall: 1366px,
+    tablet: 1024px,
+    phone : 600px
+  )
+);
+```
+
+Furthermore, there are individual components that have their own property maps.
+
+The theme and component properties can be completely overridden or added too in your project.
+
+To override a theme or component property, define the override before you include the fw-bundle.scss in your project.
 
 The following example updates the primary color of the site and defines a new breakpoint to be included:
 ```_theme.scss
@@ -14,15 +50,14 @@ $theme-properties:(
 );
 ```
 
-Components are also configurable, currently these are:
-- `sass\components\button\_button.scss`
-- `sass\components\form\_form.scss` - Form has further configuration options for the different input types
-- `sass\components\hamburger\_hamburger.scss`
+Components are also configurable, see a [list of components](components.md)
 
-The next example updates the button colors:
+To retrieve a theme property in your sass `getThemeProperty(PROPERTY);` an example:
 ```
-$component-button-properties:(
-  backgroundColor: #ff0000,
-  backgroundHoverColor: #ffff00,
-);
+ color: getThemeProperty(textColor);
+```
+
+To retrieve a component property in your sass `getThemeProperty(PROPERTY, MAP);` an example:
+```
+getThemeProperty(textHoverColor, $component-button-properties);
 ```

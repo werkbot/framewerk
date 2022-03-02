@@ -1,37 +1,42 @@
 # Framewerk
-Werkbot's framework for building websites.
+A framework of css and javascript that Werkbot uses as a foundation to build websites.
 
 ## Installation
 `npm i framewerk --save-dev`
 
-## Setup
-#### Include JS and Styles
-`require('framewerk')`
+---
 
-#### Or include source files in your build
-##### JS
-JS\
+## Setup
+There are two options to install to your project:
+
+### Use distributed files
+`'./node_modules/framewerk/dist/framewerk.js'`
+`'./node_modules/framewerk/dist/fw-bundle.css'`
+
+### Incoproprate into your build
+#### SASS Setup
+Include this at the top of your main sass file:
+
+`@import 'framewerk/sass/fw-bundle';`
+
+> *Depending on your setup, you may need to include `node_modules` in your build path. For example, we include: `importPath: 'node_modules'` for compass*
+
+#### Javascript Setup
+Include this in your main js file:
+
 `require('./node_modules/framewerk/js/form.js');`
 
-##### SASS
-Define configuration options (colors, component properties, etc...) before the `fw-bundle` in your sass build:
-```
-/* Config */
-@import 'theme';
+---
 
-/* Framewerk */
-@import 'framewerk/sass/fw-bundle';
-...
-...
-...
-```
-
-## Build
-#### Creates a new distribution file (./dist/framewerk.js)
+## Build Process
+Generate new dist files using the following:
 - `npm run build`
 - `npm run watch`
 
-### Further Documentation
-* [Further SASS documentation here](docs/en/sass-setup.md)
-* [Further flex-container documentation here](docs/en/flex-container.md)
-* [Further form documentation here](docs/en/form.md)
+---
+
+## Further Documentation
+* [Layout documentation](docs/en/layout.md)
+* [SASS documentation](docs/en/sass-setup.md)
+* [Components documentation](docs/en/components.md)
+
