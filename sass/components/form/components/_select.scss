@@ -45,6 +45,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       optgroup{
         color: getThemeProperty(textColor, $component-form-select-properties);
       }
+      @include focus-style;
     }
     &:after{
       position: absolute;

@@ -9,12 +9,13 @@ a{
     color: getThemeProperty(primaryColor);
   }
   &:visited{
-    color: getThemeProperty(primaryColor);
+    color: darken(getThemeProperty(primaryColor), 10);
   }
   &:hover{
     text-decoration: none;
   }
   &:active{
-    color: getThemeProperty(primaryColor);
+    color: lighten(getThemeProperty(primaryColor), 10);
   }
+  @include focus-style;
 }
