@@ -20,7 +20,7 @@ window.addEventListener('load', function(){
   // Shrink select field label
   document.querySelectorAll('.fw-form select').forEach(function(selectElement){
     selectElement.classList.add('valid');
-    var label = selectElement.parentElement.parentElement.querySelector('label');
+    var label = getLabel(selectElement);
     if(label){
       label.classList.add('valid');
     }
@@ -45,7 +45,7 @@ window.addEventListener('load', function(){
    * @param inputElement - The input whose label we want to shrink
    */
   function shrinkLabel(inputElement){
-    var label = inputElement.parentElement.parentElement.querySelector('label');
+    var label = getLabel(inputElement);
     if(label){
       label.classList.add('valid');
       inputElement.classList.add('valid');
@@ -58,7 +58,7 @@ window.addEventListener('load', function(){
    * @param inputElement - The input whose label we want to unshrink
    */
   function unshrinkLabel(inputElement){
-    var label = inputElement.parentElement.parentElement.querySelector('label');
+    var label = getLabel(inputElement);
     if(label){
       label.classList.remove('valid');
       inputElement.classList.remove('valid');
@@ -114,6 +114,22 @@ window.addEventListener('load', function(){
       var field = fieldContainer.querySelector('input');
       field.value = Number(field.value) + increment;
     }
+  }
+
+  /**
+   * Get Label
+   * Returns the label associated with the element, label must have `for` attribute
+   * @param element el
+   * @returns label element
+   */
+  function getLabel(el){
+    var labels = document.getElementsByTagName('label');
+    for( var i = 0; i < labels.length; i++ ) {
+      if (labels[i].htmlFor == el.id){
+        return labels[i];
+      }
+    }
+    return false;
   }
 
 });
