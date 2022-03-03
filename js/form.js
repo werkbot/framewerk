@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 
   // Shrink input and textarea field labels
-  document.querySelectorAll('.fw-form .field.text input, .fw-form .field.textarea textarea').forEach(function(inputElement){
+  document.querySelectorAll('.fw-form input[type=text], .fw-form textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
     // On input, toggle the state
     inputElement.addEventListener('input', function(event){
@@ -66,7 +66,7 @@ window.addEventListener('load', function(){
   }
 
   // Numeric Field
-  document.querySelectorAll('.fw-form .field.numeric').forEach(function(numericFieldContainer){
+  document.querySelectorAll('.fw-form .numeric').forEach(function(numericFieldContainer){
     var field = numericFieldContainer.querySelector('input');
     field.type = 'number';
 
