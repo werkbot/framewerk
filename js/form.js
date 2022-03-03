@@ -19,10 +19,10 @@ window.addEventListener('load', function(){
 
   // Shrink select field label
   document.querySelectorAll('.fw-form select').forEach(function(selectElement){
-    selectElement.classList.add('valid');
+    selectElement.classList.add('labelShrunk');
     var label = getLabel(selectElement);
     if(label){
-      label.classList.add('valid');
+      label.classList.add('labelShrunk');
     }
   });
 
@@ -47,8 +47,8 @@ window.addEventListener('load', function(){
   function shrinkLabel(inputElement){
     var label = getLabel(inputElement);
     if(label){
-      label.classList.add('valid');
-      inputElement.classList.add('valid');
+      label.classList.add('labelShrunk');
+      inputElement.classList.add('labelShrunk');
     }
   }
 
@@ -60,8 +60,8 @@ window.addEventListener('load', function(){
   function unshrinkLabel(inputElement){
     var label = getLabel(inputElement);
     if(label){
-      label.classList.remove('valid');
-      inputElement.classList.remove('valid');
+      label.classList.remove('labelShrunk');
+      inputElement.classList.remove('labelShrunk');
     }
   }
 
