@@ -25,7 +25,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       color: getThemeProperty(shiftingLabelColor, $component-form-select-properties);
       pointer-events: none;
       margin: 0;
-      &.valid{
+      &.labelShrunk{
         transform: scale(.7) translate(30px, 40px);
       }
     }
@@ -38,7 +38,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       appearance: none;
       background-color: getThemeProperty(backgroundColor, $component-form-select-properties);
       border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
-      &.valid{
+      &.labelShrunk{
         padding: 30px 20px 10px 19px;
         color: getThemeProperty(textColor, $component-form-select-properties);
       }
@@ -59,7 +59,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
 @-moz-document url-prefix() {
   .fw-form{
     .field.dropdown{
-      select.valid{
+      select.labelShrunk{
         padding-left: 15px;
       }
     }
