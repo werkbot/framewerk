@@ -36,9 +36,13 @@ $default-theme-properties: (
 
 Furthermore, there are individual components that have their own property maps.
 
-The theme and component properties can be completely overridden or added too in your project.
+The theme and component properties can be completely overridden or added to in your project.
 
 To override a theme or component property, define the override before you include the fw-bundle.scss in your project.
+```
+@import 'your-override-maps';
+@import 'framewerk/sass/fw-bundle';
+```
 
 The following example updates the primary color of the site and defines a new breakpoint to be included:
 ```_theme.scss
