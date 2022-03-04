@@ -13,7 +13,7 @@ These are the tags defined within the framework.
 
 ## Components
 These are the components we have defined within the framework.
-* [Button documentation](docs/en/button.md)
-* [Container documentation](docs/en/container.md)
-* [Form documentation](docs/en/form.md)
-* [Hamburger documentation](docs/en/hamburger.md)
+* [Button documentation](button.md)
+* [Container documentation](container.md)
+* [Form documentation](form.md)
+* [Hamburger documentation](hamburger.md)
