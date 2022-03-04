@@ -3,10 +3,6 @@ window.addEventListener('load', function(){
   // Shrink input and textarea field labels
   document.querySelectorAll('.fw-form input[type=text], .fw-form textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
-    // On input, toggle the state
-    inputElement.addEventListener('input', function(event){
-      toggleInputState(event.target);
-    });
     // On focus, shrink the label
     inputElement.addEventListener('focus', function(event){
       shrinkLabel(event.target);
