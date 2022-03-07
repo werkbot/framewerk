@@ -15,7 +15,7 @@ There are two options to install to your project:
 `require('framewerk'); // node_modules/framewerk/dist/framewerk.js`
 
 #### Import JS and Styles separately
-`require('framewerk/js/form.js') // node_modules/framewerk/js/form.js`
+`require('framewerk/js/form.js') // node_modules/framewerk/js/form.js`\
 `@import url('framewerk/dist/fw-bundle.css'); // node_modules/framewerk/dist/fw-bundle.css`
 
 ### Incoproprate into your build
