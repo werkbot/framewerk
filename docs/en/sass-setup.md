@@ -1,6 +1,6 @@
 # SASS Configuration
 
-The sass is built to be configurable per project, we do this by having a default properties map which we refer to as the "theme", its located here: `sass\variables\_theme.scss`. 
+The sass is built to be configurable per project, we do this by having a default properties map which we refer to as the "theme", it's located here: `sass\variables\_theme.scss`. 
 
 ```
 $default-theme-properties: (
@@ -16,7 +16,7 @@ $default-theme-properties: (
   // Fonts
   fontHeader: "Montserrat",
   fontText: "Roboto",
-  fontIcon: "Font Awesome 5 Pro",
+  fontIcon: "Font Awesome 5 Free",
 
   // Layout
   layoutSpace: 20px,

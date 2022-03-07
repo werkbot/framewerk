@@ -18,7 +18,7 @@ There are two options to install to your project:
 `require('framewerk/js/form.js') // node_modules/framewerk/js/form.js`\
 `@import url('framewerk/dist/fw-bundle.css'); // node_modules/framewerk/dist/fw-bundle.css`
 
-### Incoproprate into your build
+### Incorporate into your build
 #### SASS Setup
 Include this at the top of your main sass file:
 
