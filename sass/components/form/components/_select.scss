@@ -1,17 +1,24 @@
 // Default form select Properties
 $default-component-form-select-properties:(
   backgroundColor: getThemeProperty(backgroundColorLight),
-  textColor: getThemeProperty(textColorDark),
+  labelColor: getThemeProperty(textColorDark),
   icon: "\f078",
   iconFontFamily: getThemeProperty(fontIcon),
   iconTextColor: getThemeProperty(textColorDark),
   borderColor: getThemeProperty(borderColor, $component-form-properties),
   shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
+  textColor: getThemeProperty(textColorDark),
+  fontFamily: getThemeProperty(fontText),
+  fontSizes: (
+      desktop: (1em, 1.4),
+      tablet: (1em, 1.4),
+      phone: (1em, 1.4)
+  )
 );
 // If $component-form-select-properties is set, lets merge into our defaults
 $component-form-select-properties: $default-component-form-select-properties !default;
 @if($component-form-select-properties){
-  $component-form-select-properties: map-merge($default-component-form-select-properties, $component-form-select-properties);
+  $component-form-select-properties: recursive-map-merge($default-component-form-select-properties, $component-form-select-properties);
 }
 
 .fw-form{
@@ -38,12 +45,15 @@ $component-form-select-properties: $default-component-form-select-properties !de
       appearance: none;
       background-color: getThemeProperty(backgroundColor, $component-form-select-properties);
       border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
+      color: getThemeProperty(textColor, $component-form-select-properties);
+      font-family: getThemeProperty(fontFamily, $component-form-select-properties);
+      @include font-size(getThemeProperty(fontSizes, $component-form-select-properties));
       &.labelShrunk{
         padding: 30px 20px 10px 19px;
-        color: getThemeProperty(textColor, $component-form-select-properties);
+        color: getThemeProperty(labelColor, $component-form-select-properties);
       }
       optgroup{
-        color: getThemeProperty(textColor, $component-form-select-properties);
+        color: getThemeProperty(labelColor, $component-form-select-properties);
       }
       @include focus-style;
     }

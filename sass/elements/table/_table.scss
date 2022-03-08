@@ -1,3 +1,15 @@
+// Default table Properties
+$default-element-table-properties:(
+  tableRowColor: #ffffff,
+  tableRowEvenColor: #ffffff,
+  tableRowOddColor: #f3f3f5
+);
+// If $element-table-properties is set, lets merge into our defaults
+$element-table-properties: $default-element-table-properties !default;
+@if($element-table-properties){
+  $element-table-properties: map-merge($default-element-table-properties, $element-table-properties);
+}
+
 table{
   width: 100%;
   th,
@@ -10,6 +22,7 @@ table{
     tr{
       table-layout: fixed;
       width: 100%;
+      background: getThemeProperty(tableRowColor, $element-table-properties);
     }
     th{
       font-weight: 700;
@@ -23,8 +36,13 @@ table{
   tbody{
     table-layout: fixed;
     tr{
+      background: getThemeProperty(tableRowColor, $element-table-properties);
+      &:nth-child(even){
+        background: getThemeProperty(tableRowEvenColor, $element-table-properties);
+        border-radius: 3px;
+      }
       &:nth-child(odd){
-        background: #f3f3f5;
+        background: getThemeProperty(tableRowOddColor, $element-table-properties);
         border-radius: 3px;
       }
     }
