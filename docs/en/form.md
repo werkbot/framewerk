@@ -1,13 +1,15 @@
-## General
+# Form
+The form consists of the components laid out below.
+
+## General Properties
 ```
-$theme-properties: (
-  formInputIconFontFamily: "Font Awesome 5 Pro",
-  formInputShiftingLabelColor: #cccccc,
-  formInputBorderColor: #cccccc,
+$component-form-properties:(
+  borderColor: #cccccc,
+  labelColor: #cccccc,
 );
 ```
 
-## Checkbox
+## Checkbox Properties
 Adds Font Awesome icon checkbox
 ```
 $component-form-checkbox-properties:(
@@ -21,7 +23,7 @@ $component-form-checkbox-properties:(
 ```
 
 
-## Numeric
+## Numeric Properties
 Adds Font Awesome icon buttons to increase / decrease quantity
 ```
 $component-form-numeric-properties:(
@@ -34,7 +36,7 @@ $component-form-numeric-properties:(
 );
 ```
 
-## Radio
+## Radio Properties
 Adds Font Awesome icon radio
 ```
 $component-form-radio-properties:(
@@ -47,8 +49,8 @@ $component-form-radio-properties:(
 );
 ```
 
-## Select
-Positions label inside of select dropdown and adds Font Awesome icon for dropdown
+## Select Properties
+Positions the label with `for="input-element-id"` inside of select dropdown and adds Font Awesome icon for dropdown
 ```
 $component-form-select-properties:(
   backgroundColor: getThemeProperty(backgroundColorLight),
@@ -61,8 +63,8 @@ $component-form-select-properties:(
 );
 ```
 
-## Text / Textarea
-Positions label inside of field to animate on input
+## Text / Textarea Properties
+Positions the label with `for="input-element-id"` inside of field to animate on input
 ```
 $component-form-text-properties:(
   borderColor: getThemeProperty(formInputBorderColor),
