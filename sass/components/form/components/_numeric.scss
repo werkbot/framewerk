@@ -38,6 +38,7 @@ $component-form-numeric-properties: $default-component-form-numeric-properties !
       outline: none;
       border-color: getThemeProperty(borderColor, $component-form-numeric-properties);
       border: 1px solid getThemeProperty(borderColor, $component-form-numeric-properties);
+      @include focus-style;
     }
     ~ .subtract-qty, .subtract-qty, ~ .add-qty, .add-qty{
       position: absolute;

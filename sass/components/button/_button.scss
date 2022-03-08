@@ -46,6 +46,7 @@ $component-button-properties: $default-component-button-properties !default;
     background-color: getThemeProperty(backgroundHoverColor, $component-button-properties);
     color: getThemeProperty(textHoverColor, $component-button-properties);
   }
+  @include focus-style;
 }
 
 // Applied to `a` elements with the `button` class
