@@ -5,13 +5,13 @@
 */
 $default-theme-properties: (
   // Colors
-  primaryColor: #999999,
-  secondaryColor: #000000,
-  tertiaryColor: #cccccc,
-  backgroundColorLight: #ffffff,
-  backgroundColorDark: #333333,
-  textColorLight: #ffffff,
-  textColorDark: #333333,
+  primaryColor: var(--primaryColor, #999999),
+  secondaryColor: var(--secondaryColor, #000000),
+  tertiaryColor: var(--tertiaryColor, #cccccc),
+  backgroundColorLight: var(--backgroundColorLight, #ffffff),
+  backgroundColorDark: var(--backgroundColorDark, #333333),
+  textColorLight: var(--textColorLight, #ffffff),
+  textColorDark: var(--textColorDark, #333333),
 
   // Fonts
   fontHeader: "Montserrat",

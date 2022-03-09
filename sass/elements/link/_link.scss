@@ -26,6 +26,9 @@ $element-link-properties: $default-element-link-properties !default;
   }
   &:visited{
     color: getThemeProperty(linkColorVisited, $properties);
+    // Does not work with CSS vars
+    // color: darken(getThemeProperty(primaryColor), 10);
+    // filter: brightness(.5);
   }
   &:hover{
     color: getThemeProperty(linkColorHover, $properties);
@@ -33,6 +36,9 @@ $element-link-properties: $default-element-link-properties !default;
   }
   &:active{
     color: getThemeProperty(linkColorActive, $properties);
+    // Does not work with CSS vars
+    // color: lighten(getThemeProperty(primaryColor), 10);
+    // filter: brightness(2);
   }
   @include focus-style;
 }
