@@ -1,0 +1,23 @@
+// Default h3 Properties
+$default-element-h3-properties:(
+    color: getThemeProperty(textColorDark),
+    fontFamily: getThemeProperty(fontHeader),
+    fontWeight: 700,
+    fontSizes: (
+        desktop: (1.500em, 1),
+        tablet: (1.500em, 1),
+        phone: (1.500em, 1)
+    )
+);
+// If $element-h3-properties is set, lets merge into our defaults
+$element-h3-properties: $default-element-h3-properties !default;
+@if($element-h3-properties){
+  $element-h3-properties: recursive-map-merge($default-element-h3-properties, $element-h3-properties);
+}
+
+h3{
+  color: getThemeProperty(color, $element-h3-properties);
+  font-family: getThemeProperty(fontFamily, $element-h3-properties);
+  font-weight: getThemeProperty(fontWeight, $element-h3-properties);
+  @include font-size(getThemeProperty(fontSizes, $element-h3-properties));
+}

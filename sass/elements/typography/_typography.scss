@@ -1,140 +1,16 @@
-@import 'font-size-mixin';
+// Mixins
+@import 'mixins/font-size-mixin';
 
-/*
-	TYPOGRAPHY
-	Define all basic html tags. These can be overridden in but this should be the base.
-*/
-body {
-	font: 400 1rem/1rem getThemeProperty(fontText);
-}
-/* H1 */
-$h1-font-sizes: (
-  desktop: (2.5em, 1),
-  tablet: (2.5em, 1),
-  phone: (2.5em, 1)
-);
-h1{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontHeader);
-  font-weight: 700;
-	@include font-size($h1-font-sizes);
-}
-/* H2 */
-$h2-font-sizes: (
-  desktop: (2.250em, 1),
-  tablet: (2.250em, 1),
-  phone: (2.250em, 1)
-);
-h2{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontHeader);
-  font-weight: 700;
-	@include font-size($h2-font-sizes);
-}
-/* H3 */
-$h3-font-sizes: (
-  desktop: (1.500em, 1),
-  tablet: (1.500em, 1),
-  phone: (1.500em, 1)
-);
-h3{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontHeader);
-  font-weight: 700;
-	@include font-size($h3-font-sizes);
-}
-/* H4 */
-$h4-font-sizes: (
-  desktop: (1.313em, 1),
-  tablet: (1.313em, 1),
-  phone: (1.313em, 1)
-);
-h4{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontHeader);
-	@include font-size($h4-font-sizes);
-}
-/* H5 */
-$h5-font-sizes: (
-  desktop: (1.313em, 1),
-  tablet: (1.313em, 1),
-  phone: (1.313em, 1)
-);
-h5{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontHeader);
-	@include font-size($h5-font-sizes);
-}
-/* H6 */
-$h6-font-sizes: (
-  desktop: (1.125em, 1),
-  tablet: (1.125em, 1),
-  phone: (1.125em, 1)
-);
-h6{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontHeader);
-	@include font-size($h6-font-sizes);
-}
-/* P */
-$p-font-sizes: (
-  desktop: (1em, 1.4),
-  tablet: (1em, 1.4),
-  phone: (1em, 1.4)
-);
-p {
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontText);
-  @include font-size($p-font-sizes);
-}
-/* UL, OL */
-ul,ol {
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontText);
-  @include font-size($p-font-sizes);
-}
-ul{
-	list-style: disc outside;
-}
-ol{
-	list-style: decimal outside;
-}
-/* Form */
-input,
-select,
-textarea{
-  color: getThemeProperty(textColorDark);
-  font-family: getThemeProperty(fontText);
-  @include font-size($p-font-sizes);
-}
-/**/
-strong, b {
-	font-weight: 700;
-}
-em, i {
-	font-style: italic;
-}
-sup{
-  vertical-align: super;
-  font-size: smaller;
-}
-sub{
-  vertical-align: sub;
-  font-size: smaller;
-}
-/**/
-.text-center{
-  text-align: center;
-}
-.text-left{
-  text-align: left;
-}
-.text-right{
-  text-align: right;
-}
-.large-text{
-  font-size: 1.5em;
-}
-.text-white{
-  color: #ffffff;
-}
+// Elements
+@import 'elements/h1';
+@import 'elements/h2';
+@import 'elements/h3';
+@import 'elements/h4';
+@import 'elements/h5';
+@import 'elements/h6';
+@import 'elements/p';
+@import 'elements/ul';
+@import 'elements/ol';
+
+// Defaults
+@import 'defaults/text';
