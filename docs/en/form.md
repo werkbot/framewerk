@@ -6,6 +6,13 @@ The form consists of the components laid out below.
 $component-form-properties:(
   borderColor: #cccccc,
   labelColor: #cccccc,
+  fieldSpacing: getThemeProperty(layoutSpace),
+  validationErrorTextColor: #ffffff,
+  validationErrorBackgroundColor: #cc0000,
+  validationSuccessTextColor: #000000,
+  validationSuccessBackgroundColor: #00cc00,
+  validationWarningTextColor: #000000,
+  validationWarningBackgroundColor: #ffcc00
 );
 ```
 
