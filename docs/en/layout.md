@@ -7,6 +7,10 @@ A flex container has default flexbox settings which can easily be overridden. Al
 `.fw-space`<br />
 The space class is an attempt to have a uniform base padding option. It has several variant classes which can adjust the spacing amount per element.
 
+`.fw-typography-spacing`<br />
+This class is used to apply default spacing to typography elements, intended to be applied to a container class.
+
+
 ## Device Breakpoints
 A device breakpoint is the width at which we need to adjust the css for that width.
 
