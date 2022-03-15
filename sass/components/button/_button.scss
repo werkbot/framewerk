@@ -12,6 +12,12 @@ $default-component-button-properties:(
   padding: 10px 40px,
   margin: 5px 0,
   borderRadius: 5px,
+
+  textTransform: initial,
+  fontWeight: 400,
+  fontFamily: getThemeProperty(fontText),
+  fontSize: 1rem,
+
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
@@ -41,6 +47,10 @@ $component-button-properties: $default-component-button-properties !default;
   margin: getThemeProperty(margin, $component-button-properties);
   border: none;
   cursor: pointer;
+  text-transform: getThemeProperty(textTransform, $component-button-properties);
+  font-weight: getThemeProperty(fontWeight, $component-button-properties);
+  font-family: getThemeProperty(fontFamily, $component-button-properties);
+  font-size: getThemeProperty(fontSize, $component-button-properties);
   -webkit-appearance: none;
   -webkit-transition: background-color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out;
