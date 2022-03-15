@@ -12,12 +12,10 @@ $default-component-button-properties:(
   padding: 10px 40px,
   margin: 5px 0,
   borderRadius: 5px,
-
   textTransform: initial,
   fontWeight: 400,
   fontFamily: getThemeProperty(fontText),
   fontSize: 1rem,
-
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
