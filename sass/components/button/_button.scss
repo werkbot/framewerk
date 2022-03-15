@@ -11,12 +11,22 @@ $default-component-button-properties:(
   textHoverColor: getThemeProperty(textColorDark),
   padding: 10px 40px,
   margin: 5px 0,
-  borderRadius: 5px
+  borderRadius: 5px,
+  variants: (
+    white-btn: (
+      background-color: getThemeProperty(backgroundColorLight),
+      color: getThemeProperty(textColorDark),
+      hoverStyle: (
+        background-color: getThemeProperty(primaryColor),
+        color: getThemeProperty(textColorLight),
+      )
+    )
+  )
 );
 // If $component-button-properties is set, lets merge into our defaults
 $component-button-properties: $default-component-button-properties !default;
 @if($component-button-properties){
-  $component-button-properties: map-merge($default-component-button-properties, $component-button-properties);
+  $component-button-properties: recursive-map-merge($default-component-button-properties, $component-button-properties);
 }
 
 // Button Mixin
@@ -47,6 +57,24 @@ $component-button-properties: $default-component-button-properties !default;
     color: getThemeProperty(textHoverColor, $component-button-properties);
   }
   @include focus-style;
+
+  // Define style rules for button variants
+  @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
+    &.#{$variantClass}{
+      @each $styleRule, $styleValue in $variantProperties {
+        @if($styleRule == 'hoverStyle'){
+          &:hover{
+            @each $hoverStyleRule, $hoverStyleValue in $styleValue {
+              #{$hoverStyleRule}: #{$hoverStyleValue};
+            }
+          }
+        } @else {
+          #{$styleRule}: #{$styleValue};
+        }
+      }
+    }
+  }
+
 }
 
 // Applied to `a` elements with the `button` class
