@@ -3,7 +3,7 @@ $default-element-focus-properties:(
   innerBorderColor: #336ba3,
   innerBorderSize: 2px,
   outerBorderColor: #b4def3bf,
-  outerBorderSize: 0.6em
+  outerBorderSize: 0.6rem
 );
 // If $element-focus-properties is set, lets merge into our defaults
 $element-focus-properties: $default-element-focus-properties !default;
