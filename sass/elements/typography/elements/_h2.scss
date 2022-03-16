@@ -1,13 +1,14 @@
 // Default h2 Properties
 $default-element-h2-properties:(
-    color: getThemeProperty(textColorDark),
+    color: getThemeProperty(HeadingColor, $component-typography-properties),
     fontFamily: getThemeProperty(fontHeader),
     fontWeight: 700,
     fontSizes: (
         desktop: (2.250em, 1),
         tablet: (2.250em, 1),
         phone: (2.250em, 1)
-    )
+    ),
+    margin: getThemeProperty(HeadingMargin, $component-typography-properties)
 );
 // If $element-h2-properties is set, lets merge into our defaults
 $element-h2-properties: $default-element-h2-properties !default;
@@ -20,4 +21,10 @@ h2{
   font-family: getThemeProperty(fontFamily, $element-h2-properties);
   font-weight: getThemeProperty(fontWeight, $element-h2-properties);
   @include font-size(getThemeProperty(fontSizes, $element-h2-properties));
+}
+
+.fw-typography-spacing{
+  h2{
+    margin: getThemeProperty(margin, $element-h2-properties);
+  }
 }

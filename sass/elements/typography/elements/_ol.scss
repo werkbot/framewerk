@@ -8,7 +8,8 @@ $default-element-ol-properties:(
         desktop: (1em, 1.4),
         tablet: (1em, 1.4),
         phone: (1em, 1.4)
-    )
+    ),
+    margin: 0 0 getThemeProperty(layoutSpace) getThemeProperty(layoutSpace)
 );
 // If $element-ol-properties is set, lets merge into our defaults
 $element-ol-properties: $default-element-ol-properties !default;
@@ -22,4 +23,10 @@ ol{
   font-family: getThemeProperty(fontFamily, $element-ol-properties);
   font-weight: getThemeProperty(fontWeight, $element-ol-properties);
   @include font-size(getThemeProperty(fontSizes, $element-ol-properties));
+}
+
+.fw-typography-spacing{
+  ol{
+    margin: getThemeProperty(margin, $element-ol-properties);
+  }
 }
