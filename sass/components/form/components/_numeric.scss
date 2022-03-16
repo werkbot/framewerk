@@ -20,6 +20,7 @@ $component-form-numeric-properties: $default-component-form-numeric-properties !
     label{
       transform: none;
       margin: 2px 0;
+      position: relative;
       &.labelShrunk{
         transform: none;
       }
