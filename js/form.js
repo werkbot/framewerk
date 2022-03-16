@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 
   // Shrink input and textarea field labels
-  document.querySelectorAll('.fw-form input[type=text], .fw-form textarea').forEach(function(inputElement){
+  document.querySelectorAll('.fw-form input[type=text], .fw-form input[type=date], .fw-form input[type=email], .fw-form textarea').forEach(function(inputElement){
     toggleInputState(inputElement);
     // On focus, shrink the label
     inputElement.addEventListener('focus', function(event){
@@ -28,7 +28,7 @@ window.addEventListener('load', function(){
    * @param inputElement - The input whose label we want to toggle
    */
   function toggleInputState(inputElement){
-    if(inputElement.value || inputElement.placeholder || inputElement === document.activeElement){
+    if(inputElement.value || inputElement.placeholder || inputElement === document.activeElement || inputElement.type == 'date'|| inputElement.type == 'email'){
       shrinkLabel(inputElement);
     } else {
       unshrinkLabel(inputElement);
