@@ -18,7 +18,6 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
   .checkboxset div,
   .field.checkbox{
     position: relative;
-    @include focus-within-style;
     input{
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
@@ -54,5 +53,11 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
         }
       }
     }
+  }
+  // Focus Styles
+  .checkboxset li,
+  .checkboxset > div div,
+  .field.checkbox{
+    @include focus-within-style;
   }
 }

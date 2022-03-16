@@ -18,16 +18,18 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
 
 .fw-form{
   .field.textarea{
+    position: relative;
     label{
       display: block;
-      transform: translate(20px, 45px);
+      position: absolute;
+      transform: translate(20px, 25px);
       transform-origin: left;
       transition: transform .25s ease;
       color: getThemeProperty(shiftingLabelColor, $component-form-textarea-properties);
       pointer-events: none;
       margin: 0;
       &.labelShrunk{
-        transform: scale(.7) translate(30px, 40px);
+        transform: scale(.7) translate(30px, 20px);
       }
     }
     textarea{

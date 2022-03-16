@@ -14,9 +14,10 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
 }
 
 .fw-form{
-  fieldset.field div, .field.optionset div, ul.optionset li{
+  fieldset.field div, 
+  .field.optionset div, 
+  ul.optionset li{
     position: relative;
-    @include focus-within-style;
     input[type='radio']{
       width: max-content;
       border: none;
@@ -51,5 +52,11 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         cursor: pointer;
       }
     }
+  }
+  // Focus Styles
+  fieldset.field > div div, 
+  .field.optionset li,
+  ul.optionset li{
+    @include focus-within-style;
   }
 }
