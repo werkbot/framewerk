@@ -30,7 +30,7 @@ ol{
     }
   }
 }
-@media handheld, only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
+@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
   ul,
   ol{
     &.two-column-list,
