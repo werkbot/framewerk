@@ -16,7 +16,7 @@ Include this at the top of your main sass file:
 #### Javascript Setup
 Include this in your main js file:
 
-`require('./node_modules/framewerk/js/form.js');`
+`require('framewerk');`
 
 ---
 
