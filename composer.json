@@ -1,9 +1,0 @@
-{
-  "name": "werkbot/framewerk",
-  "description": "Werkbot's css framework, based on the flexbox layout",
-  "extra": {
-    "expose": [
-        "dist"
-    ]
-  }
-}
