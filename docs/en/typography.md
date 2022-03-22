@@ -9,7 +9,6 @@ Font Family's are passed in to the framewerk by name reference and should be loa
 
 The default heading properties apply `HeadingColor` and `HeadingMargin` to all headings (h1-h6)
 ```
-// Default form checkbox Properties
 $default-component-typography-properties:(
     "HeadingColor": getThemeProperty(textColorDark),
     "HeadingMargin": 0 0 getThemeProperty(layoutSpace)/2 0
@@ -48,7 +47,6 @@ $default-element-p-properties:(
 
 ## Ordered List Properties:
 ```
-// Default ol Properties
 $default-element-ol-properties:(
     listStyle: decimal outside,
     color: getThemeProperty(textColorDark),
@@ -65,7 +63,6 @@ $default-element-ol-properties:(
 
 ## Unordered List Properties:
 ```
-// Default ul Properties
 $default-element-ul-properties:(
     listStyle: disc outside,
     color: getThemeProperty(textColorDark),
