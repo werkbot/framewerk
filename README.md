@@ -7,19 +7,6 @@ A framework of css and javascript that Werkbot uses as a foundation to build web
 ---
 
 ## Setup
-There are two options to install to your project:
-
-### Use distributed files
-
-#### Import JS and Styles together
-`require('framewerk'); // node_modules/framewerk/dist/framewerk.js`
-
-#### Import JS and Styles separately
-`require('framewerk/js/form.js') // node_modules/framewerk/js/form.js`\
-`@import url('framewerk/dist/fw-bundle.css'); // node_modules/framewerk/dist/fw-bundle.css`
-
-### Incorporate into your build
-#### SASS Setup
 Include this at the top of your main sass file:
 
 `@import 'framewerk/sass/fw-bundle';`
@@ -29,14 +16,7 @@ Include this at the top of your main sass file:
 #### Javascript Setup
 Include this in your main js file:
 
-`require('./node_modules/framewerk/js/form.js');`
-
----
-
-## Build Process
-Generate new dist files using the following:
-- `npm run build`
-- `npm run watch`
+`require('framewerk');`
 
 ---
 
