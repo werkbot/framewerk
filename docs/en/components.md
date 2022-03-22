@@ -10,6 +10,7 @@ These are the tags defined within the framework.
 - `<list>`
 - `<table>`
 - `typography` consists of tags focused around typography
+* [Learn more about typography](typography.md)
 
 ## Components
 These are the components we have defined within the framework.

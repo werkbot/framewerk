@@ -57,9 +57,9 @@ table{
     }
   }
 }
-@media handheld, only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), tablet)) {
+@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), tablet)) {
 }
-@media handheld, only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
+@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
   table{
     font-size: 0.8em;
     th,
