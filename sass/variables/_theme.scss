@@ -14,13 +14,13 @@ $default-theme-properties: (
   textColorDark: var(--textColorDark, #333333),
 
   // Fonts
-  fontHeader: "Montserrat",
-  fontText: "Roboto",
-  fontIcon: "Font Awesome 6 Free",
+  fontHeader: var(--fontHeader, "Montserrat"),
+  fontText: var(--fontText, "Roboto"),
+  fontIcon: var(--fontIcon, "Font Awesome 6 Free"),
 
   // Layout
   layoutSpace: 20px,
-  layoutContainerWidth: 1366px,
+  layoutContainerWdth: var(--layoutContainerWdth, 1366px),
 
   // Breakpoints
   breakpointDesktop: (

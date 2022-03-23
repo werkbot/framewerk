@@ -11,7 +11,14 @@ const customizeFramewerk = (config = null, elementSelector = null) => {
 	}
 	if(config){
 		for(var prop in config){
-			setCSSVar(element, prop, config[prop]);
+			if(typeof config[prop] == 'object'){
+				var componentConfig = config[prop];
+				for(var componentProp in componentConfig){
+					setCSSVar(element, prop + '_' + componentProp, componentConfig[componentProp]);
+				}
+			} else {
+				setCSSVar(element, prop, config[prop]);
+			}
 		}
 	}
 }
