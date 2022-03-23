@@ -16,8 +16,8 @@ There are two options to install to your project:
 
 #### Import JS and Styles together with initialized settings
 ```
-const { initFramewerk } = require('framewerk');
-initFramewerk({
+const framewerk = require('framewerk');
+framewerk({
 	primaryColor: '#999999',
 	backgroundColorDark: '#333333',
 });
