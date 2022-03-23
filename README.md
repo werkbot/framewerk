@@ -9,14 +9,14 @@ A framework of css and javascript that Werkbot uses as a foundation to build web
 ## Setup
 Include this at the top of your main sass file:
 
-`@import 'framewerk/sass/fw-bundle';`
+`@import 'werkbot-framewerk/sass/fw-bundle';`
 
 > *Depending on your setup, you may need to include `node_modules` in your build path. For example, we include: `importPath: 'node_modules'` for compass*
 
 #### Javascript Setup
 Include this in your main js file:
 
-`require('framewerk');`
+`require('werkbot-framewerk');`
 
 ---
 
