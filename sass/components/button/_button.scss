@@ -74,11 +74,11 @@ $component-button-properties: $default-component-button-properties !default;
         @if($styleRule == 'hoverStyle'){
           &:hover{
             @each $hoverStyleRule, $hoverStyleValue in $styleValue {
-              #{$hoverStyleRule}: #{$hoverStyleValue};
+              #{$hoverStyleRule}: var(--componentButtonProperties_variants_#{$variantClass}_#{$hoverStyleRule}, #{$hoverStyleValue});
             }
           }
         } @else {
-          #{$styleRule}: #{$styleValue};
+          #{$styleRule}: var(--componentButtonProperties_variants_#{$variantClass}_#{$styleRule}, #{$styleValue});
         }
       }
     }
@@ -87,7 +87,7 @@ $component-button-properties: $default-component-button-properties !default;
 }
 
 // Applied to `a` elements with the `button` class
-a.button, input.button, button.button{
+a.button, input.button, button.button, span.button{
   @include button-input-style;
 }
 
