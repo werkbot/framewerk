@@ -65,8 +65,8 @@ const customizeFramewerk = (config = null, elementSelector = null) => {
 	const framewerk = require('framewerk');
 	import framewerk from 'framewerk'
 */
-module.exports = (config = null, element = null) => {
-	require('./dist/framewerk.js')
+module.exports = (config = null, element = null, includeStyles = true) => {
+	includeStyles ? require('./dist/framewerk.js') : require('./dist/framewerk-no-styles.js');
 	customizeFramewerk(config, element);
 }
 
@@ -75,7 +75,7 @@ module.exports = (config = null, element = null) => {
 	const { initFramewerk } = require('framewerk');
 	import { initFramewerk } from 'framewerk';
 */
-module.exports.initFramewerk = () => require('./dist/framewerk.js');
+module.exports.initFramewerk = (includeStyles = true) => includeStyles ? require('./dist/framewerk.js') : require('./dist/framewerk-no-styles.js');
 
 
 /*
