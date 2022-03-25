@@ -1,9 +1,9 @@
 // Default form textarea Properties
 $default-component-form-textarea-properties:(
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
-  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
-  textColor: getThemeProperty(textColorDark),
-  fontFamily: getThemeProperty(fontText),
+  borderColor: var(--componentFormTextareaProperties_borderColor, getThemeProperty(borderColor, $component-form-properties)),
+  shiftingLabelColor: var(--componentFormTextareaProperties_shiftingLabelColor, getThemeProperty(labelColor, $component-form-properties)),
+  textColor: var(--componentFormTextareaProperties_textColor, getThemeProperty(textColorDark)),
+  fontFamily: var(--componentFormTextareaProperties_fontFamily, getThemeProperty(fontText)),
   fontSizes: (
       desktop: (1em, 1.4),
       tablet: (1em, 1.4),

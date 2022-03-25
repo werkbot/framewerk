@@ -1,14 +1,14 @@
 // Default form select Properties
 $default-component-form-select-properties:(
-  backgroundColor: getThemeProperty(backgroundColorLight),
-  labelColor: getThemeProperty(textColorDark),
-  icon: "\f078",
-  iconFontFamily: getThemeProperty(fontIcon),
-  iconTextColor: getThemeProperty(textColorDark),
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
-  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
-  textColor: getThemeProperty(textColorDark),
-  fontFamily: getThemeProperty(fontText),
+  backgroundColor: var(--componentFormSelectProperties_backgroundColor, getThemeProperty(backgroundColorLight)),
+  labelColor: var(--componentFormSelectProperties_labelColor, getThemeProperty(textColorDark)),
+  icon: var(--componentFormSelectProperties_icon, "\f078"),
+  iconFontFamily: var(--componentFormSelectProperties_iconFontFamily, getThemeProperty(fontIcon)),
+  iconTextColor: var(--componentFormSelectProperties_iconTextColor, getThemeProperty(textColorDark)),
+  borderColor: var(--componentFormSelectProperties_borderColor, getThemeProperty(borderColor, $component-form-properties)),
+  shiftingLabelColor: var(--componentFormSelectProperties_shiftingLabelColor, getThemeProperty(labelColor, $component-form-properties)),
+  textColor: var(--componentFormSelectProperties_textColor, getThemeProperty(textColorDark)),
+  fontFamily: var(--componentFormSelectProperties_fontFamily, getThemeProperty(fontText)),
   fontSizes: (
       desktop: (1em, 1.4),
       tablet: (1em, 1.4),
