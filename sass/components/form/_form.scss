@@ -1,15 +1,15 @@
 // Default form checkbox Properties
 $default-component-form-properties:(
-  borderColor: #cccccc,
-  labelColor: getThemeProperty(textColorDark),
-  disabledColor: #dddddd,
-  fieldSpacing: getThemeProperty(layoutSpace),
-  validationErrorTextColor: #ffffff,
-  validationErrorBackgroundColor: #cc0000,
-  validationSuccessTextColor: #000000,
-  validationSuccessBackgroundColor: #00cc00,
-  validationWarningTextColor: #000000,
-  validationWarningBackgroundColor: #ffcc00
+  borderColor: var(--componentFormProperties_borderColor, #cccccc),
+  labelColor: var(--componentFormProperties_labelColor, #cccccc),
+  disabledColor: var(--componentFormProperties_disabledColor, #dddddd),
+  fieldSpacing: var(--componentFormProperties_fieldSpacing, getThemeProperty(layoutSpace)),
+  validationErrorTextColor: var(--componentFormProperties_validationErrorTextColor, #ffffff),
+  validationErrorBackgroundColor: var(--componentFormProperties_validationErrorBackgroundColor, #cc0000),
+  validationSuccessTextColor: var(--componentFormProperties_validationSuccessTextColor, #000000),
+  validationSuccessBackgroundColor: var(--componentFormProperties_validationSuccessBackgroundColor, #00cc00),
+  validationWarningTextColor: var(--componentFormProperties_validationWarningTextColor, #000000),
+  validationWarningBackgroundColor: var(--componentFormProperties_validationWarningBackgroundColor, #ffcc00),
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-properties: $default-component-form-properties !default;

@@ -2,15 +2,15 @@
 
 // Default p Properties
 $default-element-p-properties:(
-    color: getThemeProperty(TextColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontText),
-    fontWeight: 400,
+    color: var(--elementPProperties_color, getThemeProperty(TextColor, $component-typography-properties)),
+    fontFamily: var(--elementPProperties_fontFamily, getThemeProperty(fontText)),
+    fontWeight: var(--elementPProperties_fontWeight, 400),
     fontSizes: (
         desktop: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
         tablet: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
         phone: (1em, getThemeProperty(TextLineHeight, $component-typography-properties))
     ),
-    margin: 0 0 math.div(getThemeProperty(layoutSpace), 2) 0,
+    margin: var(--elementPProperties_margin, 0 0 math.div(getThemeProperty(layoutSpace), 2) 0),
     textTransform: getThemeProperty(TextTextTransform, $component-typography-properties),
     letterSpacing: getThemeProperty(TextLetterSpacing, $component-typography-properties)
 );

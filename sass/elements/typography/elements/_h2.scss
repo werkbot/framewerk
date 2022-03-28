@@ -1,14 +1,14 @@
 // Default h2 Properties
 $default-element-h2-properties:(
-    color: getThemeProperty(HeadingColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontHeader),
-    fontWeight: 700,
+    color: var(--elementH2Properties_color, getThemeProperty(HeadingColor, $component-typography-properties)),
+    fontFamily: var(--elementH2Properties_fontFamily, getThemeProperty(fontHeader)),
+    fontWeight: var(--elementH2Properties_fontWeight, 700),
     fontSizes: (
         desktop: (2.250em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
         tablet: (2.250em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
         phone: (2.250em, getThemeProperty(HeadingLineHeight, $component-typography-properties))
     ),
-    margin: getThemeProperty(HeadingMargin, $component-typography-properties),
+    margin: var(--elementH2Properties_margin, getThemeProperty(HeadingMargin, $component-typography-properties)),
     textTransform: getThemeProperty(HeadingTextTransform, $component-typography-properties),
     letterSpacing: getThemeProperty(HeadingLetterSpacing, $component-typography-properties)
 );

@@ -1,15 +1,15 @@
 // Default ul Properties
 $default-element-ul-properties:(
-    listStyle: disc outside,
-    color: getThemeProperty(TextColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontText),
-    fontWeight: 400,
+    listStyle: var(--elementULProperties_listStyle, disc outside),
+    color: var(--elementULProperties_color, getThemeProperty(TextColor, $component-typography-properties)),
+    fontFamily: var(--elementULProperties_fontFamily, getThemeProperty(fontText)),
+    fontWeight: var(--elementULProperties_fontWeight, 400),
     fontSizes: (
         desktop: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
         tablet: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
         phone: (1em, getThemeProperty(TextLineHeight, $component-typography-properties))
     ),
-    margin: 0 0 getThemeProperty(layoutSpace) getThemeProperty(layoutSpace),
+    margin: var(--elementULProperties_margin, 0 0 getThemeProperty(layoutSpace) getThemeProperty(layoutSpace)),
     textTransform: getThemeProperty(TextTextTransform, $component-typography-properties),
     letterSpacing: getThemeProperty(TextLetterSpacing, $component-typography-properties)
 );

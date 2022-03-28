@@ -1,14 +1,14 @@
 // Default h1 Properties
 $default-element-h1-properties:(
-    color: getThemeProperty(HeadingColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontHeader),
-    fontWeight: 700,
+    color: var(--elementH1Properties_color, getThemeProperty(HeadingColor, $component-typography-properties)),
+    fontFamily: var(--elementH1Properties_fontFamily, getThemeProperty(fontHeader)),
+    fontWeight: var(--elementH1Properties_fontWeight, 700),
     fontSizes: (
         desktop: (2.5em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
         tablet: (2.5em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
         phone: (2.5em, getThemeProperty(HeadingLineHeight, $component-typography-properties))
     ),
-    margin: getThemeProperty(HeadingMargin, $component-typography-properties),
+    margin: var(--elementH1Properties_margin, getThemeProperty(HeadingMargin, $component-typography-properties)),
     textTransform: getThemeProperty(HeadingTextTransform, $component-typography-properties),
     letterSpacing: getThemeProperty(HeadingLetterSpacing, $component-typography-properties)
 );
