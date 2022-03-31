@@ -28,6 +28,7 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
       color: getThemeProperty(shiftingLabelColor, $component-form-textarea-properties);
       pointer-events: none;
       margin: 0;
+      z-index: 1;
       &.labelShrunk{
         transform: scale(.7) translate(30px, 20px);
       }
