@@ -42,6 +42,10 @@ module.exports = [
 						},
 						{
 							loader: 'sass-loader',
+							options: {
+								// Allows relative color builds, but with warning
+								// warnRuleAsWarning: true,
+							},
 						}
 					]
 				}
@@ -88,6 +92,10 @@ module.exports = [
 						},
 						{
 							loader: 'sass-loader',
+							options: {
+								// Allows relative color builds, but with warning
+								// warnRuleAsWarning: true,
+							},
 						}
 					]
 				}
