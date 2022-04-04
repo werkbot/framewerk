@@ -40,7 +40,7 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
       border: 1px solid getThemeProperty(borderColor, $component-form-textarea-properties);
       color: getThemeProperty(textColor, $component-form-textarea-properties);
       font-family: getThemeProperty(fontFamily, $component-form-textarea-properties);
-      @include font-size(getThemeProperty(fontSizes, $component-form-textarea-properties));
+      @include font-size(getThemeProperty(fontSizes, $component-form-textarea-properties), 'componentFormTextareaProperties');
       &.labelShrunk{
         padding: 30px 20px 10px 20px;
       }

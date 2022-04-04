@@ -49,7 +49,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
       color: getThemeProperty(textColor, $component-form-select-properties);
       font-family: getThemeProperty(fontFamily, $component-form-select-properties);
-      @include font-size(getThemeProperty(fontSizes, $component-form-select-properties));
+      @include font-size(getThemeProperty(fontSizes, $component-form-select-properties), 'componentFormSelectProperties');
       &.labelShrunk{
         padding: 30px 20px 10px 19px;
         color: getThemeProperty(labelColor, $component-form-select-properties);
