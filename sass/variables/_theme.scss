@@ -19,7 +19,7 @@ $default-theme-properties: (
   fontIcon: var(--fontIcon, "Font Awesome 6 Free"),
 
   // Layout
-  layoutSpace: 20px,
+  layoutSpace: var(--layoutSpace, 20px),
   layoutContainerWdth: var(--layoutContainerWdth, 1366px),
 
   // Breakpoints

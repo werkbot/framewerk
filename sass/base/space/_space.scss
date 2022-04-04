@@ -9,19 +9,19 @@
 .space{
   padding: getThemeProperty(layoutSpace);
   &.double{
-    padding: getThemeProperty(layoutSpace) * 2;
+    padding: calc(#{getThemeProperty(layoutSpace)} * 2);
   }
   &.triple{
-    padding: getThemeProperty(layoutSpace) * 3;
+    padding: calc(#{getThemeProperty(layoutSpace)} * 3);
   }
   &.one-forth{
-    padding: getThemeProperty(layoutSpace) * 0.25;
+    padding: calc(#{getThemeProperty(layoutSpace)} * 0.25);
   }
   &.half{
-    padding: math.div(getThemeProperty(layoutSpace), 2);
+    padding: math.div(#{getThemeProperty(layoutSpace)}, 2);
   }
   &.three-forths{
-    padding: getThemeProperty(layoutSpace) * 0.75;
+    padding: calc(#{getThemeProperty(layoutSpace)} * 0.75);
   }
 	&.noleft{
 		padding-left: 0;
@@ -30,10 +30,10 @@
 		padding-right: 0;
 	}
 	&.halfleft{
-		padding-left: math.div(getThemeProperty(layoutSpace), 2);
+		padding-left: math.div(#{getThemeProperty(layoutSpace)}, 2);
 	}
 	&.halfright{
-		padding-right: math.div(getThemeProperty(layoutSpace), 2);
+		padding-right: math.div(#{getThemeProperty(layoutSpace)}, 2);
 	}
 	&.notop{
 		padding-top: 0;
@@ -42,9 +42,9 @@
 		padding-bottom: 0;
 	}
 	&.halftop{
-		padding-top: math.div(getThemeProperty(layoutSpace), 2);
+		padding-top: math.div(#{getThemeProperty(layoutSpace)}, 2);
 	}
 	&.halfbottom{
-		padding-bottom: math.div(getThemeProperty(layoutSpace), 2);
+		padding-bottom: math.div(#{getThemeProperty(layoutSpace)}, 2);
 	}
 }
