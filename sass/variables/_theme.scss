@@ -27,9 +27,9 @@ $default-theme-properties: (
     desktop: 1366px
   ),
   breakpointResponsive: (
-    desktopsmall: 1366px,
-    tablet: 1024px,
-    phone : 600px
+    desktopsmall: env(--breakpointResponsive_desktopsmall, 1366px),
+    tablet: env(--breakpointResponsive_tablet, 1024px),
+    phone: env(--breakpointResponsive_phone, 600px),
   )
 );
 

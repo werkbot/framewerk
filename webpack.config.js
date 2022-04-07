@@ -85,6 +85,12 @@ module.exports = [
 							options: {
 								postcssOptions: {
 									plugins: [
+										[
+											'postcss-env-function',
+											{
+												importFrom: path.resolve(__dirname, 'postcss-env.js'),
+											},
+										],
 										'autoprefixer',
 									],
 								},
