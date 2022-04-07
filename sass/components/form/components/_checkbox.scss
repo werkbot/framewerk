@@ -21,6 +21,7 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
     input{
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
+      width: initial;
       border: none;
       &::before{
         font-family: getThemeProperty(iconFontFamily, $component-form-checkbox-properties);
