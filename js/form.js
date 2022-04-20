@@ -23,6 +23,36 @@ window.addEventListener('load', function(){
   });
 
   /**
+   * Form Processing
+   * Disables all form fields and replaces the submit button with a span element whcih
+   * can be configured in the css
+   */
+  document.querySelectorAll('.fw-form').forEach(function(formElement){
+    formElement.addEventListener('submit', function(event){
+      // Disable submit button, hide the button
+      event.submitter.disabled = true;
+      event.submitter.style.display = "none";
+
+      // Add "Processing" element to replace submit button
+      const processingElement = document.createElement("span");
+      processingElement.className = "fw-form-processing";
+      this.appendChild(processingElement);
+
+      // Disable all fields
+      var fields = this.getElementsByTagName('*');
+      for(var i = 0; i < fields.length; i++)
+      {
+        fields[i].disabled = true;
+        // Check for number input type
+        if(fields[i].type=="number"){
+          fields[i].parentElement.parentElement.classList.add("readonly");
+        }
+      }
+
+    });
+  });
+
+  /**
    * Toggle Input State
    * Shrinks or unshrinks the label of the element passed in
    * @param inputElement - The input whose label we want to toggle
@@ -106,7 +136,7 @@ window.addEventListener('load', function(){
    * @param integer increment - The amount to increment by
    */
   function incrementQuantity(fieldContainer, increment){
-    if(!fieldContainer.classList.contains('.readonly')){
+    if(!fieldContainer.classList.contains('readonly')){
       var field = fieldContainer.querySelector('input');
       field.value = Number(field.value) + increment;
     }
