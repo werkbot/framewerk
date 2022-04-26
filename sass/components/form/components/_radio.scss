@@ -52,13 +52,15 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         line-height: 1;
         cursor: pointer;
       }
-      &:disabled {
+      &.readonly{
+        pointer-events: none;
         &::before{
           cursor: default;
           background: getThemeProperty(disabledColor, $component-form-properties);
         }
         + label{
           cursor: default;
+          pointer-events: none;
         }
       }
     }

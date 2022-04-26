@@ -45,7 +45,8 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
         padding: 30px 20px 10px 20px;
       }
       @include focus-style;
-      &:disabled {
+      &.readonly{
+        pointer-events: none;
         background: getThemeProperty(disabledColor, $component-form-properties);
       }
     }

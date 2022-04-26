@@ -53,13 +53,15 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
           width: 100%;
         }
       }
-      &:disabled {
+      &.readonly{
+        pointer-events: none;
         &::before{
           cursor: default;
           background: getThemeProperty(disabledColor, $component-form-properties);
         }
         + label{
           cursor: default;
+          pointer-events: none;
         }
       }
     }

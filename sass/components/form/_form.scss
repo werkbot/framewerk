@@ -46,29 +46,50 @@ $component-form-properties: $default-component-form-properties !default;
   // Button Style Applied to input submit
   input[type=submit]{
     @include button-input-style;
+    &:disabled{
+      pointer-events: none;
+      background: getThemeProperty(disabledColor, $component-form-properties);
+      &:hover{
+        background: getThemeProperty(disabledColor, $component-form-properties);
+      }
+    }
   }
 }
 
 //
+.fw-form-processing-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
 .fw-form-processing{
-  @include button-input-style;
   cursor: default;
-  &:hover{
-    background-color: getThemeProperty(backgroundColor, $component-button-properties);
-    color: getThemeProperty(textColor, $component-button-properties);
-  }
+  position: relative;
+  width: 22px;
+  height: 22px;
+  left: 5px;
   &:before{
     content: "\f3f4";
     font-family: "Font Awesome 5 Pro";
+    font-size: 1.4rem;
     position: absolute;
-    animation: fa-spin 1s steps(16) infinite;
-    width: 16px;
-    height: 16px;
+    animation: fa-spin 1s steps(32) infinite;
+    width: 22px;
+    height: 22px;
+    top: 0;
+    left: 0;
   }
-  &:after{
+  /*&:after{
     content: "Processing...";
     margin-left: 20px;
-  }
+  }*/
+  /*&.fw-form-processing-small{
+    &:after{
+      content: "";
+      margin-left: 0;
+    }
+  }*/
 }
 
 // Components

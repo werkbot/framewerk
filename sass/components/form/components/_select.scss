@@ -58,9 +58,10 @@ $component-form-select-properties: $default-component-form-select-properties !de
         color: getThemeProperty(labelColor, $component-form-select-properties);
       }
       @include focus-style;
-      &:disabled {
-        background: getThemeProperty(disabledColor, $component-form-properties);
-      }
+    }
+    &.readonly select{
+      pointer-events: none;
+      background: getThemeProperty(disabledColor, $component-form-properties);
     }
     &:after{
       position: absolute;
