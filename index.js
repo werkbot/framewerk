@@ -49,6 +49,7 @@ function recursivelySetCSSVars(element, config, scopePrefix = ''){
 
 const initFramewerk = (includeStyles = true) => {
 	includeStyles ? require('./dist/framewerk.js') : require('./dist/framewerk-no-styles.js');
+	window.dispatchEvent(new Event('load'));
 }
 
 const customizeFramewerk = (config = null, elementOrSelector = null) => {
