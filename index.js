@@ -47,10 +47,18 @@ function recursivelySetCSSVars(element, config, scopePrefix = ''){
 	}
 }
 
-const customizeFramewerk = (config = null, elementSelector = null) => {
+const initFramewerk = (includeStyles = true) => {
+	includeStyles ? require('./dist/framewerk.js') : require('./dist/framewerk-no-styles.js');
+}
+
+const customizeFramewerk = (config = null, elementOrSelector = null) => {
 	let element;
-	if(elementSelector){
-		element = document.querySelector(elementSelector);
+	if(elementOrSelector){
+		if(typeof elementOrSelector == 'string'){
+			element = document.querySelector(elementOrSelector);
+		} else {
+			element = elementOrSelector;
+		}
 	} else {
 		element = document.querySelector(':root');
 	}
@@ -62,25 +70,25 @@ const customizeFramewerk = (config = null, elementSelector = null) => {
 
 /*
 	Import with one of the following
-	const framewerk = require('framewerk');
-	import framewerk from 'framewerk'
+	const framewerk = require('werkbot-framewerk');
+	import framewerk from 'werkbot-framewerk'
 */
 module.exports = (config = null, element = null, includeStyles = true) => {
-	includeStyles ? require('./dist/framewerk.js') : require('./dist/framewerk-no-styles.js');
+	initFramewerk(includeStyles);
 	customizeFramewerk(config, element);
 }
 
 /*
 	Import with one of the following
-	const { initFramewerk } = require('framewerk');
-	import { initFramewerk } from 'framewerk';
+	const { initFramewerk } = require('werkbot-framewerk');
+	import { initFramewerk } from 'werkbot-framewerk';
 */
-module.exports.initFramewerk = (includeStyles = true) => includeStyles ? require('./dist/framewerk.js') : require('./dist/framewerk-no-styles.js');
+module.exports.initFramewerk = initFramewerk;
 
 
 /*
 	Import with one of the following
-	const { customizeFramewerk } = require('framewerk');
-	import { customizeFramewerk } from 'framewerk';
+	const { customizeFramewerk } = require('werkbot-framewerk');
+	import { customizeFramewerk } from 'werkbot-framewerk';
 */
 module.exports.customizeFramewerk = customizeFramewerk;
