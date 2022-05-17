@@ -83,3 +83,7 @@ $component-form-textarea-properties:(
   shiftingLabelColor: getThemeProperty(formInputShiftingLabelColor),
 );
 ```
+
+## Form Process Animation
+When a form is submitted all fields are disabled including the submit button. An animated icon is added next to the submit button as well.
+You must opt-in for this to take effect, the form element must contain the following class: `fw-form-process-event` as well as the `fw-form` class.

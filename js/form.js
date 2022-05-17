@@ -27,7 +27,7 @@ window.addEventListener('load', function(){
    * Disables all form fields and replaces the submit button with a span element whcih
    * can be configured in the css
    */
-  document.querySelectorAll('.fw-form').forEach(function(formElement){
+  document.querySelectorAll('.fw-form.fw-form-process-event').forEach(function(formElement){
     formElement.addEventListener('submit', function(event){
       // Check the validity of the form, if any fields are not valid do not move forward
       if(!this.checkValidity()){

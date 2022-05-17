@@ -56,42 +56,6 @@ $component-form-properties: $default-component-form-properties !default;
   }
 }
 
-//
-.fw-form-processing-container{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-.fw-form-processing{
-  cursor: default;
-  position: relative;
-  width: 22px;
-  height: 22px;
-  left: 5px;
-  &:before{
-    content: "\f3f4";
-    font-family: "Font Awesome 5 Pro";
-    font-size: 1.4rem;
-    position: absolute;
-    animation: fa-spin 1s steps(32) infinite;
-    width: 22px;
-    height: 22px;
-    top: 0;
-    left: 0;
-  }
-  /*&:after{
-    content: "Processing...";
-    margin-left: 20px;
-  }*/
-  /*&.fw-form-processing-small{
-    &:after{
-      content: "";
-      margin-left: 0;
-    }
-  }*/
-}
-
 // Components
 @import 'components/radio';
 @import 'components/checkbox';
@@ -99,3 +63,4 @@ $component-form-properties: $default-component-form-properties !default;
 @import 'components/textarea';
 @import 'components/select';
 @import 'components/numeric';
+@import 'components/form-process';
