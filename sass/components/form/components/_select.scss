@@ -59,6 +59,10 @@ $component-form-select-properties: $default-component-form-select-properties !de
       }
       @include focus-style;
     }
+    &.readonly select{
+      pointer-events: none;
+      background: getThemeProperty(disabledColor, $component-form-properties);
+    }
     &:after{
       position: absolute;
       right: 10px;

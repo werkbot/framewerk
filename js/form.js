@@ -23,6 +23,71 @@ window.addEventListener('load', function(){
   });
 
   /**
+   * Form Processing
+   * Disables all form fields and replaces the submit button with a span element whcih
+   * can be configured in the css
+   */
+  document.querySelectorAll('.fw-form.fw-form-process-event').forEach(function(formElement){
+    formElement.addEventListener('submit', function(event){
+      // Check the validity of the form, if any fields are not valid do not move forward
+      if(!this.checkValidity()){
+        // Invalid form elements, halt
+        e.preventDefault();
+      }else{
+        // create wrapper container if it does not exist already
+        var wrapper = this.querySelector('.fw-form-processing-container');
+        if(!wrapper){
+          wrapper = document.createElement('div');
+          wrapper.className = "fw-form-processing-container";
+          // insert wrapper before el in the DOM tree
+          event.submitter.parentNode.insertBefore(wrapper, event.submitter);
+          // move el into wrapper
+          wrapper.appendChild(event.submitter); 
+        }
+
+        // Create "Processing" element 
+        const processingElement = document.createElement("span");
+        processingElement.className = "fw-form-processing";
+        wrapper.appendChild(processingElement); 
+
+        // Disable submit button
+        event.submitter.disabled = true;
+
+        // Disable all fields
+        var fields = this.getElementsByTagName('*');
+        for(var i = 0; i < fields.length; i++)
+        {
+          fields[i].classList.add("readonly");
+          // Check for number input type
+          if(fields[i].type=="number"){
+            fields[i].parentElement.parentElement.classList.add("readonly");
+          }
+        }
+      }
+    });
+    
+    // Listener for a form reset event, useful for ajax calls.
+    // This will reset the form to its original state
+    formElement.addEventListener('reset', function(event){
+      // Remove the processing element
+      const p = this.querySelector('.fw-form-processing');
+      p.parentElement.removeChild(p);
+
+      // Re-enable all fields
+      var fields = this.getElementsByTagName('*');
+      for(var i = 0; i < fields.length; i++)
+      {
+        fields[i].classList.remove("readonly");
+        fields[i].disabled = false;
+        // Check for number input type
+        if(fields[i].type=="number"){
+          fields[i].parentElement.parentElement.classList.remove("readonly");
+        }
+      }
+    });
+  });
+
+  /**
    * Toggle Input State
    * Shrinks or unshrinks the label of the element passed in
    * @param inputElement - The input whose label we want to toggle
@@ -106,7 +171,7 @@ window.addEventListener('load', function(){
    * @param integer increment - The amount to increment by
    */
   function incrementQuantity(fieldContainer, increment){
-    if(!fieldContainer.classList.contains('.readonly')){
+    if(!fieldContainer.classList.contains('readonly')){
       var field = fieldContainer.querySelector('input');
       field.value = Number(field.value) + increment;
     }

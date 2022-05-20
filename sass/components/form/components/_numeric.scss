@@ -79,6 +79,9 @@ $component-form-numeric-properties: $default-component-form-numeric-properties !
         background-color: getThemeProperty(readonlyIconBackgroundColor, $component-form-numeric-properties);
         cursor: default;
       }
+      input, input[type='number']{
+        background: getThemeProperty(disabledColor, $component-form-properties);
+      }
     }
   }
 }

@@ -45,6 +45,10 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
         padding: 30px 20px 10px 20px;
       }
       @include focus-style;
+      &.readonly{
+        pointer-events: none;
+        background: getThemeProperty(disabledColor, $component-form-properties);
+      }
     }
   }
 }

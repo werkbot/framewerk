@@ -28,10 +28,10 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
         content: getThemeProperty(notCheckedIcon, $component-form-checkbox-properties);
         font-weight: 400;
         position: absolute;
-        top: 2px;
+        top: 4px;
         left: 2px;
         font-size: 2em;
-        line-height: 1;
+        line-height: 0.8;
         cursor: pointer;
         -webkit-transition: all .2s;
         transition: all .2s;
@@ -51,6 +51,17 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
         cursor: pointer;
         + .message.error{
           width: 100%;
+        }
+      }
+      &.readonly{
+        pointer-events: none;
+        &::before{
+          cursor: default;
+          background: getThemeProperty(disabledColor, $component-form-properties);
+        }
+        + label{
+          cursor: default;
+          pointer-events: none;
         }
       }
     }

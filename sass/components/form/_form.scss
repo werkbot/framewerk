@@ -1,7 +1,8 @@
 // Default form checkbox Properties
 $default-component-form-properties:(
   borderColor: #cccccc,
-  labelColor: #cccccc,
+  labelColor: getThemeProperty(textColorDark),
+  disabledColor: #dddddd,
   fieldSpacing: getThemeProperty(layoutSpace),
   validationErrorTextColor: #ffffff,
   validationErrorBackgroundColor: #cc0000,
@@ -45,6 +46,13 @@ $component-form-properties: $default-component-form-properties !default;
   // Button Style Applied to input submit
   input[type=submit]{
     @include button-input-style;
+    &:disabled{
+      pointer-events: none;
+      background: getThemeProperty(disabledColor, $component-form-properties);
+      &:hover{
+        background: getThemeProperty(disabledColor, $component-form-properties);
+      }
+    }
   }
 }
 
@@ -55,3 +63,4 @@ $component-form-properties: $default-component-form-properties !default;
 @import 'components/textarea';
 @import 'components/select';
 @import 'components/numeric';
+@import 'components/form-process';

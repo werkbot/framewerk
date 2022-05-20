@@ -1,0 +1,25 @@
+// This is wrapped around the submit button
+.fw-form-processing-container{
+    position: relative;
+    width: max-content;
+    height: 100%;
+}
+// This contains the animation
+.fw-form-processing{
+    cursor: default;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-12px);
+    &:before{
+        content: "\f3f4";
+        font-family: getThemeProperty(fontIcon);
+        font-size: 1.4rem;
+        position: absolute;
+        animation: fa-spin 1s steps(32) infinite;
+        top: 0;
+        left: 0;
+    }
+}

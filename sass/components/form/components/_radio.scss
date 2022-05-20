@@ -25,6 +25,7 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
       &::before{
         font-family: getThemeProperty(iconFontFamily, $component-form-radio-properties);
+        border-radius: 25px;
         content: getThemeProperty(notCheckedIcon, $component-form-radio-properties);
         font-weight: 400;
         position: absolute;
@@ -50,6 +51,17 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         padding-left: 15px;
         line-height: 1;
         cursor: pointer;
+      }
+      &.readonly{
+        pointer-events: none;
+        &::before{
+          cursor: default;
+          background: getThemeProperty(disabledColor, $component-form-properties);
+        }
+        + label{
+          cursor: default;
+          pointer-events: none;
+        }
       }
     }
   }
