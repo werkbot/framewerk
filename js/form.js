@@ -129,38 +129,39 @@ window.addEventListener('load', function(){
   // Numeric Field
   document.querySelectorAll('.fw-form .numeric').forEach(function(numericFieldContainer){
     var field = numericFieldContainer.querySelector('input');
-    field.type = 'number';
+    if(field){
+      field.type = 'number';
+      if(!numericFieldContainer.parentElement.querySelector('.subtract-qty')){
+        // Insert subtract button
+        var subtractButton = document.createElement('span');
+        subtractButton.classList.add('subtract-qty');
+        var subtractIcon = document.createElement('i');
+        subtractIcon.classList.add('fas');
+        subtractIcon.classList.add('fa-minus');
+        subtractButton.append(subtractIcon);
+        numericFieldContainer.append(subtractButton);
+        subtractButton.style.top = field.offsetTop + 'px';
+        subtractButton.style.height = field.offsetHeight + 'px';
+        subtractButton.addEventListener('click', function(){
+          incrementQuantity(numericFieldContainer, -1);
+        });
+      }
 
-    if(!numericFieldContainer.parentElement.querySelector('.subtract-qty')){
-      // Insert subtract button
-      var subtractButton = document.createElement('span');
-      subtractButton.classList.add('subtract-qty');
-      var subtractIcon = document.createElement('i');
-      subtractIcon.classList.add('fas');
-      subtractIcon.classList.add('fa-minus');
-      subtractButton.append(subtractIcon);
-      numericFieldContainer.append(subtractButton);
-      subtractButton.style.top = field.offsetTop + 'px';
-      subtractButton.style.height = field.offsetHeight + 'px';
-      subtractButton.addEventListener('click', function(){
-        incrementQuantity(numericFieldContainer, -1);
-      });
-    }
-
-    if(!numericFieldContainer.parentElement.querySelector('.add-qty')){
-      // Insert add button
-      var addButton = document.createElement('span');
-      addButton.classList.add('add-qty');
-      var addIcon = document.createElement('i');
-      addIcon.classList.add('fas');
-      addIcon.classList.add('fa-plus');
-      addButton.append(addIcon);
-      numericFieldContainer.append(addButton);
-      addButton.style.top = field.offsetTop + 'px';
-      addButton.style.height = field.offsetHeight + 'px';
-      addButton.addEventListener('click', function(){
-        incrementQuantity(numericFieldContainer, 1);
-      });
+      if(!numericFieldContainer.parentElement.querySelector('.add-qty')){
+        // Insert add button
+        var addButton = document.createElement('span');
+        addButton.classList.add('add-qty');
+        var addIcon = document.createElement('i');
+        addIcon.classList.add('fas');
+        addIcon.classList.add('fa-plus');
+        addButton.append(addIcon);
+        numericFieldContainer.append(addButton);
+        addButton.style.top = field.offsetTop + 'px';
+        addButton.style.height = field.offsetHeight + 'px';
+        addButton.addEventListener('click', function(){
+          incrementQuantity(numericFieldContainer, 1);
+        });
+      }
     }
 
   });
