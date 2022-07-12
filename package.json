@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/werkbot/framewerk#readme",
   "dependencies": {
-    "hamburgers": "~1.1.3"
+    "hamburgers": "^1.1"
   }
 }

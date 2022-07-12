@@ -16,7 +16,7 @@
     padding: getThemeProperty(layoutSpace) * 0.25;
   }
   &.half{
-    padding: getThemeProperty(layoutSpace) / 2;
+    padding: calc(getThemeProperty(layoutSpace) / 2);
   }
   &.three-forths{
     padding: getThemeProperty(layoutSpace) * 0.75;
@@ -28,10 +28,10 @@
 		padding-right: 0;
 	}
 	&.halfleft{
-		padding-left: getThemeProperty(layoutSpace) / 2;
+		padding-left: calc(getThemeProperty(layoutSpace) / 2);
 	}
 	&.halfright{
-		padding-right: getThemeProperty(layoutSpace) / 2;
+		padding-right: calc(getThemeProperty(layoutSpace) / 2);
 	}
 	&.notop{
 		padding-top: 0;
@@ -40,9 +40,9 @@
 		padding-bottom: 0;
 	}
 	&.halftop{
-		padding-top: getThemeProperty(layoutSpace) / 2;
+		padding-top: calc(getThemeProperty(layoutSpace) / 2);
 	}
 	&.halfbottom{
-		padding-bottom: getThemeProperty(layoutSpace) / 2;
+		padding-bottom: calc(getThemeProperty(layoutSpace) / 2);
 	}
 }
