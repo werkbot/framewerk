@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/werkbot/framewerk#readme",
   "dependencies": {
-    "hamburgers": "^1.2"
+    "hamburgers": "^1.2",
+    "@fortawesome/fontawesome-pro": "^6"
   }
 }
