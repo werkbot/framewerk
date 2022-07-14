@@ -11,4 +11,3 @@ jobs:
         uses: reedyuk/npm-version@1.1.1
         with:
           version: 'patch'
-          git-tag-version: 'true'
