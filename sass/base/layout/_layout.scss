@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /*
   DEFAULT DESKTOP
   If no breakpoints are defined, these will be the fallback width percentages
@@ -8,7 +10,7 @@
 }
 @for $i from 1 through 100 {
   .desktop-#{$i} {
-    width: round(percentage(calc($i / 100)));
+    width: round(percentage(math.div($i, 100)));
   }
 }
 .desktop-hide{
@@ -32,7 +34,7 @@
     }
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
-        width: round(percentage(calc($i / 100)));
+        width: round(percentage(math.div($i, 100)));
       }
     }
     .#{$label}-auto{
@@ -58,7 +60,7 @@
     }
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
-        width: round(percentage(calc($i / 100)));
+        width: round(percentage(math.div($i, 100)));
       }
     }
     .#{$label}-auto{

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Default p Properties
 $default-element-p-properties:(
     color: getThemeProperty(textColorDark),
@@ -8,7 +10,7 @@ $default-element-p-properties:(
         tablet: (1em, 1.4),
         phone: (1em, 1.4)
     ),
-    margin: 0 0 calc(getThemeProperty(layoutSpace) / 2) 0 
+    margin: 0 0 math.div(getThemeProperty(layoutSpace), 2) 0 
 );
 // If $element-p-properties is set, lets merge into our defaults
 $element-p-properties: $default-element-p-properties !default;
