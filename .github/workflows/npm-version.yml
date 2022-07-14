@@ -1,5 +1,7 @@
-name: run npm-version pipeline
+name: Update package.json version
+
 on: push
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,7 +9,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         
-      - name: 'change version'
+      - name: Update package.json version
         uses: reedyuk/npm-version@1.1.1
         with:
-          version: 'patch'
+          version: patch
+
+      - name: Commit Updated package.json
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated package.json
