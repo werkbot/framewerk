@@ -1,24 +1,14 @@
-# This workflow will update the package.json version number when a release is drafted
-
-name: Update Version Number
-
-on:
-  release:
-    types: [created]
-
-permissions:
-  contents: write
-
-# Manual update script
-# VERSIONNUMBER="${{ steps.changelog.outputs.changelog }}";PACKAGEJSON=$(cat package.json);PACKAGEJSON=$(echo "$PACKAGEJSON" | sed -e "s/\"version\": \".+\"//");echo -e "\"version\": $VERSIONNUMBER$PACKAGEJSON" > package.json
-
+name: run npm-version pipeline
+on: push
 jobs:
-  npm-version:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@master
+        
+      - name: 'change version'
+        uses: reedyuk/npm-version@1.1.1
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - run: npm version patch
+          version: 'patch'
+          git-tag-version: 'true'
