@@ -4,7 +4,7 @@ name: Update Version Number
 
 on:
   release:
-    types: [unpublished]
+    types: [created]
 
 permissions:
   contents: write
