@@ -1,6 +1,9 @@
 name: Update package.json version
 
-on: push
+on:
+  push:
+    branches:
+      - test-version-update
 
 jobs:
   build:
