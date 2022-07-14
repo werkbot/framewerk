@@ -4,7 +4,13 @@ name: Update Version Number
 
 on:
   release:
-    types: [unpublished]
+    types: [created]
+
+permissions:
+  contents: write
+
+# Manual update script
+# VERSIONNUMBER="${{ steps.changelog.outputs.changelog }}";PACKAGEJSON=$(cat package.json);PACKAGEJSON=$(echo "$PACKAGEJSON" | sed -e "s/\"version\": \".+\"//");echo -e "\"version\": $VERSIONNUMBER$PACKAGEJSON" > package.json
 
 jobs:
   npm-version:
