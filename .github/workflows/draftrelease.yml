@@ -25,9 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         
-      - name: Test Output
-        run: echo ${{ steps.update_release_draft.outputs.tag_name }}
-        
       - name: Update package.json version
         uses: reedyuk/npm-version@1.1.1
         with:
