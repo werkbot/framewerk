@@ -24,10 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         
+      - name: Test Output
+        run: echo "${{ steps.update_release_draft.outputs.tag_name }}"
+        
       - name: Update package.json version
         uses: reedyuk/npm-version@1.1.1
         with:
-          version: ${{ steps.update_release_draft.outputs.tag_name }}
+          version: "${{ steps.update_release_draft.outputs.tag_name }}"
 
       - name: Commit Updated package.json
         uses: stefanzweifel/git-auto-commit-action@v4
