@@ -27,7 +27,7 @@ jobs:
 
       - name: Compare Versions
         id: compare_versions
-        run: ::set-output name=current_version_number npm version | grep werkbot-framewerk | sed -re "s/[a-z]*//g;s/[-|,|:|']//g;s/\s//g"
+        run: echo ::set-output name=current_version_number npm version | grep werkbot-framewerk | sed -re "s/[a-z]*//g;s/[-|,|:|']//g;s/\s//g"
         
       - name: Update package.json version
         if: steps.update_release_draft.outputs.tag_name != steps.compare_versions.outputs.current_version_number
