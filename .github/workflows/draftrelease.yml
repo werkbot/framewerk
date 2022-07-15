@@ -13,8 +13,26 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+    outputs:
+      output: ${{ steps.update_release_draft.outputs.tag_name }}
     steps:
       - name: Draft Release
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update_package_json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        
+      - name: Update package.json version
+        uses: reedyuk/npm-version@1.1.1
+        with:
+          version: ${{ steps.update_release_draft.outputs.tag_name }}
+
+      - name: Commit Updated package.json
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated package.json
