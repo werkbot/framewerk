@@ -24,13 +24,19 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@master
+
+      - name: Compare Versions
+        id: compare_versions
+        run: ::set-output name=current_version_number npm version | grep werkbot-framewerk | sed -re "s/[a-z]*//g;s/[-|,|:|']//g;s/\s//g"
         
       - name: Update package.json version
+        if: steps.update_release_draft.outputs.tag_name != steps.compare_versions.outputs.current_version_number
         uses: reedyuk/npm-version@1.1.1
         with:
           version: ${{ steps.update_release_draft.outputs.tag_name }}
 
       - name: Commit Updated package.json
+        if: steps.update_release_draft.outputs.tag_name != steps.compare_versions.outputs.current_version_number
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Updated package.json
