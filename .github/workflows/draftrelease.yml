@@ -3,7 +3,7 @@ name: Release Drafter
 on:
   push:
     branches:
-      - master
+      - workflow-files
 
 permissions:
   contents: read
@@ -23,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@workflow-files
 
       # Get the current package.json version number
       - name: Compare Versions
