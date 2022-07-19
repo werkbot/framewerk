@@ -1,6 +1,6 @@
 {
   "name": "werkbot-framewerk",
-  "version": "2.0.7",
+  "version": "0.1.0",
   "description": "A framework of css and javascript that Werkbot uses as a foundation to build our websites.",
   "main": "js/form.js",
   "directories": {
