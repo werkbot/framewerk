@@ -111,7 +111,6 @@ window.addEventListener('load', function(){
       || inputElement.type == 'datetime-local'
       || inputElement.type == 'week'
       || inputElement.type == 'month'
-      || inputElement.type == 'email'
       || inputElement.type == 'password'
     ){
       shrinkLabel(inputElement);
