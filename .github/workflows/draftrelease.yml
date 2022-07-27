@@ -3,7 +3,7 @@ name: Release Drafter
 on:
   push:
     branches:
-      - master
+      - '2.0'
       - '2.1'
 
 permissions:
