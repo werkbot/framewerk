@@ -11,6 +11,7 @@ $default-component-button-properties:(
   textHoverColor: getThemeProperty(textColorDark),
   padding: 10px 40px,
   margin: 5px 0,
+  border: none,
   borderRadius: 5px,
   textTransform: initial,
   fontWeight: 400,
@@ -43,7 +44,7 @@ $component-button-properties: $default-component-button-properties !default;
   text-decoration: none;
   padding: getThemeProperty(padding, $component-button-properties);
   margin: getThemeProperty(margin, $component-button-properties);
-  border: none;
+  border: getThemeProperty(border, $component-button-properties);
   cursor: pointer;
   text-transform: getThemeProperty(textTransform, $component-button-properties);
   font-weight: getThemeProperty(fontWeight, $component-button-properties);
