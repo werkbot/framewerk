@@ -17,14 +17,25 @@ jobs:
     outputs:
       output: ${{ steps.update_release_draft.outputs.tag_name }}
     steps:
-      - name: Draft Release
-        id: update_release_draft
-        uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Checkout
         uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      # Get the last tag created on this branch
+      - name: Get Last Tag
+        id: last_tag
+        run: |
+          LASTTAG=$(git describe --tags | sed -re "s/-.+//")
+          echo "::set-output name=last_tag_on_branch::$LASTTAG"
+
+      - name: Draft Release
+        id: update_release_draft
+        uses: tiller1010/release-drafter@master
+        with:
+          last_tag: ${{ steps.last_tag.outputs.last_tag_on_branch }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Get the current package.json version number
       - name: Compare Versions
