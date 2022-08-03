@@ -5,7 +5,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   publish-npm:
@@ -17,6 +17,18 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish
+
+      # Get the lastest version on npm and the version currently being published and convert both into valid decimals (we can ignore the patch numbers)
+      # If the latest version is greater than the current version, then we need to pass in a dist-tag (prevents overwrite of the latest version)
+      # https://docs.npmjs.com/adding-dist-tags-to-packages
+      - name: Compare lastest npm version and publish
+        run: |
+          LATEST=$(npm show werkbot-framewerk version | sed -re "s/\.[0-9]+$//")
+          CURRENT=$(npm version | grep werkbot-framewerk | sed -re "s/[a-z]*//g;s/[-|,|:|']//g;s/\s//g;s/\.[0-9]+$//")
+          if (( $(echo "$LATEST > $CURRENT" | bc -l) )); then
+            npm publish --tag support
+          else
+            npm publish
+          fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
