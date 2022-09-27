@@ -49,11 +49,13 @@ jobs:
           FILTEREDBRANCHNAME=$(git branch | grep "\* support")
           echo "::set-output name=filtered_branch_name::$FILTEREDBRANCHNAME"
 
-      # npm init
+      # node init
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+
+      # npm init
       - run: npm ci
 
       # npm publish latest
