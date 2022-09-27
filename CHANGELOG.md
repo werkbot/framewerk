@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.3 - 2022-09-27
+## 🐛 Bugfixes
+- init npm before publish
+
+## 🏗️ Build System
+- updated workflow files to use git-flow ([#50](https://github.com/werkbot/framewerk/pull/50) by [tiller1010](https://github.com/tiller1010))
+
+
+
 ## [Unreleased](https://github.com/werkbot/framewerk/tree/HEAD)
 
 [Full Changelog](https://github.com/werkbot/framewerk/compare/2.1.2...HEAD)
