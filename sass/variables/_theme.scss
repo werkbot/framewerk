@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /*
   Theme Properties
 */
@@ -18,7 +20,7 @@ $default-theme-properties: (
 
   // Layout
   layoutSpace: 20px,
-  layoutContainerWdth: 1366px,
+  layoutContainerWidth: 1366px,
 
   // Breakpoints
   breakpointDesktop: (
@@ -75,4 +77,8 @@ $default-theme-properties: (
 $theme-properties: $default-theme-properties !default;
 @if($theme-properties){
   $theme-properties: recursive-map-merge($default-theme-properties, $theme-properties);
+
+  // Support legacy misspelling
+  $theme-properties: map-merge($theme-properties, (layoutContainerWdth: getThemeProperty(layoutContainerWidth)));
 }
+

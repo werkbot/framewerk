@@ -3,6 +3,15 @@
   Generic image classes
   These classes are set from silverstripe html editor
 */
+$default-element-img-properties:(
+    borderRadius: initial,
+    boxShadow: none
+);
+// If $element-img-properties is set, lets merge into our defaults
+$element-img-properties: $default-element-img-properties !default;
+@if($element-img-properties){
+  $element-img-properties: recursive-map-merge($default-element-img-properties, $element-img-properties);
+}
 img{
   &.left{
   	float: left;
@@ -32,6 +41,12 @@ img{
   	padding: getThemeProperty(layoutSpace) 0;
   	max-width: 100%;
     height: auto;
+  }
+}
+.fw-typography-spacing {
+  img {
+    border-radius: getThemeProperty(borderRadius, $element-img-properties);
+    box-shadow: getThemeProperty(boxShadow, $element-img-properties);
   }
 }
 @media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), tablet)) {  img{
