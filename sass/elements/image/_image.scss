@@ -13,8 +13,6 @@ $element-img-properties: $default-element-img-properties !default;
   $element-img-properties: recursive-map-merge($default-element-img-properties, $element-img-properties);
 }
 img{
-  border-radius: getThemeProperty(borderRadius, $element-img-properties);
-  box-shadow: getThemeProperty(boxShadow, $element-img-properties);
   &.left{
   	float: left;
   	padding-right: getThemeProperty(layoutSpace);
@@ -43,6 +41,12 @@ img{
   	padding: getThemeProperty(layoutSpace) 0;
   	max-width: 100%;
     height: auto;
+  }
+}
+.fw-typography-spacing {
+  img {
+    border-radius: getThemeProperty(borderRadius, $element-img-properties);
+    box-shadow: getThemeProperty(boxShadow, $element-img-properties);
   }
 }
 @media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), tablet)) {  img{
