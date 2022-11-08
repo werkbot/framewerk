@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.4 - 2022-11-08
+## 🔨 Improvements
+- additional theme properties ([#55](https://github.com/werkbot/framewerk/pull/55) by [tiller1010](https://github.com/tiller1010))
+
+
+
 ## 2.1.3 - 2022-09-27
 ## 🐛 Bugfixes
 - init npm before publish
