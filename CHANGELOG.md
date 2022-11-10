@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.5 - 2022-11-10
+## 🐛 Bugfixes
+- check for processing element on reset
+
+## 📚 Documentation Changes
+- updated documentation to mention the media query sorter plugin
+
+
+
 ## 2.1.4 - 2022-11-08
 ## 🔨 Improvements
 - additional theme properties ([#55](https://github.com/werkbot/framewerk/pull/55) by [tiller1010](https://github.com/tiller1010))
