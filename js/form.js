@@ -83,7 +83,10 @@ window.addEventListener('load', function(){
     formElement.addEventListener('reset', function(event){
       // Remove the processing element
       const p = this.querySelector('.fw-form-processing');
-      p.parentElement.removeChild(p);
+      // The element may have been deleted after processing
+      if (p) {
+        p.parentElement.removeChild(p);
+      }
 
       // Re-enable all fields
       var fields = this.getElementsByTagName('*');
