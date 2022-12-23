@@ -9,27 +9,27 @@ $default-base-space-properties:(
   paddingclasses:(
     none: 0,
     default: getThemeProperty(layoutSpace),
-    double: getThemeProperty(layoutSpace) * 2,
-    triple: getThemeProperty(layoutSpace) * 3,
-    one-forth: getThemeProperty(layoutSpace) * 0.25,
-    half: math.div(getThemeProperty(layoutSpace), 2),
-    three-forths: getThemeProperty(layoutSpace) * 0.75,
+    double: calc(#{getThemeProperty(layoutSpace)} * 2),
+    triple: calc(#{getThemeProperty(layoutSpace)} * 3),
+    one-forth: calc(#{getThemeProperty(layoutSpace)} * 0.25),
+    half: math.div(#{getThemeProperty(layoutSpace)}, 2),
+    three-forths: calc(#{getThemeProperty(layoutSpace)} * 0.75),
   ),
   paddingleftclasses:(
     noleft: 0,
-    halfleft: math.div(getThemeProperty(layoutSpace), 2),
+    halfleft: math.div(#{getThemeProperty(layoutSpace)}, 2),
   ),
   paddingrightclasses:(
     noright: 0,
-    halfright: math.div(getThemeProperty(layoutSpace), 2),
+    halfright: math.div(#{getThemeProperty(layoutSpace)}, 2),
   ),
   paddingtopclasses:(
     notop: 0,
-    halftop: math.div(getThemeProperty(layoutSpace), 2),
+    halftop: math.div(#{getThemeProperty(layoutSpace)}, 2),
   ),
   paddingbottomclasses:(
     nobottom: 0,
-    halfbottom: math.div(getThemeProperty(layoutSpace), 2),
+    halfbottom: math.div(#{getThemeProperty(layoutSpace)}, 2),
   )
 );
 // If $base-space-properties is set, lets merge into our defaults

@@ -1,12 +1,12 @@
 // Default form radio Properties
 $default-component-form-radio-properties:(
-  backgroundColor: getThemeProperty(backgroundColorLight),
-  checkedIcon: "\f192",
-  checkedTextColor: getThemeProperty(textColorDark),
-  notCheckedIcon: "\f111",
-  notCheckedTextColor: getThemeProperty(textColorDark),
-  iconFontFamily: getThemeProperty(fontIcon),
-  fontWeight: getThemeProperty(fontWeight, $element-body-properties),
+  backgroundColor: var(--componentFormRadioProperties_backgroundColor, getThemeProperty(backgroundColorLight)),
+  checkedIcon: var(--componentFormRadioProperties_checkedIcon, "\f192"),
+  checkedTextColor: var(--componentFormRadioProperties_checkedTextColor, getThemeProperty(textColorDark)),
+  notCheckedIcon: var(--componentFormRadioProperties_notCheckedIcon, "\f111"),
+  notCheckedTextColor: var(--componentFormRadioProperties_notCheckedTextColor, getThemeProperty(textColorDark)),
+  iconFontFamily: var(--componentFormRadioProperties_iconFontFamily, getThemeProperty(fontIcon)),
+  fontWeight: var(--componentFormRadioProperties_fontWeight, getThemeProperty(fontWeight, $element-body-properties)),
 );
 // If $component-form-radio-properties is set, lets merge into our defaults
 $component-form-radio-properties: $default-component-form-radio-properties !default;

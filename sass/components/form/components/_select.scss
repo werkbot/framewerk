@@ -1,14 +1,14 @@
 // Default form select Properties
 $default-component-form-select-properties:(
-  backgroundColor: getThemeProperty(backgroundColorLight),
-  labelColor: getThemeProperty(textColorDark),
-  icon: "\f078",
-  iconFontFamily: getThemeProperty(fontIcon),
-  iconTextColor: getThemeProperty(textColorDark),
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
-  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
-  textColor: getThemeProperty(textColorDark),
-  fontFamily: getThemeProperty(fontText),
+  backgroundColor: var(--componentFormSelectProperties_backgroundColor, getThemeProperty(backgroundColorLight)),
+  labelColor: var(--componentFormSelectProperties_labelColor, getThemeProperty(textColorDark)),
+  icon: var(--componentFormSelectProperties_icon, "\f078"),
+  iconFontFamily: var(--componentFormSelectProperties_iconFontFamily, getThemeProperty(fontIcon)),
+  iconTextColor: var(--componentFormSelectProperties_iconTextColor, getThemeProperty(textColorDark)),
+  borderColor: var(--componentFormSelectProperties_borderColor, getThemeProperty(borderColor, $component-form-properties)),
+  shiftingLabelColor: var(--componentFormSelectProperties_shiftingLabelColor, getThemeProperty(labelColor, $component-form-properties)),
+  textColor: var(--componentFormSelectProperties_textColor, getThemeProperty(textColorDark)),
+  fontFamily: var(--componentFormSelectProperties_fontFamily, getThemeProperty(fontText)),
   fontSizes: (
       desktop: (1em, 1.4),
       tablet: (1em, 1.4),
@@ -49,7 +49,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
       color: getThemeProperty(textColor, $component-form-select-properties);
       font-family: getThemeProperty(fontFamily, $component-form-select-properties);
-      @include font-size(getThemeProperty(fontSizes, $component-form-select-properties));
+      @include font-size(getThemeProperty(fontSizes, $component-form-select-properties), 'componentFormSelectProperties');
       &.labelShrunk{
         padding: 30px 20px 10px 19px;
         color: getThemeProperty(labelColor, $component-form-select-properties);

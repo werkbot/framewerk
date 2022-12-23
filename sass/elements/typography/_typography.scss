@@ -2,8 +2,8 @@
 
 // Default form checkbox Properties
 $default-component-typography-properties:(
-    HeadingColor: getThemeProperty(textColorDark),
-    HeadingMargin: 0 0 math.div(getThemeProperty(layoutSpace), 2) 0,
+    HeadingColor: var(--componentTypographyProperties_HeadingColor, getThemeProperty(textColorDark)),
+    HeadingMargin: var(--componentTypographyProperties_HeadingMargin, 0 0 math.div(getThemeProperty(layoutSpace), 2) 0),
     HeadingLineHeight: 1,
     HeadingTextTransform: none,
     HeadingLetterSpacing: normal,

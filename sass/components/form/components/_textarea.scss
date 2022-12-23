@@ -1,9 +1,9 @@
 // Default form textarea Properties
 $default-component-form-textarea-properties:(
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
-  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
-  textColor: getThemeProperty(textColorDark),
-  fontFamily: getThemeProperty(fontText),
+  borderColor: var(--componentFormTextareaProperties_borderColor, getThemeProperty(borderColor, $component-form-properties)),
+  shiftingLabelColor: var(--componentFormTextareaProperties_shiftingLabelColor, getThemeProperty(labelColor, $component-form-properties)),
+  textColor: var(--componentFormTextareaProperties_textColor, getThemeProperty(textColorDark)),
+  fontFamily: var(--componentFormTextareaProperties_fontFamily, getThemeProperty(fontText)),
   fontSizes: (
       desktop: (1em, 1.4),
       tablet: (1em, 1.4),
@@ -40,7 +40,7 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
       border: 1px solid getThemeProperty(borderColor, $component-form-textarea-properties);
       color: getThemeProperty(textColor, $component-form-textarea-properties);
       font-family: getThemeProperty(fontFamily, $component-form-textarea-properties);
-      @include font-size(getThemeProperty(fontSizes, $component-form-textarea-properties));
+      @include font-size(getThemeProperty(fontSizes, $component-form-textarea-properties), 'componentFormTextareaProperties');
       &.labelShrunk{
         padding: 30px 20px 10px 20px;
       }

@@ -1,14 +1,14 @@
 // Default h5 Properties
 $default-element-h5-properties:(
-    color: getThemeProperty(HeadingColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontHeader),
-    fontWeight: 400,
+    color: var(--elementH5Properties_color, getThemeProperty(HeadingColor, $component-typography-properties)),
+    fontFamily: var(--elementH5Properties_fontFamily, getThemeProperty(fontHeader)),
+    fontWeight: var(--elementH5Properties_fontWeight, 400),
     fontSizes: (
         desktop: (1.313em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
         tablet: (1.313em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
         phone: (1.313em, getThemeProperty(HeadingLineHeight, $component-typography-properties))
     ),
-    margin: getThemeProperty(HeadingMargin, $component-typography-properties),
+    margin: var(--elementH5Properties_margin, getThemeProperty(HeadingMargin, $component-typography-properties)),
     textTransform: getThemeProperty(HeadingTextTransform, $component-typography-properties),
     letterSpacing: getThemeProperty(HeadingLetterSpacing, $component-typography-properties)
 );

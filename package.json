@@ -2,12 +2,14 @@
   "name": "werkbot-framewerk",
   "version": "2.1.9",
   "description": "A framework of css and javascript that Werkbot uses as a foundation to build our websites.",
-  "main": "js/form.js",
+  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,19 @@
     "url": "https://github.com/werkbot/framewerk/issues"
   },
   "homepage": "https://github.com/werkbot/framewerk#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.5.3",
+    "postcss": "^8.4.12",
+    "postcss-env-function": "^4.0.6",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.54.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  },
   "dependencies": {
     "hamburgers": "^1.2",
     "@fortawesome/fontawesome-free": "^6"

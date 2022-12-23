@@ -1,15 +1,15 @@
 // Default ol Properties
 $default-element-ol-properties:(
-    listStyle: decimal outside,
-    color: getThemeProperty(TextColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontText),
-    fontWeight: 400,
+    listStyle: var(--elementOLProperties_listStyle, decimal outside),
+    color: var(--elementOLProperties_color, getThemeProperty(TextColor, $component-typography-properties)),
+    fontFamily: var(--elementOLProperties_fontFamily, getThemeProperty(fontText)),
+    fontWeight: var(--elementOLProperties_fontWeight, 400),
     fontSizes: (
         desktop: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
         tablet: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
         phone: (1em, getThemeProperty(TextLineHeight, $component-typography-properties))
     ),
-    margin: 0 0 getThemeProperty(layoutSpace) getThemeProperty(layoutSpace),
+    margin: var(--elementOLProperties_margin, 0 0 getThemeProperty(layoutSpace) getThemeProperty(layoutSpace)),
     textTransform: getThemeProperty(TextTextTransform, $component-typography-properties),
     letterSpacing: getThemeProperty(TextLetterSpacing, $component-typography-properties)
 );

@@ -1,12 +1,12 @@
 // Default form checkbox Properties
 $default-component-form-checkbox-properties:(
-  backgroundColor: getThemeProperty(backgroundColorLight),
-  checkedIcon: "\f14a",
-  checkedTextColor: getThemeProperty(textColorDark),
-  notCheckedIcon: "\f0c8",
-  notCheckedTextColor: getThemeProperty(textColorDark),
-  iconFontFamily: getThemeProperty(fontIcon),
-  fontWeight: getThemeProperty(fontWeight, $element-body-properties),
+  backgroundColor: var(--componentFormCheckboxProperties_backgroundColor, getThemeProperty(backgroundColorLight)),
+  checkedIcon: var(--componentFormCheckboxProperties_checkedIcon, "\f14a"),
+  checkedTextColor: var(--componentFormCheckboxProperties_checkedTextColor, getThemeProperty(textColorDark)),
+  notCheckedIcon: var(--componentFormCheckboxProperties_notCheckedIcon, "\f0c8"),
+  notCheckedTextColor: var(--componentFormCheckboxProperties_notCheckedTextColor, getThemeProperty(textColorDark)),
+  iconFontFamily: var(--componentFormCheckboxProperties_iconFontFamily, getThemeProperty(fontIcon)),
+  fontWeight: var(--componentFormCheckboxProperties_fontWeight, getThemeProperty(fontWeight, $element-body-properties)),
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-checkbox-properties: $default-component-form-checkbox-properties !default;
