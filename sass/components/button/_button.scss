@@ -17,6 +17,7 @@ $default-component-button-properties:(
   fontWeight: 400,
   fontFamily: getThemeProperty(fontText),
   fontSize: 1rem,
+  textAlign: center,
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
@@ -50,6 +51,7 @@ $component-button-properties: $default-component-button-properties !default;
   font-weight: getThemeProperty(fontWeight, $component-button-properties);
   font-family: getThemeProperty(fontFamily, $component-button-properties);
   font-size: getThemeProperty(fontSize, $component-button-properties);
+  text-align: getThemeProperty(textAlign, $component-button-properties);
   -webkit-appearance: none;
   -webkit-transition: background-color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out;
