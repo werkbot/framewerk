@@ -89,6 +89,31 @@ jobs:
         with:
           release_id: ${{ steps.get_release_id.outputs.release_id }}
 
+      # node init
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      # npm init
+      - run: npm ci
+
+      # npm publish latest
+      - name: npm version publish
+        if: steps.is_support_branch.outputs.filtered_branch_name == ''
+        run: |
+            npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      # npm publish support
+      - name: npm version publish support
+        if: steps.is_support_branch.outputs.filtered_branch_name != ''
+        run: |
+            npm publish --tag support
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
 
       # START CHANGELOG PORTION
       - name: Check if releasing for a support branch
