@@ -6,6 +6,7 @@ $default-component-form-checkbox-properties:(
   notCheckedIcon: "\f0c8",
   notCheckedTextColor: getThemeProperty(textColorDark),
   iconFontFamily: getThemeProperty(fontIcon),
+  fontWeight: getThemeProperty(fontWeight, $element-body-properties),
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-checkbox-properties: $default-component-form-checkbox-properties !default;
@@ -26,7 +27,7 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
       &::before{
         font-family: getThemeProperty(iconFontFamily, $component-form-checkbox-properties);
         content: getThemeProperty(notCheckedIcon, $component-form-checkbox-properties);
-        font-weight: 400;
+        font-weight: getThemeProperty(fontWeight, $component-form-checkbox-properties);
         position: absolute;
         top: 4px;
         left: 2px;
