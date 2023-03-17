@@ -2,7 +2,7 @@
 $default-component-form-properties:(
   borderColor: #cccccc,
   labelColor: getThemeProperty(textColorDark),
-  disabledColor: #dddddd,
+  disabledColor: getThemeProperty(disabledColor, $component-button-properties),
   fieldSpacing: getThemeProperty(layoutSpace),
   validationErrorTextColor: #ffffff,
   validationErrorBackgroundColor: #cc0000,
