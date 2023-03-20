@@ -8,20 +8,29 @@
 
 $default-base-space-properties:(
   paddingclasses:(
+    none: 0,
     default: getThemeProperty(layoutSpace),
     double: getThemeProperty(layoutSpace) * 2,
     triple: getThemeProperty(layoutSpace) * 3,
     one-forth: getThemeProperty(layoutSpace) * 0.25,
     half: math.div(getThemeProperty(layoutSpace), 2),
     three-forths: getThemeProperty(layoutSpace) * 0.75,
-    noleft: inherit inherit inherit 0,
-    noright: inherit 0 inherit inherit,
-    halfleft: inherit inherit inherit math.div(getThemeProperty(layoutSpace), 2),
-    halfright: inherit math.div(getThemeProperty(layoutSpace), 2) inherit inherit,
-    notop: 0 inherit inherit inherit,
-    nobottom: inherit inherit 0 inherit,
-    halftop: math.div(getThemeProperty(layoutSpace), 2) inherit inherit inherit,
-    halfbottom: inherit inherit math.div(getThemeProperty(layoutSpace), 2) inherit,
+  ),
+  paddingleftclasses:(
+    noleft: 0,
+    halfleft: math.div(getThemeProperty(layoutSpace), 2),
+  ),
+  paddingrightclasses:(
+    noright: 0,
+    halfright: math.div(getThemeProperty(layoutSpace), 2),
+  ),
+  paddingtopclasses:(
+    notop: 0,
+    halftop: math.div(getThemeProperty(layoutSpace), 2),
+  ),
+  paddingbottomclasses:(
+    nobottom: 0,
+    halfbottom: math.div(getThemeProperty(layoutSpace), 2),
   )
 );
 // If $base-space-properties is set, lets merge into our defaults
@@ -45,8 +54,28 @@ $base-space-properties: $default-base-space-properties !default;
 @each $label, $breakpoint in getThemeProperty(breakpointResponsive){
 	@media only screen and (max-width: $breakpoint) {
 		@each $spacelabel, $value in getThemeProperty("paddingclasses", $base-space-properties){
-			.fw-space-#{$label}-#{$spacelabel}{
+			.fw-space.fw-space-#{$label}-#{$spacelabel}{
 				padding: #{$value};
+			}
+		}
+    @each $spacelabel, $value in getThemeProperty("paddingleftclasses", $base-space-properties){
+			.fw-space.fw-space-#{$label}-#{$spacelabel}{
+				padding-left: #{$value};
+			}
+		}
+    @each $spacelabel, $value in getThemeProperty("paddingrightclasses", $base-space-properties){
+			.fw-space.fw-space-#{$label}-#{$spacelabel}{
+				padding-right: #{$value};
+			}
+		}
+    @each $spacelabel, $value in getThemeProperty("paddingtopclasses", $base-space-properties){
+			.fw-space.fw-space-#{$label}-#{$spacelabel}{
+				padding-top: #{$value};
+			}
+		}
+    @each $spacelabel, $value in getThemeProperty("paddingbottomclasses", $base-space-properties){
+			.fw-space.fw-space-#{$label}-#{$spacelabel}{
+				padding-bottom: #{$value};
 			}
 		}
 	}
