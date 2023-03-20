@@ -2,7 +2,8 @@
 $default-component-form-properties:(
   borderColor: #cccccc,
   labelColor: getThemeProperty(textColorDark),
-  disabledColor: #dddddd,
+  disabledColor: getThemeProperty(disabledColor, $component-button-properties),
+  disabledTextColor: getThemeProperty(disabledTextColor, $component-button-properties),
   fieldSpacing: getThemeProperty(layoutSpace),
   validationErrorTextColor: #ffffff,
   validationErrorBackgroundColor: #cc0000,
@@ -48,10 +49,8 @@ $component-form-properties: $default-component-form-properties !default;
     @include button-input-style;
     &:disabled{
       pointer-events: none;
-      background: getThemeProperty(disabledColor, $component-form-properties);
-      &:hover{
-        background: getThemeProperty(disabledColor, $component-form-properties);
-      }
+      background: getThemeProperty(disabledColor, $component-form-properties) !important;
+      color: getThemeProperty(disabledTextColor, $component-form-properties) !important;
     }
   }
 }

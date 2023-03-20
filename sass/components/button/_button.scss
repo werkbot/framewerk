@@ -18,6 +18,8 @@ $default-component-button-properties:(
   fontFamily: getThemeProperty(fontText),
   fontSize: 1rem,
   textAlign: center,
+  disabledColor: #dddddd,
+  disabledTextColor: getThemeProperty(textColorLight),
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
@@ -68,6 +70,12 @@ $component-button-properties: $default-component-button-properties !default;
     color: getThemeProperty(textHoverColor, $component-button-properties);
   }
   @include focus-style;
+
+  &.disabled {
+    pointer-events: none;
+    background: getThemeProperty(disabledColor, $component-button-properties) !important;
+    color: getThemeProperty(disabledTextColor, $component-button-properties) !important;
+  }
 
   // Define style rules for button variants
   @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
