@@ -5,46 +5,74 @@
   getThemeProperty(layoutSpace) variable is defined in _fw-variables.scss
   Used for consistent margins and gutters throughout the defined content
 */
+$default-base-space-properties:(
+  paddingclasses:(
+    none: 0,
+    default: getThemeProperty(layoutSpace),
+    double: getThemeProperty(layoutSpace) * 2,
+    triple: getThemeProperty(layoutSpace) * 3,
+    one-forth: getThemeProperty(layoutSpace) * 0.25,
+    half: math.div(getThemeProperty(layoutSpace), 2),
+    three-forths: getThemeProperty(layoutSpace) * 0.75,
+  ),
+  paddingleftclasses:(
+    noleft: 0,
+    halfleft: math.div(getThemeProperty(layoutSpace), 2),
+  ),
+  paddingrightclasses:(
+    noright: 0,
+    halfright: math.div(getThemeProperty(layoutSpace), 2),
+  ),
+  paddingtopclasses:(
+    notop: 0,
+    halftop: math.div(getThemeProperty(layoutSpace), 2),
+  ),
+  paddingbottomclasses:(
+    nobottom: 0,
+    halfbottom: math.div(getThemeProperty(layoutSpace), 2),
+  )
+);
+// If $base-space-properties is set, lets merge into our defaults
+$base-space-properties: $default-base-space-properties !default;
+@if($base-space-properties){
+  $base-space-properties: recursive-map-merge($default-base-space-properties, $base-space-properties);
+}
+
+// Positions used for specific padding below, padding-left, padding-right, etc...
+$positions: top, right, bottom, left;
+
+// Default spacing - desktop
 .fw-space,
 .space{
-  padding: getThemeProperty(layoutSpace);
-  &.double{
-    padding: getThemeProperty(layoutSpace) * 2;
+	padding: getThemeProperty(layoutSpace);
+	@each $label, $value in getThemeProperty("paddingclasses", $base-space-properties){
+		&.#{$label}{
+			padding: #{$value};
+		}
+	}
+  @each $position in $positions {
+    @each $label, $value in getThemeProperty(padding#{$position}classes, $base-space-properties) {
+      &.#{$label}{
+        padding-#{$position}: #{$value};
+      }
+    }
   }
-  &.triple{
-    padding: getThemeProperty(layoutSpace) * 3;
-  }
-  &.one-forth{
-    padding: getThemeProperty(layoutSpace) * 0.25;
-  }
-  &.half{
-    padding: math.div(getThemeProperty(layoutSpace), 2);
-  }
-  &.three-forths{
-    padding: getThemeProperty(layoutSpace) * 0.75;
-  }
-	&.noleft{
-		padding-left: 0;
-	}
-	&.noright{
-		padding-right: 0;
-	}
-	&.halfleft{
-		padding-left: math.div(getThemeProperty(layoutSpace), 2);
-	}
-	&.halfright{
-		padding-right: math.div(getThemeProperty(layoutSpace), 2);
-	}
-	&.notop{
-		padding-top: 0;
-	}
-	&.nobottom{
-		padding-bottom: 0;
-	}
-	&.halftop{
-		padding-top: math.div(getThemeProperty(layoutSpace), 2);
-	}
-	&.halfbottom{
-		padding-bottom: math.div(getThemeProperty(layoutSpace), 2);
+}
+
+// For each responsive breakpoint, create a space class
+@each $label, $breakpoint in getThemeProperty(breakpointResponsive){
+	@media only screen and (max-width: $breakpoint) {
+		@each $spacelabel, $value in getThemeProperty("paddingclasses", $base-space-properties){
+			.fw-space.fw-space-#{$label}-#{$spacelabel}{
+				padding: #{$value};
+			}
+		}
+    @each $position in $positions {
+      @each $spacelabel, $value in getThemeProperty(padding#{$position}classes, $base-space-properties) {
+        .fw-space.fw-space-#{$label}-#{$spacelabel}{
+          padding-#{$position}: #{$value};
+        }
+      }
+    }
 	}
 }

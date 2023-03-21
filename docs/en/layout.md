@@ -7,6 +7,10 @@ A flex container has default flexbox settings which can easily be overridden. Al
 `.fw-space`<br />
 The space class is an attempt to have a uniform base padding option. It has several variant classes which can adjust the spacing amount per element.
 
+`.fw-space-{breakpoint}-{class}`<br />
+*fw-space-tablet-double, fw-space-phone-triple*
+The default spacing is overriden by breakpoint
+
 `.fw-typography-spacing`<br />
 This class is used to apply default spacing to typography elements, intended to be applied to a container class.
 
@@ -33,16 +37,16 @@ The element would be shown at the device breakpoint defined
 The width of the element would be set to auto at the device breakpoint defined
 
 ## Examples
-Two columns 50% on desktop, One Column 100% on phone
+Two columns 50%, double spacing on desktop, One Column 100%, default spacing on phone
 ```html
 <div class="flex-container">
   <div class="desktop-50 phone-100">
-    <div class="fw-space">
+    <div class="fw-space double fw-space-phone-default">
       [ CONTENT GOES HERE ]
     </div>
   </div>
   <div class="desktop-50 phone-100">
-    <div class="fw-space">
+    <div class="fw-space double fw-space-phone-default">
       [ CONTENT GOES HERE ]
     </div>
   </div>
