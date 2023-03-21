@@ -5,7 +5,6 @@
   getThemeProperty(layoutSpace) variable is defined in _fw-variables.scss
   Used for consistent margins and gutters throughout the defined content
 */
-
 $default-base-space-properties:(
   paddingclasses:(
     none: 0,
@@ -39,6 +38,9 @@ $base-space-properties: $default-base-space-properties !default;
   $base-space-properties: recursive-map-merge($default-base-space-properties, $base-space-properties);
 }
 
+// Positions used for specific padding below, padding-left, padding-right, etc...
+$positions: top, right, bottom, left;
+
 // Default spacing - desktop
 .fw-space,
 .space{
@@ -48,6 +50,13 @@ $base-space-properties: $default-base-space-properties !default;
 			padding: #{$value};
 		}
 	}
+  @each $position in $positions {
+    @each $label, $value in getThemeProperty(padding#{$position}classes, $base-space-properties) {
+      &.#{$label}{
+        padding-#{$position}: #{$value};
+      }
+    }
+  }
 }
 
 // For each responsive breakpoint, create a space class
@@ -58,25 +67,12 @@ $base-space-properties: $default-base-space-properties !default;
 				padding: #{$value};
 			}
 		}
-    @each $spacelabel, $value in getThemeProperty("paddingleftclasses", $base-space-properties){
-			.fw-space.fw-space-#{$label}-#{$spacelabel}{
-				padding-left: #{$value};
-			}
-		}
-    @each $spacelabel, $value in getThemeProperty("paddingrightclasses", $base-space-properties){
-			.fw-space.fw-space-#{$label}-#{$spacelabel}{
-				padding-right: #{$value};
-			}
-		}
-    @each $spacelabel, $value in getThemeProperty("paddingtopclasses", $base-space-properties){
-			.fw-space.fw-space-#{$label}-#{$spacelabel}{
-				padding-top: #{$value};
-			}
-		}
-    @each $spacelabel, $value in getThemeProperty("paddingbottomclasses", $base-space-properties){
-			.fw-space.fw-space-#{$label}-#{$spacelabel}{
-				padding-bottom: #{$value};
-			}
-		}
+    @each $position in $positions {
+      @each $spacelabel, $value in getThemeProperty(padding#{$position}classes, $base-space-properties) {
+        .fw-space.fw-space-#{$label}-#{$spacelabel}{
+          padding-#{$position}: #{$value};
+        }
+      }
+    }
 	}
 }
