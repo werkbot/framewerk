@@ -1,5 +1,16 @@
+// Default text Properties
+$default-text-properties:(
+    boldStrongWeight: 700,
+    largeTextFontSize: 1.5em,
+);
+// If $default-text-properties is set, lets merge into our defaults
+$text-properties: $default-text-properties !default;
+@if($text-properties){
+    $text-properties: recursive-map-merge($default-text-properties, $text-properties);
+}
+
 strong, b {
-	font-weight: 700;
+	font-weight: getThemeProperty(boldStrongWeight, $text-properties);
 }
 em, i {
 	font-style: italic;
@@ -23,7 +34,7 @@ sup {
     text-align: right;
 }
 .large-text{
-    font-size: 1.5em;
+    font-size: getThemeProperty(largeTextFontSize, $text-properties);
 }
 .text-white{
     color: #ffffff;
