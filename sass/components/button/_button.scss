@@ -17,6 +17,9 @@ $default-component-button-properties:(
   fontWeight: 400,
   fontFamily: getThemeProperty(fontText),
   fontSize: 1rem,
+  textAlign: center,
+  disabledColor: #dddddd,
+  disabledTextColor: getThemeProperty(textColorLight),
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
@@ -50,6 +53,7 @@ $component-button-properties: $default-component-button-properties !default;
   font-weight: getThemeProperty(fontWeight, $component-button-properties);
   font-family: getThemeProperty(fontFamily, $component-button-properties);
   font-size: getThemeProperty(fontSize, $component-button-properties);
+  text-align: getThemeProperty(textAlign, $component-button-properties);
   -webkit-appearance: none;
   -webkit-transition: background-color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out;
@@ -66,6 +70,12 @@ $component-button-properties: $default-component-button-properties !default;
     color: getThemeProperty(textHoverColor, $component-button-properties);
   }
   @include focus-style;
+
+  &.disabled {
+    pointer-events: none;
+    background: getThemeProperty(disabledColor, $component-button-properties) !important;
+    color: getThemeProperty(disabledTextColor, $component-button-properties) !important;
+  }
 
   // Define style rules for button variants
   @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
