@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.6 - 2023-03-22
+## 🎉 New Features
+- radio checkbox weight ([#60](https://github.com/werkbot/framewerk/pull/60) by [tiller1010](https://github.com/tiller1010))
+- mark ([#61](https://github.com/werkbot/framewerk/pull/61) by [tiller1010](https://github.com/tiller1010))
+- disabled button link ([#62](https://github.com/werkbot/framewerk/pull/62) by [tiller1010](https://github.com/tiller1010))
+
+
+
 ## 2.1.5 - 2022-11-10
 ## 🐛 Bugfixes
 - check for processing element on reset
