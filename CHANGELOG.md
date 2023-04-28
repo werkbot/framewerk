@@ -10,7 +10,7 @@
 
 ## 2.1.5 - 2022-11-10
 ## 🐛 Bugfixes
-- check for processing element on reset
+- fix: check for processing element on reset
 
 ## 📚 Documentation Changes
 - updated documentation to mention the media query sorter plugin
