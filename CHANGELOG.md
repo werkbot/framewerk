@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.7 - 2023-04-28
+## 🎉 New Features
+- added important option to -text classes ([#67](https://github.com/werkbot/framewerk/pull/67) by [tiller1010](https://github.com/tiller1010))
+
+## 🏗️ Build System
+- allow for context in branch name
+
+
+
 ## 2.1.6 - 2023-03-22
 ## 🎉 New Features
 - radio checkbox weight ([#60](https://github.com/werkbot/framewerk/pull/60) by [tiller1010](https://github.com/tiller1010))
@@ -10,7 +19,7 @@
 
 ## 2.1.5 - 2022-11-10
 ## 🐛 Bugfixes
-- check for processing element on reset
+- fix: check for processing element on reset
 
 ## 📚 Documentation Changes
 - updated documentation to mention the media query sorter plugin
