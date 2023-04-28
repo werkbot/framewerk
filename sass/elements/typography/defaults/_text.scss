@@ -10,10 +10,10 @@ $element-text-properties: $default-element-text-properties !default;
 }
 
 strong, b {
-  font-weight: getThemeProperty(boldStrongWeight, $element-text-properties);
+	font-weight: getThemeProperty(boldStrongWeight, $element-text-properties);
 }
 em, i {
-  font-style: italic;
+	font-style: italic;
 }
 sub {
     vertical-align: sub;
@@ -24,26 +24,18 @@ sup {
     font-size: smaller;
 }
 
-/* Define style rule with optional !important */
-@mixin importantOptionFor($rule, $value) {
-    #{$rule}: #{$value};
-    &.important {
-      #{$rule}: #{$value} !important;
-    }
-}
-
 .text-center{
-    @include importantOptionFor(text-align, center);
+    text-align: center;
 }
 .text-left{
-    @include importantOptionFor(text-align, left);
+    text-align: left;
 }
 .text-right{
-    @include importantOptionFor(text-align, right);
+    text-align: right;
 }
 .large-text{
-    @include importantOptionFor(font-size, getThemeProperty(largeTextFontSize, $element-text-properties));
+    font-size: getThemeProperty(largeTextFontSize, $element-text-properties);
 }
 .text-white{
-    @include importantOptionFor(color, #ffffff);
+    color: #ffffff;
 }
