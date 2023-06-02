@@ -67,7 +67,8 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
     }
   }
   // Focus Styles
-  fieldset.field > div div, 
+  fieldset.field .odd, 
+  fieldset.field .even, 
   .field.optionset li,
   ul.optionset li{
     @include focus-within-style;
