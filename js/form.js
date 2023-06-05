@@ -149,7 +149,7 @@ window.addEventListener('load', function(){
   }
 
   // Numeric Field
-  document.querySelectorAll('.fw-form .numeric').forEach(function(numericFieldContainer){
+  document.querySelectorAll('.fw-form .numeric .middleColumn').forEach(function(numericFieldContainer){
     var field = numericFieldContainer.querySelector('input');
     if(field){
       field.type = 'number';
