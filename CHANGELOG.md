@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.8 - 2023-06-05
+
+
+
+
 ## 2.1.7 - 2023-04-28
 ## 🎉 New Features
 - added important option to -text classes ([#67](https://github.com/werkbot/framewerk/pull/67) by [tiller1010](https://github.com/tiller1010))
