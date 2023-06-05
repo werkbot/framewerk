@@ -69,7 +69,8 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
   }
   // Focus Styles
   .checkboxset li,
-  .checkboxset > div div,
+  .checkboxset .odd, 
+  .checkboxset .even, 
   .field.checkbox{
     @include focus-within-style;
   }
