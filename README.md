@@ -25,3 +25,6 @@ Include this in your main js file:
 * [SASS documentation](docs/en/sass-setup.md)
 * [Components documentation](docs/en/components.md)
 
+## Support/2.1.x
+- Dart Sass instead of Ruby Sass (compass). e.g. (`math.div($i, 100)` instead of `$i / 100`)
+- FontAwesome 6 (Uses Dart Sass syntax)
