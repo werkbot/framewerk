@@ -1,0 +1,67 @@
+// Default form text-with-button Properties
+$default-component-form-text-with-button-properties: (
+  backgroundColor: getThemeProperty(backgroundColorLight),
+  borderColor: getThemeProperty(borderColor, $component-form-properties),
+  borderRadius: 10px,
+  borderWidth: 2px,
+  buttonBorderRadius: 0 10px 10px 0,
+  textPadding: 20px,
+);
+
+// If $component-form-text-with-button-properties is set, lets merge into our defaults
+$component-form-text-with-button-properties: $default-component-form-text-with-button-properties !default;
+@if ($component-form-text-with-button-properties) {
+  $component-form-text-with-button-properties: map-merge($default-component-form-text-with-button-properties, $component-form-text-with-button-properties);
+}
+
+.fw-form {
+  .field.text-with-button {
+    position: relative;
+    label {
+      display: block;
+      position: absolute;
+      transform: translate(20px, 150%);
+      transform-origin: left;
+      transition: transform .25s ease;
+      color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
+      pointer-events: none;
+      margin: 0;
+      z-index: 1;
+      &.labelShrunk{
+        transform: scale(.7) translate(30px, 50%);
+      }
+    }
+    input[type=text],
+    input[type=date],
+    input[type=time],
+    input[type=datetime-local],
+    input[type=search],
+    input[type=tel],
+    input[type=url],
+    input[type=week],
+    input[type=month],
+    input[type=email],
+    input[type=password],
+    textarea {
+      width: 100%;
+      border-radius: getThemeProperty(borderRadius, $component-form-text-with-button-properties);
+      padding: getThemeProperty(textPadding, $component-form-text-with-button-properties);
+      margin: 0;
+      border-style: solid;
+      border-width: getThemeProperty(borderWidth, $component-form-text-with-button-properties);
+      border-color: getThemeProperty(borderColor, $component-form-text-with-button-properties);
+      background-color: getThemeProperty(backgroundColor, $component-form-text-with-button-properties);
+    }
+    button, input[type="submit"] {
+      @include button-input-style;
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+      border-radius: getThemeProperty(buttonBorderRadius, $component-form-text-with-button-properties);
+    }
+  }
+}
