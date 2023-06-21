@@ -54,13 +54,21 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
       &.labelShrunk{
         padding: 30px 20px 10px 20px;
       }
+      @include focus-style;
+      &.readonly{
+        pointer-events: none;
+        background: getThemeProperty(disabledColor, $component-form-properties);
+      }
     }
+    .fw-form-processing-container,
     button, input[type="submit"] {
-      @include button-input-style;
       position: absolute !important;
       top: 0;
       right: 0;
       height: 100%;
+    }
+    button, input[type="submit"] {
+      @include button-input-style;
       padding-top: 0;
       padding-bottom: 0;
       margin: 0;
