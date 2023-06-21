@@ -85,7 +85,7 @@ $component-form-textarea-properties:(
 ```
 
 ## Text With Button Properties
-Postitions a button inside of a text input. This is common is search forms and newsletter sign-up forms.
+Postitions a button inside of a text input. This is common in search forms and newsletter sign-up forms.
 ```scss
 $component-form-text-with-button-properties: (
   backgroundColor: getThemeProperty(backgroundColorLight),
