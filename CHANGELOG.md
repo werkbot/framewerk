@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.9 - 2023-07-17
+## 🎉 New Features
+- text button field ([#76](https://github.com/werkbot/framewerk/pull/76) by [tiller1010](https://github.com/tiller1010))
+
+## 🐛 Bugfixes
+- fixed label vertical offset
+
+## 🏗️ Build System
+- incremented package.json version
+
+
+
 ## 2.1.8 - 2023-06-05
 
 
