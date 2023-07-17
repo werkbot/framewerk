@@ -20,7 +20,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
     label {
       display: block;
       position: absolute;
-      transform: translate(20px, 150%);
+      transform: translate(20px, 25px);
       transform-origin: left;
       transition: transform .25s ease;
       color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
