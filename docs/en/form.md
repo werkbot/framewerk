@@ -2,7 +2,7 @@
 The form consists of the components laid out below.
 
 ## General Properties
-```
+```scss
 $component-form-properties:(
   borderColor: #cccccc,
   labelColor: #cccccc,
@@ -18,7 +18,7 @@ $component-form-properties:(
 
 ## Checkbox Properties
 Adds Font Awesome icon checkbox
-```
+```scss
 $component-form-checkbox-properties:(
   backgroundColor: getThemeProperty(backgroundColorLight),
   checkedIcon: "\f14a",
@@ -32,7 +32,7 @@ $component-form-checkbox-properties:(
 
 ## Numeric Properties
 Adds Font Awesome icon buttons to increase / decrease quantity
-```
+```scss
 $component-form-numeric-properties:(
   backgroundColor: getThemeProperty(backgroundColorLight),
   iconBackgroundColor: getThemeProperty(backgroundColorDark),
@@ -45,7 +45,7 @@ $component-form-numeric-properties:(
 
 ## Radio Properties
 Adds Font Awesome icon radio
-```
+```scss
 $component-form-radio-properties:(
   backgroundColor: getThemeProperty(backgroundColorLight),
   checkedIcon: "\f192",
@@ -58,7 +58,7 @@ $component-form-radio-properties:(
 
 ## Select Properties
 Positions the label with `for="input-element-id"` inside of select dropdown and adds Font Awesome icon for dropdown
-```
+```scss
 $component-form-select-properties:(
   backgroundColor: getThemeProperty(backgroundColorLight),
   textColor: getThemeProperty(textColorDark),
@@ -72,7 +72,7 @@ $component-form-select-properties:(
 
 ## Text / Textarea Properties
 Positions the label with `for="input-element-id"` inside of field to animate on input
-```
+```scss
 $component-form-text-properties:(
   borderColor: getThemeProperty(formInputBorderColor),
   shiftingLabelColor: getThemeProperty(formInputShiftingLabelColor),
@@ -81,6 +81,19 @@ $component-form-text-properties:(
 $component-form-textarea-properties:(
   borderColor: getThemeProperty(formInputBorderColor),
   shiftingLabelColor: getThemeProperty(formInputShiftingLabelColor),
+);
+```
+
+## Text With Button Properties
+Postitions a button inside of a text input. This is common in search forms and newsletter sign-up forms.
+```scss
+$component-form-text-with-button-properties: (
+  backgroundColor: getThemeProperty(backgroundColorLight),
+  borderColor: getThemeProperty(borderColor, $component-form-properties),
+  borderRadius: 10px,
+  borderWidth: 2px,
+  buttonBorderRadius: 0 6px 6px 0,
+  textPadding: 20px,
 );
 ```
 

@@ -47,6 +47,7 @@ $component-form-numeric-properties: $default-component-form-numeric-properties !
       top: 20px;
       height: 43px;
       width: 50px;
+      min-height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
