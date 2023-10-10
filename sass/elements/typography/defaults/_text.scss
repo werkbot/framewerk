@@ -41,6 +41,9 @@ sup {
 .text-right{
     @include importantOptionFor(text-align, right);
 }
+.text-justify{
+    @include importantOptionFor(text-align, justify);
+}
 .large-text{
     @include importantOptionFor(font-size, getThemeProperty(largeTextFontSize, $element-text-properties));
 }
