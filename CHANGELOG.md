@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.10 - 2023-10-11
+## 🐛 Bugfixes
+- added missing text-justify class
+
+
+
 ## 2.1.9 - 2023-07-17
 ## 🎉 New Features
 - text button field ([#76](https://github.com/werkbot/framewerk/pull/76) by [tiller1010](https://github.com/tiller1010))
