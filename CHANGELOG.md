@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.11 - 2023-10-13
+## 🐛 Bugfixes
+- disabled pointer events on select arrow
+
+
+
 ## 2.1.10 - 2023-10-11
 ## 🐛 Bugfixes
 - added missing text-justify class
