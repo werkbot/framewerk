@@ -70,6 +70,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       content: getThemeProperty(icon, $component-form-select-properties);
       font-family: getThemeProperty(iconFontFamily, $component-form-select-properties);
       color: getThemeProperty(iconTextColor, $component-form-select-properties);
+      pointer-events: none;
     }
   }
 }
