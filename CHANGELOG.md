@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.12 - 2024-02-12
+## 🐛 Bugfixes
+- removed image width 100%
+
+
+
 ## 2.1.11 - 2023-10-13
 ## 🐛 Bugfixes
 - disabled pointer events on select arrow
