@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.13 - 2024-02-22
+
+
+
+
 ## 2.1.12 - 2024-02-12
 ## 🐛 Bugfixes
 - removed image width 100%
