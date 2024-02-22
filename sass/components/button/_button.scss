@@ -20,7 +20,7 @@ $default-component-button-properties:(
   textAlign: center,
   disabledColor: #dddddd,
   disabledTextColor: getThemeProperty(textColorLight),
-  lineHeight: 1,
+  lineHeight: inherit,
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
