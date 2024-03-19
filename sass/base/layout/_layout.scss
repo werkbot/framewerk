@@ -46,6 +46,21 @@
     .#{$label}-show{
       display: inherit;
     }
+    /* Flex Container Direction */
+    .flex-container{
+      &.#{$label}-ltr{
+        flex-direction: row;
+      }
+      &.#{$label}-rtl{
+        flex-direction: row-reverse;
+      }
+      &.#{$label}-ttb{
+        flex-direction: column;
+      }
+      &.#{$label}-btt{
+        flex-direction: column-reverse;
+      }
+    }
   }
 }
 /*
