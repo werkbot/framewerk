@@ -22,6 +22,21 @@
 .desktop-show{
   display: inherit;
 }
+/* Flex Container Direction */
+.flex-container{
+  &.desktop-ltr{
+    flex-direction: row;
+  }
+  &.desktop-rtl{
+    flex-direction: row-reverse;
+  }
+  &.desktop-ttb{
+    flex-direction: column;
+  }
+  &.desktop-btt{
+    flex-direction: column-reverse;
+  }
+}
 /*
   DESKTOP BREAKPOINTS
   Loop through each desktop defined breakpoint
@@ -45,6 +60,21 @@
     }
     .#{$label}-show{
       display: inherit;
+    }
+    /* Flex Container Direction */
+    .flex-container{
+      &.#{$label}-ltr{
+        flex-direction: row;
+      }
+      &.#{$label}-rtl{
+        flex-direction: row-reverse;
+      }
+      &.#{$label}-ttb{
+        flex-direction: column;
+      }
+      &.#{$label}-btt{
+        flex-direction: column-reverse;
+      }
     }
   }
 }
