@@ -207,7 +207,20 @@ window.addEventListener('load', function() {
   function incrementQuantity(fieldContainer, increment) {
     if (!fieldContainer.classList.contains('readonly')) {
       var field = fieldContainer.querySelector('input');
-      field.value = Number(field.value) + increment;
+
+      var min = field.getAttribute('min') ? Number(field.getAttribute('min')) : false;
+      var max = field.getAttribute('max') ? Number(field.getAttribute('max')) : false;
+      var value = Number(field.value) + increment;
+
+      if (min !== false && value < min) {
+        value = min;
+      }
+
+      if (max !== false && value > max) {
+        value = max;
+      }
+
+      field.value = value;
     }
   }
 
