@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.15 - 2024-05-02
+## 🐛 Bugfixes
+- respect min and max attributes
+
+## 🔨 Improvements
+- respect numeric input step attribute, trigger change event, code styles
+
+
+
 ## 2.1.14 - 2024-03-26
 
 
