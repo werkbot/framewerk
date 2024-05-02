@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+window.addEventListener('load', function() {
 
   // Shrink input and textarea field labels
   document.querySelectorAll('.fw-form input[type=text],\
@@ -13,23 +13,26 @@ window.addEventListener('load', function(){
     .fw-form input[type=email],\
     .fw-form input[type=password],\
     .fw-form textarea\
-  ').forEach(function(inputElement){
+  ').forEach(function(inputElement) {
     toggleInputState(inputElement);
+
     // On focus, shrink the label
-    inputElement.addEventListener('focus', function(event){
+    inputElement.addEventListener('focus', function(event) {
       shrinkLabel(event.target);
     });
+
     // On blur, toggle the state
-    inputElement.addEventListener('blur', function(event){
+    inputElement.addEventListener('blur', function(event) {
       toggleInputState(event.target);
     });
+
   });
 
   // Shrink select field label
-  document.querySelectorAll('.fw-form select').forEach(function(selectElement){
+  document.querySelectorAll('.fw-form select').forEach(function(selectElement) {
     selectElement.classList.add('labelShrunk');
     var label = getLabel(selectElement);
-    if(label){
+    if (label) {
       label.classList.add('labelShrunk');
     }
   });
@@ -39,48 +42,49 @@ window.addEventListener('load', function(){
    * Disables all form fields and replaces the submit button with a span element whcih
    * can be configured in the css
    */
-  document.querySelectorAll('.fw-form.fw-form-process-event').forEach(function(formElement){
-    formElement.addEventListener('submit', function(event){
+  document.querySelectorAll('.fw-form.fw-form-process-event').forEach(function(formElement) {
+    formElement.addEventListener('submit', function(event) {
       // Check the validity of the form, if any fields are not valid do not move forward
-      if(!this.checkValidity()){
+      if (!this.checkValidity()) {
         // Invalid form elements, halt
         e.preventDefault();
-      }else{
+
+      } else {
         // create wrapper container if it does not exist already
         var wrapper = this.querySelector('.fw-form-processing-container');
-        if(!wrapper){
+        if (!wrapper) {
           wrapper = document.createElement('div');
           wrapper.className = "fw-form-processing-container";
           // insert wrapper before el in the DOM tree
           event.submitter.parentNode.insertBefore(wrapper, event.submitter);
           // move el into wrapper
-          wrapper.appendChild(event.submitter); 
+          wrapper.appendChild(event.submitter);
         }
 
-        // Create "Processing" element 
+        // Create "Processing" element
         const processingElement = document.createElement("span");
         processingElement.className = "fw-form-processing";
-        wrapper.appendChild(processingElement); 
+        wrapper.appendChild(processingElement);
 
         // Disable submit button
         event.submitter.disabled = true;
 
         // Disable all fields
         var fields = this.getElementsByTagName('*');
-        for(var i = 0; i < fields.length; i++)
-        {
+        for (var i = 0; i < fields.length; i++) {
           fields[i].classList.add("readonly");
           // Check for number input type
-          if(fields[i].type=="number"){
+          if (fields[i].type=="number") {
             fields[i].parentElement.parentElement.classList.add("readonly");
           }
         }
       }
+
     });
-    
+
     // Listener for a form reset event, useful for ajax calls.
     // This will reset the form to its original state
-    formElement.addEventListener('reset', function(event){
+    formElement.addEventListener('reset', function(event) {
       // Remove the processing element
       const p = this.querySelector('.fw-form-processing');
       // The element may have been deleted after processing
@@ -90,12 +94,11 @@ window.addEventListener('load', function(){
 
       // Re-enable all fields
       var fields = this.getElementsByTagName('*');
-      for(var i = 0; i < fields.length; i++)
-      {
+      for (var i = 0; i < fields.length; i++) {
         fields[i].classList.remove("readonly");
         fields[i].disabled = false;
         // Check for number input type
-        if(fields[i].type=="number"){
+        if (fields[i].type=="number") {
           fields[i].parentElement.parentElement.classList.remove("readonly");
         }
       }
@@ -107,15 +110,15 @@ window.addEventListener('load', function(){
    * Shrinks or unshrinks the label of the element passed in
    * @param inputElement - The input whose label we want to toggle
    */
-  function toggleInputState(inputElement){
-    if(inputElement.value || inputElement.placeholder || inputElement === document.activeElement
+  function toggleInputState(inputElement) {
+    if (inputElement.value || inputElement.placeholder || inputElement === document.activeElement
       || inputElement.type == 'date'
       || inputElement.type == 'time'
       || inputElement.type == 'datetime-local'
       || inputElement.type == 'week'
       || inputElement.type == 'month'
       || inputElement.type == 'password'
-    ){
+    ) {
       shrinkLabel(inputElement);
     } else {
       unshrinkLabel(inputElement);
@@ -127,9 +130,9 @@ window.addEventListener('load', function(){
    * Shrinks the label of the element passed in
    * @param inputElement - The input whose label we want to shrink
    */
-  function shrinkLabel(inputElement){
+  function shrinkLabel(inputElement) {
     var label = getLabel(inputElement);
-    if(label){
+    if (label) {
       label.classList.add('labelShrunk');
       inputElement.classList.add('labelShrunk');
     }
@@ -140,20 +143,22 @@ window.addEventListener('load', function(){
    * Unshrinks the label of the element passed in
    * @param inputElement - The input whose label we want to unshrink
    */
-  function unshrinkLabel(inputElement){
+  function unshrinkLabel(inputElement) {
     var label = getLabel(inputElement);
-    if(label){
+    if (label) {
       label.classList.remove('labelShrunk');
       inputElement.classList.remove('labelShrunk');
     }
   }
 
   // Numeric Field
-  document.querySelectorAll('.fw-form .numeric .middleColumn').forEach(function(numericFieldContainer){
+  document.querySelectorAll('.fw-form .numeric .middleColumn').forEach(function(numericFieldContainer) {
     var field = numericFieldContainer.querySelector('input');
-    if(field){
+    if (field) {
       field.type = 'number';
-      if(!numericFieldContainer.parentElement.querySelector('.subtract-qty')){
+      var step = Number(field.getAttribute('step') ? field.getAttribute('step') : 1);
+
+      if (!numericFieldContainer.parentElement.querySelector('.subtract-qty')) {
         // Insert subtract button
         var subtractButton = document.createElement('span');
         subtractButton.classList.add('subtract-qty');
@@ -164,12 +169,15 @@ window.addEventListener('load', function(){
         numericFieldContainer.append(subtractButton);
         subtractButton.style.top = field.offsetTop + 'px';
         subtractButton.style.height = field.offsetHeight + 'px';
-        subtractButton.addEventListener('click', function(){
-          incrementQuantity(numericFieldContainer, -1);
+
+        subtractButton.addEventListener('click', function() {
+          incrementQuantity(numericFieldContainer, (step * -1));
+          field.dispatchEvent(new Event('input'));
         });
+
       }
 
-      if(!numericFieldContainer.parentElement.querySelector('.add-qty')){
+      if (!numericFieldContainer.parentElement.querySelector('.add-qty')) {
         // Insert add button
         var addButton = document.createElement('span');
         addButton.classList.add('add-qty');
@@ -180,9 +188,12 @@ window.addEventListener('load', function(){
         numericFieldContainer.append(addButton);
         addButton.style.top = field.offsetTop + 'px';
         addButton.style.height = field.offsetHeight + 'px';
-        addButton.addEventListener('click', function(){
-          incrementQuantity(numericFieldContainer, 1);
+
+        addButton.addEventListener('click', function() {
+          incrementQuantity(numericFieldContainer, step);
+          field.dispatchEvent(new Event('input'));
         });
+
       }
     }
 
@@ -193,10 +204,23 @@ window.addEventListener('load', function(){
    * @param element fieldContainer - The button that was clicked
    * @param integer increment - The amount to increment by
    */
-  function incrementQuantity(fieldContainer, increment){
-    if(!fieldContainer.classList.contains('readonly')){
+  function incrementQuantity(fieldContainer, increment) {
+    if (!fieldContainer.classList.contains('readonly')) {
       var field = fieldContainer.querySelector('input');
-      field.value = Number(field.value) + increment;
+
+      var min = field.getAttribute('min') ? Number(field.getAttribute('min')) : false;
+      var max = field.getAttribute('max') ? Number(field.getAttribute('max')) : false;
+      var value = Number(field.value) + increment;
+
+      if (min !== false && value < min) {
+        value = min;
+      }
+
+      if (max !== false && value > max) {
+        value = max;
+      }
+
+      field.value = value;
     }
   }
 
@@ -206,10 +230,10 @@ window.addEventListener('load', function(){
    * @param element el
    * @returns label element
    */
-  function getLabel(el){
+  function getLabel(el) {
     var labels = document.getElementsByTagName('label');
-    for( var i = 0; i < labels.length; i++ ) {
-      if (labels[i].htmlFor == el.id){
+    for (var i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor == el.id) {
         return labels[i];
       }
     }
