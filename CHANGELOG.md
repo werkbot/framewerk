@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.16 - 2024-06-03
+
+
+
+
 ## 2.1.15 - 2024-05-02
 ## 🐛 Bugfixes
 - respect min and max attributes
