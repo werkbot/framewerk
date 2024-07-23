@@ -1,0 +1,59 @@
+// Button Mixin
+@mixin button-input-style() {
+    background-color: getThemeProperty(backgroundColor, $component-button-properties);
+    border-radius: getThemeProperty(borderRadius, $component-button-properties);
+    color: getThemeProperty(textColor, $component-button-properties);
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: getThemeProperty(padding, $component-button-properties);
+    margin: getThemeProperty(margin, $component-button-properties);
+    border: getThemeProperty(border, $component-button-properties);;
+    cursor: pointer;
+    text-transform: getThemeProperty(textTransform, $component-button-properties);
+    font-weight: getThemeProperty(fontWeight, $component-button-properties);
+    font-family: getThemeProperty(fontFamily, $component-button-properties);
+    font-size: getThemeProperty(fontSize, $component-button-properties);
+    line-height: getThemeProperty(lineHeight, $component-button-properties);
+    text-align: getThemeProperty(textAlign, $component-button-properties);
+    -webkit-appearance: none;
+    -webkit-transition: background-color 0.25s ease-out;
+    -moz-transition: background-color 0.25s ease-out;
+    -o-transition: background-color 0.25s ease-out;
+    transition: background-color 0.25s ease-out;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active{
+      color: getThemeProperty(textColor, $component-button-properties);
+    }
+    &:hover{
+      background-color: getThemeProperty(backgroundHoverColor, $component-button-properties);
+      color: getThemeProperty(textHoverColor, $component-button-properties);
+    }
+    @include focus-style;
+  
+    &.disabled {
+      pointer-events: none;
+      background: getThemeProperty(disabledColor, $component-button-properties) !important;
+      color: getThemeProperty(disabledTextColor, $component-button-properties) !important;
+    }
+  
+    // Define style rules for button variants
+    @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
+      &.#{$variantClass}{
+        @each $styleRule, $styleValue in $variantProperties {
+          @if($styleRule == 'hoverStyle'){
+            &:hover{
+              @each $hoverStyleRule, $hoverStyleValue in $styleValue {
+                #{$hoverStyleRule}: #{$hoverStyleValue};
+              }
+            }
+          } @else {
+            #{$styleRule}: #{$styleValue};
+          }
+        }
+      }
+    }
+  
+  }

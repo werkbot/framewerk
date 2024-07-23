@@ -1,0 +1,23 @@
+// Mixin for applying to an a element, this exists for when you want a whole section to have a different
+// property (color, etc...) for a certain section where the default properties do not work.
+@mixin fw-mixin-link($properties) {
+    @if($properties){
+      $properties: map-merge($default-element-link-properties, $properties);
+    }
+    color: getThemeProperty(linkColor, $properties);
+    text-decoration: getThemeProperty(linkDecoration, $properties);
+    &:link{
+      color: getThemeProperty(linkColor, $properties);
+    }
+    &:visited{
+      color: getThemeProperty(linkColorVisited, $properties);
+    }
+    &:hover{
+      color: getThemeProperty(linkColorHover, $properties);
+      text-decoration: getThemeProperty(linkDecorationHover, $properties);
+    }
+    &:active{
+      color: getThemeProperty(linkColorActive, $properties);
+    }
+    @include focus-style;
+  }
