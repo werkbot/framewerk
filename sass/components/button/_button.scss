@@ -83,16 +83,17 @@ $component-button-properties: $default-component-button-properties !default;
   @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
     &.#{$variantClass}{
       @each $styleRule, $styleValue in $variantProperties {
-        @if($styleRule == 'hoverStyle'){
-          &:hover{
-            @each $hoverStyleRule, $hoverStyleValue in $styleValue {
-              #{$hoverStyleRule}: #{$hoverStyleValue};
-            }
-          }
-        } @else {
+        @if ($styleRule != 'hoverStyle') {
           #{$styleRule}: #{$styleValue};
         }
       }
+
+      &:hover {
+        @each $hoverStyleRule, $hoverStyleValue in map-get($variantProperties, 'hoverStyle') {
+          #{$hoverStyleRule}: #{$hoverStyleValue};
+        }
+      }
+
     }
   }
 
