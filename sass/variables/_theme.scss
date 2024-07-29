@@ -14,8 +14,8 @@ $default-theme-properties: (
   textColorDark: #333333,
 
   // Fonts
-  fontHeader: "Montserrat",
-  fontText: "Roboto",
+  fontHeader: ("Montserrat", sans-serif),
+  fontText: ("Roboto", sans-serif),
   fontIcon: "Font Awesome 6 Free",
 
   // Layout
