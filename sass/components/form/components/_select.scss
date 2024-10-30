@@ -73,6 +73,24 @@ $component-form-select-properties: $default-component-form-select-properties !de
       pointer-events: none;
     }
   }
+
+  // Label above field
+  &.fw-form-label-above{
+    .field.dropdown{
+      label{
+        position: relative;
+        transform: none;
+        &.labelShrunk{
+          transform: none;
+        }
+      }
+      select{
+        &.labelShrunk{
+          padding: 20px;
+        }
+      }
+    }
+  }
 }
 @-moz-document url-prefix() {
   .fw-form{
