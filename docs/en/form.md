@@ -100,3 +100,6 @@ $component-form-text-with-button-properties: (
 ## Form Process Animation
 When a form is submitted all fields are disabled including the submit button. An animated icon is added next to the submit button as well.
 You must opt-in for this to take effect, the form element must contain the following class: `fw-form-process-event` as well as the `fw-form` class.
+
+## Label placements
+By default, labels are placed inside the input box. To change this, simply add the `fw-form-label-above` class alongside the `fw-form class`. This adjustment moves labels above the fields, eliminating any animation when a field gains or loses focus.
