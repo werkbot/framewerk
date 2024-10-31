@@ -51,4 +51,23 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       }
     }
   }
+
+  // Label above field
+  &.fw-form-label-above{
+    .field.text{
+      label{
+        position: relative;
+        transform: none;
+        &.labelShrunk{
+          transform: none;
+        }
+      }
+      input{
+        padding: 20px;
+        &.labelShrunk{
+          padding: 20px;
+        }
+      }
+    }
+  }
 }

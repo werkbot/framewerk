@@ -101,6 +101,24 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
         border-radius: getThemeProperty(buttonBorderRadius, $component-form-text-with-button-properties);
       }
     }
+  }
 
+  // Label above field
+  &.fw-form-label-above{
+    .field.text-with-button{
+      label{
+        position: relative;
+        transform: none;
+        &.labelShrunk{
+          transform: none;
+        }
+      }
+      input{
+        padding: 20px;
+        &.labelShrunk{
+          padding: 20px;
+        }
+      }
+    }
   }
 }
