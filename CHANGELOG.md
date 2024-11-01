@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.1 - 2024-11-01
+
+
+
+
 ## 2.1.17 - 2024-11-01
 ## 🐛 Bugfixes
 - moved post-nested top-level style rules to separate selectors
