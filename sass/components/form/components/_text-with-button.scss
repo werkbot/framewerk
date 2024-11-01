@@ -109,6 +109,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
       label{
         position: relative;
         transform: none;
+        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
         &.labelShrunk{
           transform: none;
         }

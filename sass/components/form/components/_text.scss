@@ -58,6 +58,7 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       label{
         position: relative;
         transform: none;
+        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
         &.labelShrunk{
           transform: none;
         }
