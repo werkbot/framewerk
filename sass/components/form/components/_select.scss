@@ -80,6 +80,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       label{
         position: relative;
         transform: none;
+        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
         &.labelShrunk{
           transform: none;
         }

@@ -58,6 +58,7 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
       label{
         position: relative;
         transform: none;
+        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
         &.labelShrunk{
           transform: none;
         }
