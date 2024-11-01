@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.17 - 2024-11-01
+## 🐛 Bugfixes
+- moved post-nested top-level style rules to separate selectors
+
+## 🔨 Improvements
+- added default fallback fonts
+
+
+
 ## 2.1.17 - 2024-07-29
 ## 🐛 Bugfixes
 - moved post-nested top-level style rules to separate selectors
