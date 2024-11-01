@@ -10,7 +10,8 @@ $default-component-form-properties:(
   validationSuccessTextColor: #000000,
   validationSuccessBackgroundColor: #00cc00,
   validationWarningTextColor: #000000,
-  validationWarningBackgroundColor: #ffcc00
+  validationWarningBackgroundColor: #ffcc00,
+  labelAboveMargin: 0,
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-properties: $default-component-form-properties !default;

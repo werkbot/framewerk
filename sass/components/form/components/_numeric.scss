@@ -93,4 +93,13 @@ $component-form-numeric-properties: $default-component-form-numeric-properties !
       }
     }
   }
+
+  // Label above field
+  &.fw-form-label-above{
+    .field.numeric{
+      input, input[type='number']{
+        padding: 9px 50px;
+      }
+    }
+  }
 }

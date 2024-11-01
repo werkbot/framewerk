@@ -51,4 +51,24 @@ $component-form-textarea-properties: $default-component-form-textarea-properties
       }
     }
   }
+
+  // Label above field
+  &.fw-form-label-above{
+    .field.textarea{
+      label{
+        position: relative;
+        transform: none;
+        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
+        &.labelShrunk{
+          transform: none;
+        }
+      }
+      textarea{
+        padding: 20px;
+        &.labelShrunk{
+          padding: 20px;
+        }
+      }
+    }
+  }
 }
