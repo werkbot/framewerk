@@ -1,5 +1,8 @@
+@use "../../../variables/theme";
+@use  "../form";
+
 // Default form text Properties
-$default-component-form-text-properties:(
+$default-component-form-text-properties: (
   borderColor: getThemeProperty(borderColor, $component-form-properties),
   shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
   textColor: getThemeProperty(textColorDark),
@@ -12,14 +15,14 @@ $default-component-form-text-properties:(
 );
 // If $component-form-text-properties is set, lets merge into our defaults
 $component-form-text-properties: $default-component-form-text-properties !default;
-@if($component-form-text-properties){
+@if ($component-form-text-properties) {
   $component-form-text-properties: recursive-map-merge($default-component-form-text-properties, $component-form-text-properties);
 }
 
-.fw-form{
-  .field.text{
+.fw-form {
+  .field.text {
     position: relative;
-    label{
+    label {
       display: block;
       position: absolute;
       transform: translate(20px, 25px);
@@ -29,11 +32,11 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       pointer-events: none;
       margin: 0;
       z-index: 1;
-      &.labelShrunk{
+      &.labelShrunk {
         transform: scale(.7) translate(30px, 20px);
       }
     }
-    input{
+    input {
       padding: 30px 20px 10px 20px;
       width: 100%;
       box-sizing: border-box;
@@ -41,11 +44,11 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       color: getThemeProperty(textColor, $component-form-text-properties);
       font-family: getThemeProperty(fontFamily, $component-form-text-properties);
       @include font-size(getThemeProperty(fontSizes, $component-form-text-properties));
-      &.labelShrunk{
+      &.labelShrunk {
         padding: 30px 20px 10px 20px;
       }
       @include focus-style;
-      &.readonly{
+      &.readonly {
         pointer-events: none;
         background: getThemeProperty(disabledColor, $component-form-properties);
       }
@@ -53,19 +56,19 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
   }
 
   // Label above field
-  &.fw-form-label-above{
-    .field.text{
-      label{
+  &.fw-form-label-above {
+    .field.text {
+      label {
         position: relative;
         transform: none;
         margin: getThemeProperty(labelAboveMargin, $component-form-properties);
-        &.labelShrunk{
+        &.labelShrunk {
           transform: none;
         }
       }
-      input{
+      input {
         padding: 20px;
-        &.labelShrunk{
+        &.labelShrunk {
           padding: 20px;
         }
       }

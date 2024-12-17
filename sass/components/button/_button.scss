@@ -1,61 +1,65 @@
+@use "sass:map";
+@use "../../elements/focus/focus";
+@use "../../variables/theme";
+
 /*
   BUTTON
   Generic button class can be used as a class on an element or as a mixin in scss.
 */
 
 // Default Button Properties
-$default-component-button-properties:(
-  backgroundColor: getThemeProperty(backgroundColorDark),
-  textColor: getThemeProperty(textColorLight),
-  backgroundHoverColor: getThemeProperty(backgroundColorLight),
-  textHoverColor: getThemeProperty(textColorDark),
+$default-component-button-properties: (
+  backgroundColor: theme.getThemeProperty(backgroundColorDark),
+  textColor: theme.getThemeProperty(textColorLight),
+  backgroundHoverColor: theme.getThemeProperty(backgroundColorLight),
+  textHoverColor: theme.getThemeProperty(textColorDark),
   padding: 10px 40px,
   margin: 5px 0,
   border: none,
   borderRadius: 5px,
   textTransform: initial,
   fontWeight: 400,
-  fontFamily: getThemeProperty(fontText),
+  fontFamily: theme.getThemeProperty(fontText),
   fontSize: 1rem,
   textAlign: center,
   disabledColor: #dddddd,
-  disabledTextColor: getThemeProperty(textColorLight),
+  disabledTextColor: theme.getThemeProperty(textColorLight),
   lineHeight: inherit,
   variants: (
     white-btn: (
-      background-color: getThemeProperty(backgroundColorLight),
-      color: getThemeProperty(textColorDark),
+      background-color: theme.getThemeProperty(backgroundColorLight),
+      color: theme.getThemeProperty(textColorDark),
       hoverStyle: (
-        background-color: getThemeProperty(primaryColor),
-        color: getThemeProperty(textColorLight),
+        background-color: theme.getThemeProperty(primaryColor),
+        color: theme.getThemeProperty(textColorLight),
       )
     )
   )
 );
 // If $component-button-properties is set, lets merge into our defaults
 $component-button-properties: $default-component-button-properties !default;
-@if($component-button-properties){
-  $component-button-properties: recursive-map-merge($default-component-button-properties, $component-button-properties);
+@if ($component-button-properties) {
+  $component-button-properties: theme.recursive-map-merge($default-component-button-properties, $component-button-properties);
 }
 
 // Button Mixin
 @mixin button-input-style() {
-  background-color: getThemeProperty(backgroundColor, $component-button-properties);
-  border-radius: getThemeProperty(borderRadius, $component-button-properties);
-  color: getThemeProperty(textColor, $component-button-properties);
+  background-color: theme.getThemeProperty(backgroundColor, $component-button-properties);
+  border-radius: theme.getThemeProperty(borderRadius, $component-button-properties);
+  color: theme.getThemeProperty(textColor, $component-button-properties);
   display: inline-block;
   position: relative;
   text-decoration: none;
-  padding: getThemeProperty(padding, $component-button-properties);
-  margin: getThemeProperty(margin, $component-button-properties);
-  border: getThemeProperty(border, $component-button-properties);;
+  padding: theme.getThemeProperty(padding, $component-button-properties);
+  margin: theme.getThemeProperty(margin, $component-button-properties);
+  border: theme.getThemeProperty(border, $component-button-properties);;
   cursor: pointer;
-  text-transform: getThemeProperty(textTransform, $component-button-properties);
-  font-weight: getThemeProperty(fontWeight, $component-button-properties);
-  font-family: getThemeProperty(fontFamily, $component-button-properties);
-  font-size: getThemeProperty(fontSize, $component-button-properties);
-  line-height: getThemeProperty(lineHeight, $component-button-properties);
-  text-align: getThemeProperty(textAlign, $component-button-properties);
+  text-transform: theme.getThemeProperty(textTransform, $component-button-properties);
+  font-weight: theme.getThemeProperty(fontWeight, $component-button-properties);
+  font-family: theme.getThemeProperty(fontFamily, $component-button-properties);
+  font-size: theme.getThemeProperty(fontSize, $component-button-properties);
+  line-height: theme.getThemeProperty(lineHeight, $component-button-properties);
+  text-align: theme.getThemeProperty(textAlign, $component-button-properties);
   -webkit-appearance: none;
   -webkit-transition: background-color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out;
@@ -64,24 +68,24 @@ $component-button-properties: $default-component-button-properties !default;
   &:link,
   &:visited,
   &:hover,
-  &:active{
-    color: getThemeProperty(textColor, $component-button-properties);
+  &:active {
+    color: theme.getThemeProperty(textColor, $component-button-properties);
   }
-  &:hover{
-    background-color: getThemeProperty(backgroundHoverColor, $component-button-properties);
-    color: getThemeProperty(textHoverColor, $component-button-properties);
+  &:hover {
+    background-color: theme.getThemeProperty(backgroundHoverColor, $component-button-properties);
+    color: theme.getThemeProperty(textHoverColor, $component-button-properties);
   }
-  @include focus-style;
+  @include focus.focus-style;
 
   &.disabled {
     pointer-events: none;
-    background: getThemeProperty(disabledColor, $component-button-properties) !important;
-    color: getThemeProperty(disabledTextColor, $component-button-properties) !important;
+    background: theme.getThemeProperty(disabledColor, $component-button-properties) !important;
+    color: theme.getThemeProperty(disabledTextColor, $component-button-properties) !important;
   }
 
   // Define style rules for button variants
-  @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
-    &.#{$variantClass}{
+  @each $variantClass, $variantProperties in theme.getThemeProperty(variants, $component-button-properties) {
+    &.#{$variantClass} {
       @each $styleRule, $styleValue in $variantProperties {
         @if ($styleRule != 'hoverStyle') {
           #{$styleRule}: #{$styleValue};
@@ -89,7 +93,7 @@ $component-button-properties: $default-component-button-properties !default;
       }
 
       &:hover {
-        @each $hoverStyleRule, $hoverStyleValue in map-get($variantProperties, 'hoverStyle') {
+        @each $hoverStyleRule, $hoverStyleValue in map.get($variantProperties, 'hoverStyle') {
           #{$hoverStyleRule}: #{$hoverStyleValue};
         }
       }
@@ -100,14 +104,14 @@ $component-button-properties: $default-component-button-properties !default;
 }
 
 // Applied to `a` elements with the `button` class
-a.button, input.button, button.button{
+a.button, input.button, button.button {
   @include button-input-style;
 }
 
 /*
   To add onto the button, you can define the following in your local
-  a.button{
-    &.super-custom-button{
+  a.button {
+    &.super-custom-button {
       background-color: #fbff00;
       color: #333333;
     }

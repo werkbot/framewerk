@@ -1,5 +1,8 @@
+@use "../../../variables/theme";
+@use  "../form";
+
 // Default form radio Properties
-$default-component-form-radio-properties:(
+$default-component-form-radio-properties: (
   backgroundColor: getThemeProperty(backgroundColorLight),
   checkedIcon: "\f192",
   checkedTextColor: getThemeProperty(textColorDark),
@@ -10,21 +13,21 @@ $default-component-form-radio-properties:(
 );
 // If $component-form-radio-properties is set, lets merge into our defaults
 $component-form-radio-properties: $default-component-form-radio-properties !default;
-@if($component-form-radio-properties){
+@if ($component-form-radio-properties) {
   $component-form-radio-properties: map-merge($default-component-form-radio-properties, $component-form-radio-properties);
 }
 
-.fw-form{
+.fw-form {
   fieldset.field div, 
   .field.optionset div, 
-  ul.optionset li{
+  ul.optionset li {
     position: relative;
-    input[type='radio']{
+    input[type='radio'] {
       width: max-content;
       border: none;
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
-      &::before{
+      &::before {
         font-family: getThemeProperty(iconFontFamily, $component-form-radio-properties);
         border-radius: 25px;
         content: getThemeProperty(notCheckedIcon, $component-form-radio-properties);
@@ -40,11 +43,11 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         color: getThemeProperty(notCheckedTextColor, $component-form-radio-properties);
         background: getThemeProperty(backgroundColor, $component-form-radio-properties);
       }
-      &:checked::before{
+      &:checked::before {
         content: getThemeProperty(checkedIcon, $component-form-radio-properties);
         color: getThemeProperty(checkedTextColor, $component-form-radio-properties);
       }
-      + label{
+      + label {
         display: inline-flex;
         align-items: center;
         width: max-content;
@@ -53,13 +56,13 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         line-height: 1;
         cursor: pointer;
       }
-      &.readonly{
+      &.readonly {
         pointer-events: none;
-        &::before{
+        &::before {
           cursor: default;
           background: getThemeProperty(disabledColor, $component-form-properties);
         }
-        + label{
+        + label {
           cursor: default;
           pointer-events: none;
         }
@@ -70,7 +73,7 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
   fieldset.field .odd, 
   fieldset.field .even, 
   .field.optionset li,
-  ul.optionset li{
+  ul.optionset li {
     @include focus-within-style;
   }
 }

@@ -1,16 +1,18 @@
+@use "../../variables/theme";
+
 // Default text Properties
-$default-element-text-properties:(
+$default-element-text-properties: (
     boldStrongWeight: 700,
     largeTextFontSize: 1.5em,
 );
 // If $default-element-text-properties is set, lets merge into our defaults
 $element-text-properties: $default-element-text-properties !default;
-@if($element-text-properties){
+@if ($element-text-properties) {
     $element-text-properties: recursive-map-merge($default-element-text-properties, $element-text-properties);
 }
 
 strong, b {
-  font-weight: getThemeProperty(boldStrongWeight, $element-text-properties);
+  font-weight: theme.getThemeProperty(boldStrongWeight, $element-text-properties);
 }
 em, i {
   font-style: italic;
@@ -32,21 +34,21 @@ sup {
     }
 }
 
-.text-center{
+.text-center {
     @include importantOptionFor(text-align, center);
 }
-.text-left{
+.text-left {
     @include importantOptionFor(text-align, left);
 }
-.text-right{
+.text-right {
     @include importantOptionFor(text-align, right);
 }
-.text-justify{
+.text-justify {
     @include importantOptionFor(text-align, justify);
 }
-.large-text{
-    @include importantOptionFor(font-size, getThemeProperty(largeTextFontSize, $element-text-properties));
+.large-text {
+    @include importantOptionFor(font-size, theme.getThemeProperty(largeTextFontSize, $element-text-properties));
 }
-.text-white{
+.text-white {
     @include importantOptionFor(color, #ffffff);
 }

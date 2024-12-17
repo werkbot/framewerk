@@ -1,43 +1,47 @@
+@use "sass:map";
+@use "../../variables/theme";
+@use "../focus/focus";
+
 // Default link Properties
-$default-element-link-properties:(
-  linkColor: getThemeProperty(textColorDark),
-  linkColorVisited:getThemeProperty(textColorDark),
-  linkColorActive: getThemeProperty(textColorDark),
-  linkColorHover: getThemeProperty(textColorDark),
+$default-element-link-properties: (
+  linkColor: theme.getThemeProperty(textColorDark),
+  linkColorVisited:theme.getThemeProperty(textColorDark),
+  linkColorActive: theme.getThemeProperty(textColorDark),
+  linkColorHover: theme.getThemeProperty(textColorDark),
   linkDecoration: underline,
   linkDecorationHover: none
 );
 // If $element-link-properties is set, lets merge into our defaults
 $element-link-properties: $default-element-link-properties !default;
-@if($element-link-properties){
-  $element-link-properties: map-merge($default-element-link-properties, $element-link-properties);
+@if ($element-link-properties) {
+  $element-link-properties: map.merge($default-element-link-properties, $element-link-properties);
 }
 
 // Mixin for applying to an a element, this exists for when you want a whole section to have a different
 // property (color, etc...) for a certain section where the default properties do not work.
 @mixin fw-mixin-link($properties) {
-  @if($properties){
-    $properties: map-merge($default-element-link-properties, $properties);
+  @if ($properties) {
+    $properties: map.merge($default-element-link-properties, $properties);
   }
-  color: getThemeProperty(linkColor, $properties);
-  text-decoration: getThemeProperty(linkDecoration, $properties);
-  &:link{
-    color: getThemeProperty(linkColor, $properties);
+  color: theme.getThemeProperty(linkColor, $properties);
+  text-decoration: theme.getThemeProperty(linkDecoration, $properties);
+  &:link {
+    color: theme.getThemeProperty(linkColor, $properties);
   }
-  &:visited{
-    color: getThemeProperty(linkColorVisited, $properties);
+  &:visited {
+    color: theme.getThemeProperty(linkColorVisited, $properties);
   }
-  &:hover{
-    color: getThemeProperty(linkColorHover, $properties);
-    text-decoration: getThemeProperty(linkDecorationHover, $properties);
+  &:hover {
+    color: theme.getThemeProperty(linkColorHover, $properties);
+    text-decoration: theme.getThemeProperty(linkDecorationHover, $properties);
   }
-  &:active{
-    color: getThemeProperty(linkColorActive, $properties);
+  &:active {
+    color: theme.getThemeProperty(linkColorActive, $properties);
   }
-  @include focus-style;
+  @include focus.focus-style;
 }
 
 // Apply the mixin to the default a element
-a{
+a {
   @include fw-mixin-link($element-link-properties);
 }

@@ -1,3 +1,5 @@
+@use "../../variables/theme";
+
 @use "sass:math";
 
 /*
@@ -5,37 +7,37 @@
   getThemeProperty(layoutSpace) variable is defined in _fw-variables.scss
   Used for consistent margins and gutters throughout the defined content
 */
-$default-base-space-properties:(
-  paddingclasses:(
+$default-base-space-properties: (
+  paddingclasses: (
     none: 0,
-    default: getThemeProperty(layoutSpace),
-    double: getThemeProperty(layoutSpace) * 2,
-    triple: getThemeProperty(layoutSpace) * 3,
-    one-forth: getThemeProperty(layoutSpace) * 0.25,
-    half: math.div(getThemeProperty(layoutSpace), 2),
-    three-forths: getThemeProperty(layoutSpace) * 0.75,
+    default: theme.getThemeProperty(layoutSpace),
+    double: theme.getThemeProperty(layoutSpace) * 2,
+    triple: theme.getThemeProperty(layoutSpace) * 3,
+    one-forth: theme.getThemeProperty(layoutSpace) * 0.25,
+    half: math.div(theme.getThemeProperty(layoutSpace), 2),
+    three-forths: theme.getThemeProperty(layoutSpace) * 0.75,
   ),
-  paddingleftclasses:(
+  paddingleftclasses: (
     noleft: 0,
-    halfleft: math.div(getThemeProperty(layoutSpace), 2),
+    halfleft: math.div(theme.getThemeProperty(layoutSpace), 2),
   ),
-  paddingrightclasses:(
+  paddingrightclasses: (
     noright: 0,
-    halfright: math.div(getThemeProperty(layoutSpace), 2),
+    halfright: math.div(theme.getThemeProperty(layoutSpace), 2),
   ),
-  paddingtopclasses:(
+  paddingtopclasses: (
     notop: 0,
-    halftop: math.div(getThemeProperty(layoutSpace), 2),
+    halftop: math.div(theme.getThemeProperty(layoutSpace), 2),
   ),
-  paddingbottomclasses:(
+  paddingbottomclasses: (
     nobottom: 0,
-    halfbottom: math.div(getThemeProperty(layoutSpace), 2),
+    halfbottom: math.div(theme.getThemeProperty(layoutSpace), 2),
   )
 );
 // If $base-space-properties is set, lets merge into our defaults
 $base-space-properties: $default-base-space-properties !default;
-@if($base-space-properties){
-  $base-space-properties: recursive-map-merge($default-base-space-properties, $base-space-properties);
+@if ($base-space-properties) {
+  $base-space-properties: theme.recursive-map-merge($default-base-space-properties, $base-space-properties);
 }
 
 // Positions used for specific padding below, padding-left, padding-right, etc...
@@ -43,16 +45,16 @@ $positions: top, right, bottom, left;
 
 // Default spacing - desktop
 .fw-space,
-.space{
-	padding: getThemeProperty(layoutSpace);
-	@each $label, $value in getThemeProperty("paddingclasses", $base-space-properties){
-		&.#{$label}{
-			padding: #{$value};
-		}
-	}
+.space {
+  padding: theme.getThemeProperty(layoutSpace);
+  @each $label, $value in theme.getThemeProperty("paddingclasses", $base-space-properties) {
+    &.#{$label} {
+      padding: #{$value};
+    }
+  }
   @each $position in $positions {
-    @each $label, $value in getThemeProperty(padding#{$position}classes, $base-space-properties) {
-      &.#{$label}{
+    @each $label, $value in theme.getThemeProperty(padding#{$position}classes, $base-space-properties) {
+      &.#{$label} {
         padding-#{$position}: #{$value};
       }
     }
@@ -60,19 +62,19 @@ $positions: top, right, bottom, left;
 }
 
 // For each responsive breakpoint, create a space class
-@each $label, $breakpoint in getThemeProperty(breakpointResponsive){
-	@media only screen and (max-width: $breakpoint) {
-		@each $spacelabel, $value in getThemeProperty("paddingclasses", $base-space-properties){
-			.fw-space.fw-space-#{$label}-#{$spacelabel}{
-				padding: #{$value};
-			}
-		}
+@each $label, $breakpoint in theme.getThemeProperty(breakpointResponsive) {
+  @media only screen and (max-width: $breakpoint) {
+    @each $spacelabel, $value in theme.getThemeProperty("paddingclasses", $base-space-properties) {
+      .fw-space.fw-space-#{$label}-#{$spacelabel} {
+        padding: #{$value};
+      }
+    }
     @each $position in $positions {
-      @each $spacelabel, $value in getThemeProperty(padding#{$position}classes, $base-space-properties) {
-        .fw-space.fw-space-#{$label}-#{$spacelabel}{
+      @each $spacelabel, $value in theme.getThemeProperty(padding#{$position}classes, $base-space-properties) {
+        .fw-space.fw-space-#{$label}-#{$spacelabel} {
           padding-#{$position}: #{$value};
         }
       }
     }
-	}
+  }
 }

@@ -1,4 +1,6 @@
-hr{
+@use "../../variables/theme";
+
+hr {
   width: 100%;
-  color: getThemeProperty(primaryColor);
+  color: theme.getThemeProperty(primaryColor);
 }

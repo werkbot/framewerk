@@ -1,36 +1,39 @@
+@use "../../../variables/theme";
+@use  "../typography";
+
 // Default ol Properties
-$default-element-ol-properties:(
+$default-element-ol-properties: (
     listStyle: decimal outside,
-    color: getThemeProperty(TextColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontText),
+    color: theme.getThemeProperty(TextColor, $component-typography-properties),
+    fontFamily: theme.getThemeProperty(fontText),
     fontWeight: 400,
     fontSizes: (
-        desktop: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
-        tablet: (1em, getThemeProperty(TextLineHeight, $component-typography-properties)),
-        phone: (1em, getThemeProperty(TextLineHeight, $component-typography-properties))
+        desktop: (1em, theme.getThemeProperty(TextLineHeight, $component-typography-properties)),
+        tablet: (1em, theme.getThemeProperty(TextLineHeight, $component-typography-properties)),
+        phone: (1em, theme.getThemeProperty(TextLineHeight, $component-typography-properties))
     ),
-    margin: 0 0 getThemeProperty(layoutSpace) getThemeProperty(layoutSpace),
-    textTransform: getThemeProperty(TextTextTransform, $component-typography-properties),
-    letterSpacing: getThemeProperty(TextLetterSpacing, $component-typography-properties)
+    margin: 0 0 theme.getThemeProperty(layoutSpace) theme.getThemeProperty(layoutSpace),
+    textTransform: theme.getThemeProperty(TextTextTransform, $component-typography-properties),
+    letterSpacing: theme.getThemeProperty(TextLetterSpacing, $component-typography-properties)
 );
 // If $element-ol-properties is set, lets merge into our defaults
 $element-ol-properties: $default-element-ol-properties !default;
-@if($element-ol-properties){
+@if ($element-ol-properties) {
   $element-ol-properties: recursive-map-merge($default-element-ol-properties, $element-ol-properties);
 }
 
-ol{
-	list-style: getThemeProperty(listStyle, $element-ol-properties);
-  color: getThemeProperty(color, $element-ol-properties);
-  font-family: getThemeProperty(fontFamily, $element-ol-properties);
-  font-weight: getThemeProperty(fontWeight, $element-ol-properties);
-  text-transform: getThemeProperty(textTransform, $element-ol-properties);
-  letter-spacing: getThemeProperty(letterSpacing, $element-ol-properties);
-  @include font-size(getThemeProperty(fontSizes, $element-ol-properties));
+ol {
+  list-style: theme.getThemeProperty(listStyle, $element-ol-properties);
+  color: theme.getThemeProperty(color, $element-ol-properties);
+  font-family: theme.getThemeProperty(fontFamily, $element-ol-properties);
+  font-weight: theme.getThemeProperty(fontWeight, $element-ol-properties);
+  text-transform: theme.getThemeProperty(textTransform, $element-ol-properties);
+  letter-spacing: theme.getThemeProperty(letterSpacing, $element-ol-properties);
+  @include font-size(theme.getThemeProperty(fontSizes, $element-ol-properties));
 }
 
-.fw-typography-spacing{
-  ol{
-    margin: getThemeProperty(margin, $element-ol-properties);
+.fw-typography-spacing {
+  ol {
+    margin: theme.getThemeProperty(margin, $element-ol-properties);
   }
 }

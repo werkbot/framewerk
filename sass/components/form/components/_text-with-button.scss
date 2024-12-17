@@ -1,3 +1,6 @@
+@use "../../../variables/theme";
+@use  "../form";
+
 // Default form text-with-button Properties
 $default-component-form-text-with-button-properties: (
   backgroundColor: getThemeProperty(backgroundColorLight),
@@ -27,7 +30,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
       pointer-events: none;
       margin: 0;
       z-index: 1;
-      &.labelShrunk{
+      &.labelShrunk {
         transform: scale(.7) translate(30px, 20px);
       }
     }
@@ -51,11 +54,11 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
       border-width: getThemeProperty(borderWidth, $component-form-text-with-button-properties);
       border-color: getThemeProperty(borderColor, $component-form-text-with-button-properties);
       background-color: getThemeProperty(backgroundColor, $component-form-text-with-button-properties);
-      &.labelShrunk{
+      &.labelShrunk {
         padding: 30px 20px 10px 20px;
       }
       @include focus-style;
-      &.readonly{
+      &.readonly {
         pointer-events: none;
         background: getThemeProperty(disabledColor, $component-form-properties);
       }
@@ -104,19 +107,19 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
   }
 
   // Label above field
-  &.fw-form-label-above{
-    .field.text-with-button{
-      label{
+  &.fw-form-label-above {
+    .field.text-with-button {
+      label {
         position: relative;
         transform: none;
         margin: getThemeProperty(labelAboveMargin, $component-form-properties);
-        &.labelShrunk{
+        &.labelShrunk {
           transform: none;
         }
       }
-      input{
+      input {
         padding: 20px;
-        &.labelShrunk{
+        &.labelShrunk {
           padding: 20px;
         }
       }

@@ -1,35 +1,38 @@
+@use "../../../variables/theme";
+@use  "../typography";
+
 // Default h3 Properties
-$default-element-h3-properties:(
-    color: getThemeProperty(HeadingColor, $component-typography-properties),
-    fontFamily: getThemeProperty(fontHeader),
+$default-element-h3-properties: (
+    color: theme.getThemeProperty(HeadingColor, $component-typography-properties),
+    fontFamily: theme.getThemeProperty(fontHeader),
     fontWeight: 700,
     fontSizes: (
-        desktop: (1.500em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
-        tablet: (1.500em, getThemeProperty(HeadingLineHeight, $component-typography-properties)),
-        phone: (1.500em, getThemeProperty(HeadingLineHeight, $component-typography-properties))
+        desktop: (1.500em, theme.getThemeProperty(HeadingLineHeight, $component-typography-properties)),
+        tablet: (1.500em, theme.getThemeProperty(HeadingLineHeight, $component-typography-properties)),
+        phone: (1.500em, theme.getThemeProperty(HeadingLineHeight, $component-typography-properties))
     ),
-    margin: getThemeProperty(HeadingMargin, $component-typography-properties),
-    textTransform: getThemeProperty(HeadingTextTransform, $component-typography-properties),
-    letterSpacing: getThemeProperty(HeadingLetterSpacing, $component-typography-properties)
+    margin: theme.getThemeProperty(HeadingMargin, $component-typography-properties),
+    textTransform: theme.getThemeProperty(HeadingTextTransform, $component-typography-properties),
+    letterSpacing: theme.getThemeProperty(HeadingLetterSpacing, $component-typography-properties)
 );
 // If $element-h3-properties is set, lets merge into our defaults
 $element-h3-properties: $default-element-h3-properties !default;
-@if($element-h3-properties){
+@if ($element-h3-properties) {
   $element-h3-properties: recursive-map-merge($default-element-h3-properties, $element-h3-properties);
 }
 
 h3,
-.fw-heading-3{
-  color: getThemeProperty(color, $element-h3-properties);
-  font-family: getThemeProperty(fontFamily, $element-h3-properties);
-  font-weight: getThemeProperty(fontWeight, $element-h3-properties);
-  text-transform: getThemeProperty(textTransform, $element-h3-properties);
-  letter-spacing: getThemeProperty(letterSpacing, $element-h3-properties);
-  @include font-size(getThemeProperty(fontSizes, $element-h3-properties));
+.fw-heading-3 {
+  color: theme.getThemeProperty(color, $element-h3-properties);
+  font-family: theme.getThemeProperty(fontFamily, $element-h3-properties);
+  font-weight: theme.getThemeProperty(fontWeight, $element-h3-properties);
+  text-transform: theme.getThemeProperty(textTransform, $element-h3-properties);
+  letter-spacing: theme.getThemeProperty(letterSpacing, $element-h3-properties);
+  @include font-size(theme.getThemeProperty(fontSizes, $element-h3-properties));
 }
 
-.fw-typography-spacing{
-  h3{
-    margin: getThemeProperty(margin, $element-h3-properties);
+.fw-typography-spacing {
+  h3 {
+    margin: theme.getThemeProperty(margin, $element-h3-properties);
   }
 }

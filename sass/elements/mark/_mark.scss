@@ -1,16 +1,19 @@
+@use "sass:map";
+@use "../../variables/theme";
+
 // Default mark Properties
-$default-element-mark-properties:(
-  background: getThemeProperty(primaryColor),
-  color: getThemeProperty(textColorLight),
+$default-element-mark-properties: (
+  background: theme.getThemeProperty(primaryColor),
+  color: theme.getThemeProperty(textColorLight),
   padding: 0 8px,
 );
 // If $element-mark-properties is set, lets merge into our defaults
 $element-mark-properties: $default-element-mark-properties !default;
-@if($element-mark-properties){
-  $element-mark-properties: map-merge($default-element-mark-properties, $element-mark-properties);
+@if ($element-mark-properties) {
+  $element-mark-properties: map.merge($default-element-mark-properties, $element-mark-properties);
 }
 mark {
-  background: getThemeProperty(background, $element-mark-properties);
-  color: getThemeProperty(color, $element-mark-properties);
-  padding: getThemeProperty(padding, $element-mark-properties);
+  background: theme.getThemeProperty(background, $element-mark-properties);
+  color: theme.getThemeProperty(color, $element-mark-properties);
+  padding: theme.getThemeProperty(padding, $element-mark-properties);
 }

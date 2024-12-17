@@ -1,14 +1,18 @@
+@use "sass:map";
+@use "../../elements/mark/mark";
+@use "../../variables/theme";
+
 // Default selection Properties
-$default-component-selection-properties:(
-  background: getThemeProperty(background, $element-mark-properties),
-  color: getThemeProperty(color, $element-mark-properties),
+$default-component-selection-properties: (
+  background: theme.getThemeProperty(background, mark.$element-mark-properties),
+  color: theme.getThemeProperty(color, mark.$element-mark-properties),
 );
 // If $component-selection-properties is set, lets merge into our defaults
 $component-selection-properties: $default-component-selection-properties !default;
-@if($component-selection-properties){
-  $component-selection-properties: map-merge($default-component-selection-properties, $component-selection-properties);
+@if ($component-selection-properties) {
+  $component-selection-properties: map.merge($default-component-selection-properties, $component-selection-properties);
 }
 p::selection, li::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, b::selection, strong::selection, i::selection, em::selection, a::selection, mark::selection {
-  background: getThemeProperty(background, $component-selection-properties);
-  color: getThemeProperty(color, $component-selection-properties);
+  background: theme.getThemeProperty(background, $component-selection-properties);
+  color: theme.getThemeProperty(color, $component-selection-properties);
 }

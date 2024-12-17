@@ -1,42 +1,45 @@
+@use "sass:map";
+@use "../../variables/theme";
+
 /*
   Ordered & Un-ordered Column List
 */
 ul,
-ol{
-  &.two-column-list{
+ol {
+  &.two-column-list {
     columns: 2;
     column-gap: 40px;
   }
-  &.three-column-list{
+  &.three-column-list {
     columns: 3;
     column-gap: 40px;
   }
-  &.four-column-list{
+  &.four-column-list {
     columns: 4;
     column-gap: 40px;
   }
-  &.five-column-list{
+  &.five-column-list {
     columns: 5;
     column-gap: 40px;
   }
 }
-ol{
-  li{
+ol {
+  li {
     margin-bottom: 20px;
-    &::marker{
+    &::marker {
       font-weight: 700;
       line-height: 1;
       font-size: 1.2em;
     }
   }
 }
-@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
+@media only screen and (max-width: map.get(theme.getThemeProperty(breakpointResponsive), phone)) {
   ul,
-  ol{
+  ol {
     &.two-column-list,
     &.three-column-list,
     &.four-column-list,
-    &.five-column-list{
+    &.five-column-list {
       columns: 1;
     }
   }
