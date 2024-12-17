@@ -1,7 +1,47 @@
 @charset "UTF-8";
 
+@use "../../variables/theme";
+
+// Base Hamburger (We need this)
+// ==================================================
+@use "hamburgers/_sass/hamburgers/base";
+
+// Hamburger types
+// ==================================================
+@use "hamburgers/_sass/hamburgers/types/3dx";
+@use "hamburgers/_sass/hamburgers/types/3dx-r";
+@use "hamburgers/_sass/hamburgers/types/3dy";
+@use "hamburgers/_sass/hamburgers/types/3dy-r";
+@use "hamburgers/_sass/hamburgers/types/3dxy";
+@use "hamburgers/_sass/hamburgers/types/3dxy-r";
+@use "hamburgers/_sass/hamburgers/types/arrow";
+@use "hamburgers/_sass/hamburgers/types/arrow-r";
+@use "hamburgers/_sass/hamburgers/types/arrowalt";
+@use "hamburgers/_sass/hamburgers/types/arrowalt-r";
+@use "hamburgers/_sass/hamburgers/types/arrowturn";
+@use "hamburgers/_sass/hamburgers/types/arrowturn-r";
+@use "hamburgers/_sass/hamburgers/types/boring";
+@use "hamburgers/_sass/hamburgers/types/collapse";
+@use "hamburgers/_sass/hamburgers/types/collapse-r";
+@use "hamburgers/_sass/hamburgers/types/elastic";
+@use "hamburgers/_sass/hamburgers/types/elastic-r";
+@use "hamburgers/_sass/hamburgers/types/emphatic";
+@use "hamburgers/_sass/hamburgers/types/emphatic-r";
+@use "hamburgers/_sass/hamburgers/types/minus";
+@use "hamburgers/_sass/hamburgers/types/slider";
+@use "hamburgers/_sass/hamburgers/types/slider-r";
+@use "hamburgers/_sass/hamburgers/types/spin";
+@use "hamburgers/_sass/hamburgers/types/spin-r";
+@use "hamburgers/_sass/hamburgers/types/spring";
+@use "hamburgers/_sass/hamburgers/types/spring-r";
+@use "hamburgers/_sass/hamburgers/types/stand";
+@use "hamburgers/_sass/hamburgers/types/stand-r";
+@use "hamburgers/_sass/hamburgers/types/squeeze";
+@use "hamburgers/_sass/hamburgers/types/vortex";
+@use "hamburgers/_sass/hamburgers/types/vortex-r";
+
 // Default Hamburger Properties
-$default-component-hamburger-properties:(
+$default-component-hamburger-properties: (
   hamburger-padding-x: 15px,
   hamburger-padding-y: 15px,
   hamburger-layer-width: 40px,
@@ -15,7 +55,7 @@ $default-component-hamburger-properties:(
 );
 // If $component-hamburger-properties is set, lets merge into our defaults
 $component-hamburger-properties: $default-component-hamburger-properties !default;
-@if($component-hamburger-properties){
+@if ($component-hamburger-properties) {
   $component-hamburger-properties: map-merge($default-component-hamburger-properties, $component-hamburger-properties);
 }
 
@@ -29,16 +69,16 @@ $component-hamburger-properties: $default-component-hamburger-properties !defaul
 
 // Settings
 // ==================================================
-$hamburger-padding-x           : getThemeProperty(hamburger-padding-x, $component-hamburger-properties) !default;
-$hamburger-padding-y           : getThemeProperty(hamburger-padding-y, $component-hamburger-properties) !default;
-$hamburger-layer-width         : getThemeProperty(hamburger-layer-width, $component-hamburger-properties) !default;
-$hamburger-layer-height        : getThemeProperty(hamburger-layer-height, $component-hamburger-properties) !default;
-$hamburger-layer-spacing       : getThemeProperty(hamburger-layer-spacing , $component-hamburger-properties) !default;
-$hamburger-layer-color         : getThemeProperty(hamburger-layer-color , $component-hamburger-properties) !default;
-$hamburger-layer-border-radius : getThemeProperty(hamburger-layer-border-radius, $component-hamburger-properties) !default;
-$hamburger-hover-opacity       : getThemeProperty(hamburger-hover-opacity, $component-hamburger-properties) !default;
-$hamburger-active-layer-color  : getThemeProperty(hamburger-active-layer-color, $component-hamburger-properties) !default;
-$hamburger-active-hover-opacity: getThemeProperty(hamburger-active-hover-opacity, $component-hamburger-properties) !default;
+$hamburger-padding-x           : theme.getThemeProperty(hamburger-padding-x, $component-hamburger-properties) !default;
+$hamburger-padding-y           : theme.getThemeProperty(hamburger-padding-y, $component-hamburger-properties) !default;
+$hamburger-layer-width         : theme.getThemeProperty(hamburger-layer-width, $component-hamburger-properties) !default;
+$hamburger-layer-height        : theme.getThemeProperty(hamburger-layer-height, $component-hamburger-properties) !default;
+$hamburger-layer-spacing       : theme.getThemeProperty(hamburger-layer-spacing , $component-hamburger-properties) !default;
+$hamburger-layer-color         : theme.getThemeProperty(hamburger-layer-color , $component-hamburger-properties) !default;
+$hamburger-layer-border-radius : theme.getThemeProperty(hamburger-layer-border-radius, $component-hamburger-properties) !default;
+$hamburger-hover-opacity       : theme.getThemeProperty(hamburger-hover-opacity, $component-hamburger-properties) !default;
+$hamburger-active-layer-color  : theme.getThemeProperty(hamburger-active-layer-color, $component-hamburger-properties) !default;
+$hamburger-active-hover-opacity: theme.getThemeProperty(hamburger-active-hover-opacity, $component-hamburger-properties) !default;
 
 // To use CSS filters as the hover effect instead of opacity,
 // set $hamburger-hover-use-filter as true and
@@ -83,40 +123,3 @@ $hamburger-types: (
   vortex-r
 ) !default;
 
-// Base Hamburger (We need this)
-// ==================================================
-@import "hamburgers/_sass/hamburgers/base";
-
-// Hamburger types
-// ==================================================
-@import "hamburgers/_sass/hamburgers/types/3dx";
-@import "hamburgers/_sass/hamburgers/types/3dx-r";
-@import "hamburgers/_sass/hamburgers/types/3dy";
-@import "hamburgers/_sass/hamburgers/types/3dy-r";
-@import "hamburgers/_sass/hamburgers/types/3dxy";
-@import "hamburgers/_sass/hamburgers/types/3dxy-r";
-@import "hamburgers/_sass/hamburgers/types/arrow";
-@import "hamburgers/_sass/hamburgers/types/arrow-r";
-@import "hamburgers/_sass/hamburgers/types/arrowalt";
-@import "hamburgers/_sass/hamburgers/types/arrowalt-r";
-@import "hamburgers/_sass/hamburgers/types/arrowturn";
-@import "hamburgers/_sass/hamburgers/types/arrowturn-r";
-@import "hamburgers/_sass/hamburgers/types/boring";
-@import "hamburgers/_sass/hamburgers/types/collapse";
-@import "hamburgers/_sass/hamburgers/types/collapse-r";
-@import "hamburgers/_sass/hamburgers/types/elastic";
-@import "hamburgers/_sass/hamburgers/types/elastic-r";
-@import "hamburgers/_sass/hamburgers/types/emphatic";
-@import "hamburgers/_sass/hamburgers/types/emphatic-r";
-@import "hamburgers/_sass/hamburgers/types/minus";
-@import "hamburgers/_sass/hamburgers/types/slider";
-@import "hamburgers/_sass/hamburgers/types/slider-r";
-@import "hamburgers/_sass/hamburgers/types/spin";
-@import "hamburgers/_sass/hamburgers/types/spin-r";
-@import "hamburgers/_sass/hamburgers/types/spring";
-@import "hamburgers/_sass/hamburgers/types/spring-r";
-@import "hamburgers/_sass/hamburgers/types/stand";
-@import "hamburgers/_sass/hamburgers/types/stand-r";
-@import "hamburgers/_sass/hamburgers/types/squeeze";
-@import "hamburgers/_sass/hamburgers/types/vortex";
-@import "hamburgers/_sass/hamburgers/types/vortex-r";

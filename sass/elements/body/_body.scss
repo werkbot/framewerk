@@ -1,23 +1,26 @@
+@use "sass:map";
+@use "../../variables/theme";
+
 // Default body Properties
-$default-element-body-properties:(
-    background: getThemeProperty(backgroundColorLight),
-    color: getThemeProperty(textColorDark),
-    fontFamily: getThemeProperty(fontHeader),
+$default-element-body-properties: (
+    background: theme.getThemeProperty(backgroundColorLight),
+    color: theme.getThemeProperty(textColorDark),
+    fontFamily: theme.getThemeProperty(fontHeader),
     fontWeight: 400,
     fontSize: 1rem,
     lineHeight: 1rem
 );
 // If $element-body-properties is set, lets merge into our defaults
 $element-body-properties: $default-element-body-properties !default;
-@if($element-body-properties){
-  $element-body-properties: map-merge($default-element-body-properties, $element-body-properties);
+@if ($element-body-properties) {
+  $element-body-properties: map.merge($default-element-body-properties, $element-body-properties);
 }
 
-body{
-  background: getThemeProperty(background, $element-body-properties);
-  color: getThemeProperty(color, $element-body-properties);
-  font-family: getThemeProperty(fontFamily, $element-body-properties);
-  font-weight: getThemeProperty(fontWeight, $element-body-properties);
-  font-size: getThemeProperty(fontSize, $element-body-properties);
-  line-height: getThemeProperty(lineHeight, $element-body-properties);
+body {
+  background: theme.getThemeProperty(background, $element-body-properties);
+  color: theme.getThemeProperty(color, $element-body-properties);
+  font-family: theme.getThemeProperty(fontFamily, $element-body-properties);
+  font-weight: theme.getThemeProperty(fontWeight, $element-body-properties);
+  font-size: theme.getThemeProperty(fontSize, $element-body-properties);
+  line-height: theme.getThemeProperty(lineHeight, $element-body-properties);
 }

@@ -1,27 +1,28 @@
 /* variables */
-@import 'variables/theme';
+@forward 'variables/theme';
 
 /* base */
-@import 'base/reset/reset';
-@import 'base/space/space';
-@import 'base/flex/flex';
-@import 'base/layout/layout';
+@use 'base/reset/reset';
+@forward 'base/space/space';
+@use 'base/flex/flex';
+@use 'base/layout/layout';
 
 /* Elements */
-@import 'elements/focus/focus';
-@import 'elements/html/html';
-@import 'elements/body/body';
-@import 'elements/hr/hr';
-@import 'elements/image/image';
-@import 'elements/link/link';
-@import 'elements/mark/mark';
-@import 'elements/table/table';
-@import 'elements/list/list';
-@import 'elements/typography/typography';
+@forward 'elements/focus/focus';
+@use 'elements/html/html';
+@forward 'elements/body/body';
+@use 'elements/hr/hr';
+@forward 'elements/image/image';
+@forward 'elements/link/link';
+@forward 'elements/mark/mark';
+@forward 'elements/table/table';
+@use 'elements/list/list';
+@forward 'elements/typography/typography';
 
 /* components */
-@import 'components/button/button';
-@import 'components/container/container';
-@import 'components/form/form';
-@import 'components/hamburger/hamburger';
-@import 'components/selection/selection';
+@forward 'components/button/button';
+@use 'components/container/container';
+@forward 'components/form/form';
+@forward 'components/hamburger/hamburger';
+@forward 'components/selection/selection';
+

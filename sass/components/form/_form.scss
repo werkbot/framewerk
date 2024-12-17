@@ -1,5 +1,17 @@
+@use "../../variables/theme";
+
+// Components
+@forward 'components/radio';
+@forward 'components/checkbox';
+@forward 'components/text';
+@forward 'components/textarea';
+@forward 'components/text-with-button';
+@forward 'components/select';
+@forward 'components/numeric';
+@forward 'components/form-process';
+
 // Default form checkbox Properties
-$default-component-form-properties:(
+$default-component-form-properties: (
   borderColor: #cccccc,
   labelColor: getThemeProperty(textColorDark),
   disabledColor: getThemeProperty(disabledColor, $component-button-properties),
@@ -15,40 +27,40 @@ $default-component-form-properties:(
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-properties: $default-component-form-properties !default;
-@if($component-form-properties){
+@if ($component-form-properties) {
   $component-form-properties: map-merge($default-component-form-properties, $component-form-properties);
 }
 
 // General Form Styles
-.fw-form{
+.fw-form {
   // Field Spacing
-  .field{
+  .field {
     margin: getThemeProperty(fieldSpacing, $component-form-properties) 0;
   }
   // Validation/Messages
-  .message{
+  .message {
     padding: getThemeProperty(layoutSpace, $component-form-properties);
     display: block;
     &.error,
     &.bad,
-    &.validation{
+    &.validation {
       color: getThemeProperty(validationErrorTextColor, $component-form-properties);
       background: getThemeProperty(validationErrorBackgroundColor, $component-form-properties);
     }
-    &.warning{
+    &.warning {
       color: getThemeProperty(validationWarningTextColor, $component-form-properties);
       background: getThemeProperty(validationWarningBackgroundColor, $component-form-properties);
     }
-    &.good{
+    &.good {
       color: getThemeProperty(validationSuccessTextColor, $component-form-properties);
       background: getThemeProperty(validationSuccessBackgroundColor, $component-form-properties);
     }
   }
 
   // Button Style Applied to input submit
-  input[type=submit]{
+  input[type=submit] {
     @include button-input-style;
-    &:disabled{
+    &:disabled {
       pointer-events: none;
       background: getThemeProperty(disabledColor, $component-form-properties) !important;
       color: getThemeProperty(disabledTextColor, $component-form-properties) !important;
@@ -56,12 +68,3 @@ $component-form-properties: $default-component-form-properties !default;
   }
 }
 
-// Components
-@import 'components/radio';
-@import 'components/checkbox';
-@import 'components/text';
-@import 'components/textarea';
-@import 'components/text-with-button';
-@import 'components/select';
-@import 'components/numeric';
-@import 'components/form-process';

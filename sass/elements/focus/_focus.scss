@@ -1,5 +1,8 @@
+@use "sass:map";
+@use "../../variables/theme";
+
 // Default form checkbox Properties
-$default-element-focus-properties:(
+$default-element-focus-properties: (
   innerBorderColor: #336ba3,
   innerBorderSize: 2px,
   outerBorderColor: #b4def3bf,
@@ -7,17 +10,17 @@ $default-element-focus-properties:(
 );
 // If $element-focus-properties is set, lets merge into our defaults
 $element-focus-properties: $default-element-focus-properties !default;
-@if($element-focus-properties){
-  $element-focus-properties: map-merge($default-element-focus-properties, $element-focus-properties);
+@if ($element-focus-properties) {
+  $element-focus-properties: map.merge($default-element-focus-properties, $element-focus-properties);
 }
 
 @mixin just-focus-style() {
     outline: none;
-    box-shadow: 0 0 0 getThemeProperty(innerBorderSize, $element-focus-properties) getThemeProperty(innerBorderColor, $element-focus-properties), 
-                0 0 0 getThemeProperty(outerBorderSize, $element-focus-properties) getThemeProperty(outerBorderColor, $element-focus-properties);
+    box-shadow: 0 0 0 theme.getThemeProperty(innerBorderSize, $element-focus-properties) theme.getThemeProperty(innerBorderColor, $element-focus-properties), 
+                0 0 0 theme.getThemeProperty(outerBorderSize, $element-focus-properties) theme.getThemeProperty(outerBorderColor, $element-focus-properties);
 }
 @mixin focus-style() {
-    &:focus{
+    &:focus {
         outline: none;
         box-shadow: none; 
     }
@@ -30,7 +33,7 @@ $element-focus-properties: $default-element-focus-properties !default;
     }
 }
 @mixin focus-within-style() {
-    &:focus-within{
+    &:focus-within {
         @include just-focus-style;
     }
 }

@@ -2,23 +2,23 @@
   Flex
   Classes with default flex properties defined and inline flex helpers
 */
-.flex-container{
+.flex-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   flex-flow: row wrap;
-	justify-content: flex-start;
+  justify-content: flex-start;
   align-content: flex-start;
 }
 .flex-image {
   width: 100%;
   height: auto;
 }
-.flex-iframe{
+.flex-iframe {
   width: 100%;
-  iframe{
+  iframe {
     width: 100%;
   }
 }

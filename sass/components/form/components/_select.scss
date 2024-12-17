@@ -1,5 +1,8 @@
+@use "../../../variables/theme";
+@use  "../form";
+
 // Default form select Properties
-$default-component-form-select-properties:(
+$default-component-form-select-properties: (
   backgroundColor: getThemeProperty(backgroundColorLight),
   labelColor: getThemeProperty(textColorDark),
   icon: "\f078",
@@ -17,14 +20,14 @@ $default-component-form-select-properties:(
 );
 // If $component-form-select-properties is set, lets merge into our defaults
 $component-form-select-properties: $default-component-form-select-properties !default;
-@if($component-form-select-properties){
+@if ($component-form-select-properties) {
   $component-form-select-properties: recursive-map-merge($default-component-form-select-properties, $component-form-select-properties);
 }
 
-.fw-form{
-  .field.dropdown{
+.fw-form {
+  .field.dropdown {
     position: relative;
-    label{
+    label {
       display: block;
       position: absolute;
       transform: translate(20px, 25px);
@@ -34,11 +37,11 @@ $component-form-select-properties: $default-component-form-select-properties !de
       pointer-events: none;
       margin: 0;
       z-index: 1;
-      &.labelShrunk{
+      &.labelShrunk {
         transform: scale(.7) translate(30px, 20px);
       }
     }
-    select{
+    select {
       width: 100%;
       padding: 20px 15px;
       box-sizing:border-box;
@@ -50,20 +53,20 @@ $component-form-select-properties: $default-component-form-select-properties !de
       color: getThemeProperty(textColor, $component-form-select-properties);
       font-family: getThemeProperty(fontFamily, $component-form-select-properties);
       @include font-size(getThemeProperty(fontSizes, $component-form-select-properties));
-      &.labelShrunk{
+      &.labelShrunk {
         padding: 30px 20px 10px 19px;
         color: getThemeProperty(labelColor, $component-form-select-properties);
       }
-      optgroup{
+      optgroup {
         color: getThemeProperty(labelColor, $component-form-select-properties);
       }
       @include focus-style;
     }
-    &.readonly select{
+    &.readonly select {
       pointer-events: none;
       background: getThemeProperty(disabledColor, $component-form-properties);
     }
-    &:after{
+    &:after {
       position: absolute;
       right: 10px;
       top: 50%;
@@ -75,18 +78,18 @@ $component-form-select-properties: $default-component-form-select-properties !de
   }
 
   // Label above field
-  &.fw-form-label-above{
-    .field.dropdown{
-      label{
+  &.fw-form-label-above {
+    .field.dropdown {
+      label {
         position: relative;
         transform: none;
         margin: getThemeProperty(labelAboveMargin, $component-form-properties);
-        &.labelShrunk{
+        &.labelShrunk {
           transform: none;
         }
       }
-      select{
-        &.labelShrunk{
+      select {
+        &.labelShrunk {
           padding: 20px;
         }
       }
@@ -94,9 +97,9 @@ $component-form-select-properties: $default-component-form-select-properties !de
   }
 }
 @-moz-document url-prefix() {
-  .fw-form{
-    .field.dropdown{
-      select.labelShrunk{
+  .fw-form {
+    .field.dropdown {
+      select.labelShrunk {
         padding-left: 15px;
       }
     }

@@ -1,3 +1,5 @@
+@use "sass:list";
+@use "sass:meta";
 @use "sass:map";
 
 /*
@@ -41,17 +43,17 @@ $default-theme-properties: (
   - ex:
     `color: getThemeProperty(primaryColor)`;
 */
-@function getThemeProperty($key, $properties:()) {
-  @if(length($properties) > 0){ // Check to see if any properties were passed in
-    @if(map-get($properties, $key)){ // Check if the key exists in the properties
-      @return map-get($properties, $key);
-    }@else{
+@function getThemeProperty($key, $properties: ()) {
+  @if (list.length($properties) > 0) { // Check to see if any properties were passed in
+    @if (map.get($properties, $key)) { // Check if the key exists in the properties
+      @return map.get($properties, $key);
+    } @else {
       @return getThemeProperty($key); // Fall back to the theme properties
     }
-  }@else{
-    @if(map-get($theme-properties, $key)){
-      @return map-get($theme-properties, $key);
-    }@else{
+  } @else {
+    @if (map.get($theme-properties, $key)) {
+      @return map.get($theme-properties, $key);
+    } @else {
       @return #00ff00; // The key was not found, so we return this color as an error
     }
   }
@@ -63,11 +65,11 @@ $default-theme-properties: (
 @function recursive-map-merge($parent-map, $child-map) {
   $result: $parent-map;
   @each $key, $value in $child-map {
-    @if (not map-has-key($result, $key)) or (type-of(map-get($result, $key)) != type-of($value)) or (not (type-of(map-get($result, $key)) == map and type-of($value) == map)) {
-      $result: map-merge($result, ($key: $value));
+    @if (not map.has-key($result, $key)) or (meta.type-of(map.get($result, $key)) != meta.type-of($value)) or (not (meta.type-of(map.get($result, $key)) == map and meta.type-of($value) == map)) {
+      $result: map.merge($result, ($key: $value));
     }
     @else {
-      $result: map-merge($result, ($key: recursive-map-merge(map-get($result, $key), $value)));
+      $result: map.merge($result, ($key: recursive-map-merge(map.get($result, $key), $value)));
     }
   }
   @return $result;
@@ -75,10 +77,10 @@ $default-theme-properties: (
 
 // If $theme-properties is set, lets merge into our defaults
 $theme-properties: $default-theme-properties !default;
-@if($theme-properties){
+@if ($theme-properties) {
   $theme-properties: recursive-map-merge($default-theme-properties, $theme-properties);
 
   // Support legacy misspelling
-  $theme-properties: map-merge($theme-properties, (layoutContainerWdth: getThemeProperty(layoutContainerWidth)));
+  $theme-properties: map.merge($theme-properties, (layoutContainerWdth: getThemeProperty(layoutContainerWidth)));
 }
 

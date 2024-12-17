@@ -1,38 +1,39 @@
+@use "sass:map";
 @use "sass:math";
 
+@use "../../variables/theme";
+
+// Elements
+@forward 'elements/h1';
+@forward 'elements/h2';
+@forward 'elements/h3';
+@forward 'elements/h4';
+@forward 'elements/h5';
+@forward 'elements/h6';
+@forward 'elements/p';
+@forward 'elements/ul';
+@forward 'elements/ol';
+
+// Defaults
+@forward 'defaults/text';
+
 // Default form checkbox Properties
-$default-component-typography-properties:(
-    HeadingColor: getThemeProperty(textColorDark),
-    HeadingMargin: 0 0 math.div(getThemeProperty(layoutSpace), 2) 0,
+$default-component-typography-properties: (
+    HeadingColor: theme.getThemeProperty(textColorDark),
+    HeadingMargin: 0 0 math.div(theme.getThemeProperty(layoutSpace), 2) 0,
     HeadingLineHeight: 1,
     HeadingTextTransform: none,
     HeadingLetterSpacing: normal,
 
     // Applies to p, ol, & ul elements
-    TextColor: getThemeProperty(textColorDark), // Does not affect the base "TextColorDark" or "TextColorLight"
+    TextColor: theme.getThemeProperty(textColorDark), // Does not affect the base "TextColorDark" or "TextColorLight"
     TextLineHeight: 1.4,
     TextTextTransform: none,
     TextLetterSpacing: normal
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-typography-properties: $default-component-typography-properties !default;
-@if($component-typography-properties){
-  $component-typography-properties: map-merge($default-component-typography-properties, $component-typography-properties);
+@if ($component-typography-properties) {
+  $component-typography-properties: map.merge($default-component-typography-properties, $component-typography-properties);
 }
 
-// Mixins
-@import 'mixins/font-size-mixin';
-
-// Elements
-@import 'elements/h1';
-@import 'elements/h2';
-@import 'elements/h3';
-@import 'elements/h4';
-@import 'elements/h5';
-@import 'elements/h6';
-@import 'elements/p';
-@import 'elements/ul';
-@import 'elements/ol';
-
-// Defaults
-@import 'defaults/text';

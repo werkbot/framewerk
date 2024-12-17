@@ -1,30 +1,33 @@
+@use "sass:map";
+@use "../../variables/theme";
+
 // Default table Properties
-$default-element-table-properties:(
+$default-element-table-properties: (
   tableRowColor: #ffffff,
   tableRowEvenColor: #ffffff,
   tableRowOddColor: #f3f3f5
 );
 // If $element-table-properties is set, lets merge into our defaults
 $element-table-properties: $default-element-table-properties !default;
-@if($element-table-properties){
-  $element-table-properties: map-merge($default-element-table-properties, $element-table-properties);
+@if ($element-table-properties) {
+  $element-table-properties: map.merge($default-element-table-properties, $element-table-properties);
 }
 
-table{
+table {
   width: 100%;
   th,
-  td{
+  td {
     padding: 10px;
   }
-  thead{
+  thead {
     position: sticky;
     top: 0;
-    tr{
+    tr {
       table-layout: fixed;
       width: 100%;
-      background: getThemeProperty(tableRowColor, $element-table-properties);
+      background: theme.getThemeProperty(tableRowColor, $element-table-properties);
     }
-    th{
+    th {
       font-weight: 700;
       text-align: left;
       padding: 10px 15px;
@@ -33,37 +36,37 @@ table{
       line-height: 1em;
     }
   }
-  tbody{
+  tbody {
     table-layout: fixed;
-    tr{
-      background: getThemeProperty(tableRowColor, $element-table-properties);
-      &:nth-child(even){
-        background: getThemeProperty(tableRowEvenColor, $element-table-properties);
+    tr {
+      background: theme.getThemeProperty(tableRowColor, $element-table-properties);
+      &:nth-child(even) {
+        background: theme.getThemeProperty(tableRowEvenColor, $element-table-properties);
         border-radius: 3px;
       }
-      &:nth-child(odd){
-        background: getThemeProperty(tableRowOddColor, $element-table-properties);
+      &:nth-child(odd) {
+        background: theme.getThemeProperty(tableRowOddColor, $element-table-properties);
         border-radius: 3px;
       }
     }
-    td{
+    td {
       padding: 10px 15px;
     }
   }
-  tfoot{
+  tfoot {
     font-size: 0.8em;
     line-height: 1em;
-    td{
+    td {
     }
   }
 }
-@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), tablet)) {
+@media only screen and (max-width: map.get(theme.getThemeProperty(breakpointResponsive), tablet)) {
 }
-@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), phone)) {
-  table{
+@media only screen and (max-width: map.get(theme.getThemeProperty(breakpointResponsive), phone)) {
+  table {
     font-size: 0.8em;
     th,
-    td{
+    td {
       padding: 5px;
     }
   }

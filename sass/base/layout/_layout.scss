@@ -1,39 +1,41 @@
+@use "../../variables/theme";
+
 @use "sass:math";
 
 /*
   DEFAULT DESKTOP
   If no breakpoints are defined, these will be the fallback width percentages
 */
-.desktop-half{
+.desktop-half {
   width: 0.5%;
   min-height: 1px;
 }
 @for $i from 1 through 100 {
   .desktop-#{$i} {
-    width: round(percentage(math.div($i, 100)));
+    width: math.round(math.percentage(math.div($i, 100)));
   }
 }
-.desktop-hide{
+.desktop-hide {
   display: none;
 }
-.desktop-auto{
+.desktop-auto {
   width: auto;
 }
-.desktop-show{
+.desktop-show {
   display: inherit;
 }
 /* Flex Container Direction */
-.flex-container{
-  &.desktop-ltr{
+.flex-container {
+  &.desktop-ltr {
     flex-direction: row;
   }
-  &.desktop-rtl{
+  &.desktop-rtl {
     flex-direction: row-reverse;
   }
-  &.desktop-ttb{
+  &.desktop-ttb {
     flex-direction: column;
   }
-  &.desktop-btt{
+  &.desktop-btt {
     flex-direction: column-reverse;
   }
 }
@@ -41,38 +43,38 @@
   DESKTOP BREAKPOINTS
   Loop through each desktop defined breakpoint
 */
-@each $label, $breakpoint in getThemeProperty(breakpointDesktop){
+@each $label, $breakpoint in theme.getThemeProperty(breakpointDesktop) {
   @media screen and (min-width: $breakpoint) {
-    .#{$label}-half{
+    .#{$label}-half {
       width: 0.5%;
       min-height: 1px;
     }
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
-        width: round(percentage(math.div($i, 100)));
+        width: math.round(math.percentage(math.div($i, 100)));
       }
     }
-    .#{$label}-auto{
+    .#{$label}-auto {
       width: auto;
     }
-    .#{$label}-hide{
+    .#{$label}-hide {
       display: none;
     }
-    .#{$label}-show{
+    .#{$label}-show {
       display: inherit;
     }
     /* Flex Container Direction */
-    .flex-container{
-      &.#{$label}-ltr{
+    .flex-container {
+      &.#{$label}-ltr {
         flex-direction: row;
       }
-      &.#{$label}-rtl{
+      &.#{$label}-rtl {
         flex-direction: row-reverse;
       }
-      &.#{$label}-ttb{
+      &.#{$label}-ttb {
         flex-direction: column;
       }
-      &.#{$label}-btt{
+      &.#{$label}-btt {
         flex-direction: column-reverse;
       }
     }
@@ -82,45 +84,45 @@
   RESPONSIVE BREAKPOINTS
   Simply out puts classes with a width set from 1-100 for each breakpoint defined.
 */
-@each $label, $breakpoint in getThemeProperty(breakpointResponsive){
+@each $label, $breakpoint in theme.getThemeProperty(breakpointResponsive) {
   @media only screen and (max-width: $breakpoint) {
-    .#{$label}-half{
+    .#{$label}-half {
       width: 0.5%;
       min-height: 1px;
     }
     @for $i from 1 through 100 {
       .#{$label}-#{$i} {
-        width: round(percentage(math.div($i, 100)));
+        width: math.round(math.percentage(math.div($i, 100)));
       }
     }
-    .#{$label}-auto{
+    .#{$label}-auto {
       width: auto;
     }
-    .#{$label}-hide{
+    .#{$label}-hide {
       display: none;
     }
-    .#{$label}-show{
+    .#{$label}-show {
       display: inherit;
     }
     /* Flex Container Direction */
-    .flex-container{
-      &.#{$label}-ltr{
+    .flex-container {
+      &.#{$label}-ltr {
         flex-direction: row;
       }
-      &.#{$label}-rtl{
+      &.#{$label}-rtl {
         flex-direction: row-reverse;
       }
-      &.#{$label}-ttb{
+      &.#{$label}-ttb {
         flex-direction: column;
       }
-      &.#{$label}-btt{
+      &.#{$label}-btt {
         flex-direction: column-reverse;
       }
     }
     /* SPACING RESET */
-    .space{
-      &.#{$label}-space-reset{
-        padding: getThemeProperty(layoutSpace);
+    .space {
+      &.#{$label}-space-reset {
+        padding: theme.getThemeProperty(layoutSpace);
       }
     }
   }

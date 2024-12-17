@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../variables/theme";
+
 @use "sass:math";
 
 /*
@@ -5,14 +8,14 @@
   Site wide generic container class. Will center all content within it's max-width
 */
 .container,
-.fw-container{
-  max-width: getThemeProperty(layoutContainerWidth);
+.fw-container {
+  max-width: theme.getThemeProperty(layoutContainerWidth);
   margin: 0 auto;
 }
 
 
 .half-container, .fw-half-container {
-  max-width: math.div(getThemeProperty(layoutContainerWidth), 2);
+  max-width: math.div(theme.getThemeProperty(layoutContainerWidth), 2);
   &:first-child  {
     margin-left: auto;
     &:last-child {
@@ -20,7 +23,7 @@
     }
   }
 }
-@media only screen and (max-width: map-get(getThemeProperty(breakpointResponsive), desktopsmall)) {
+@media only screen and (max-width: map.get(theme.getThemeProperty(breakpointResponsive), desktopsmall)) {
   .half-container, .fw-half-container {
     max-width: unset;
     &:first-child, &:first-child:last-child {
