@@ -1,10 +1,13 @@
 @use "../../../variables/theme";
+@use "../../../elements/focus/focus";
+@use '../../../components/button/button';
 @use  "../form";
+@use  "text";
 
 // Default form text-with-button Properties
 $default-component-form-text-with-button-properties: (
-  backgroundColor: getThemeProperty(backgroundColorLight),
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
+  backgroundColor: theme.getThemeProperty(backgroundColorLight),
+  borderColor: theme.getThemeProperty(borderColor, form.$component-form-properties),
   borderRadius: 10px,
   borderWidth: 2px,
   buttonBorderRadius: 0 10px 10px 0,
@@ -26,7 +29,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
       transform: translate(20px, 25px);
       transform-origin: left;
       transition: transform .25s ease;
-      color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
+      color: theme.getThemeProperty(shiftingLabelColor, text.$component-form-text-properties);
       pointer-events: none;
       margin: 0;
       z-index: 1;
@@ -47,20 +50,20 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
     input[type=password],
     textarea {
       width: 100%;
-      border-radius: getThemeProperty(borderRadius, $component-form-text-with-button-properties);
-      padding: getThemeProperty(textPadding, $component-form-text-with-button-properties);
+      border-radius: theme.getThemeProperty(borderRadius, $component-form-text-with-button-properties);
+      padding: theme.getThemeProperty(textPadding, $component-form-text-with-button-properties);
       margin: 0;
       border-style: solid;
-      border-width: getThemeProperty(borderWidth, $component-form-text-with-button-properties);
-      border-color: getThemeProperty(borderColor, $component-form-text-with-button-properties);
-      background-color: getThemeProperty(backgroundColor, $component-form-text-with-button-properties);
+      border-width: theme.getThemeProperty(borderWidth, $component-form-text-with-button-properties);
+      border-color: theme.getThemeProperty(borderColor, $component-form-text-with-button-properties);
+      background-color: theme.getThemeProperty(backgroundColor, $component-form-text-with-button-properties);
       &.labelShrunk {
         padding: 30px 20px 10px 20px;
       }
-      @include focus-style;
+      @include focus.focus-style;
       &.readonly {
         pointer-events: none;
-        background: getThemeProperty(disabledColor, $component-form-properties);
+        background: theme.getThemeProperty(disabledColor, form.$component-form-properties);
       }
     }
     .fw-form-processing-container,
@@ -72,7 +75,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
     }
 
     button, input[type="submit"] {
-      @include button-input-style;
+      @include button.button-input-style;
       /*
         & {} repeats the above selector after nested :hover rules instead of pulling declarations up to the top level
         https://sass-lang.com/documentation/breaking-changes/mixed-decls/
@@ -101,7 +104,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
         padding-top: 0;
         padding-bottom: 0;
         margin: 0;
-        border-radius: getThemeProperty(buttonBorderRadius, $component-form-text-with-button-properties);
+        border-radius: theme.getThemeProperty(buttonBorderRadius, $component-form-text-with-button-properties);
       }
     }
   }
@@ -112,7 +115,7 @@ $component-form-text-with-button-properties: $default-component-form-text-with-b
       label {
         position: relative;
         transform: none;
-        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
+        margin: theme.getThemeProperty(labelAboveMargin, form.$component-form-properties);
         &.labelShrunk {
           transform: none;
         }

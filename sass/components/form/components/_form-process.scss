@@ -18,7 +18,7 @@
     transform: translateY(-12px);
     &:before {
         content: "\f3f4";
-        font-family: getThemeProperty(fontIcon);
+        font-family: theme.getThemeProperty(fontIcon);
         font-size: 1.4rem;
         position: absolute;
         animation: fa-spin 1s steps(32) infinite;

@@ -1,15 +1,17 @@
 @use "../../../variables/theme";
+@use "../../../elements/body/body";
+@use "../../../elements/focus/focus";
 @use  "../form";
 
 // Default form radio Properties
 $default-component-form-radio-properties: (
-  backgroundColor: getThemeProperty(backgroundColorLight),
+  backgroundColor: theme.getThemeProperty(backgroundColorLight),
   checkedIcon: "\f192",
-  checkedTextColor: getThemeProperty(textColorDark),
+  checkedTextColor: theme.getThemeProperty(textColorDark),
   notCheckedIcon: "\f111",
-  notCheckedTextColor: getThemeProperty(textColorDark),
-  iconFontFamily: getThemeProperty(fontIcon),
-  fontWeight: getThemeProperty(fontWeight, $element-body-properties),
+  notCheckedTextColor: theme.getThemeProperty(textColorDark),
+  iconFontFamily: theme.getThemeProperty(fontIcon),
+  fontWeight: theme.getThemeProperty(fontWeight, body.$element-body-properties),
 );
 // If $component-form-radio-properties is set, lets merge into our defaults
 $component-form-radio-properties: $default-component-form-radio-properties !default;
@@ -28,10 +30,10 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
       &::before {
-        font-family: getThemeProperty(iconFontFamily, $component-form-radio-properties);
+        font-family: theme.getThemeProperty(iconFontFamily, $component-form-radio-properties);
         border-radius: 25px;
-        content: getThemeProperty(notCheckedIcon, $component-form-radio-properties);
-        font-weight: getThemeProperty(fontWeight, $component-form-radio-properties);
+        content: theme.getThemeProperty(notCheckedIcon, $component-form-radio-properties);
+        font-weight: theme.getThemeProperty(fontWeight, $component-form-radio-properties);
         position: absolute;
         top: 2px;
         left: 2px;
@@ -40,12 +42,12 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         cursor: pointer;
         -webkit-transition: all .2s;
         transition: all .2s;
-        color: getThemeProperty(notCheckedTextColor, $component-form-radio-properties);
-        background: getThemeProperty(backgroundColor, $component-form-radio-properties);
+        color: theme.getThemeProperty(notCheckedTextColor, $component-form-radio-properties);
+        background: theme.getThemeProperty(backgroundColor, $component-form-radio-properties);
       }
       &:checked::before {
-        content: getThemeProperty(checkedIcon, $component-form-radio-properties);
-        color: getThemeProperty(checkedTextColor, $component-form-radio-properties);
+        content: theme.getThemeProperty(checkedIcon, $component-form-radio-properties);
+        color: theme.getThemeProperty(checkedTextColor, $component-form-radio-properties);
       }
       + label {
         display: inline-flex;
@@ -60,7 +62,7 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
         pointer-events: none;
         &::before {
           cursor: default;
-          background: getThemeProperty(disabledColor, $component-form-properties);
+          background: theme.getThemeProperty(disabledColor, form.$component-form-properties);
         }
         + label {
           cursor: default;
@@ -74,6 +76,6 @@ $component-form-radio-properties: $default-component-form-radio-properties !defa
   fieldset.field .even, 
   .field.optionset li,
   ul.optionset li {
-    @include focus-within-style;
+    @include focus.focus-within-style;
   }
 }
