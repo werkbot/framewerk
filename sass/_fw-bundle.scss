@@ -17,12 +17,34 @@
 @forward 'elements/mark/mark';
 @forward 'elements/table/table';
 @use 'elements/list/list';
+
 @forward 'elements/typography/typography';
+@forward 'elements/typography/elements/h1';
+@forward 'elements/typography/elements/h2';
+@forward 'elements/typography/elements/h3';
+@forward 'elements/typography/elements/h4';
+@forward 'elements/typography/elements/h5';
+@forward 'elements/typography/elements/h6';
+@forward 'elements/typography/elements/p';
+@forward 'elements/typography/elements/ul';
+@forward 'elements/typography/elements/ol';
+@forward 'elements/typography/defaults/text';
+
 
 /* components */
 @forward 'components/button/button';
 @use 'components/container/container';
+
 @forward 'components/form/form';
+@forward 'components/form/components/radio';
+@forward 'components/form/components/checkbox';
+@forward 'components/form/components/text';
+@forward 'components/form/components/textarea';
+@forward 'components/form/components/text-with-button';
+@forward 'components/form/components/select';
+@forward 'components/form/components/numeric';
+@forward 'components/form/components/form-process';
+
 @forward 'components/hamburger/hamburger';
 @forward 'components/selection/selection';
 

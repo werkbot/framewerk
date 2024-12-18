@@ -1,12 +1,14 @@
 @use "../../../variables/theme";
+@use  "../../../elements/typography/mixins/font-size-mixin";
+@use "../../../elements/focus/focus";
 @use  "../form";
 
 // Default form text Properties
 $default-component-form-text-properties: (
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
-  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
-  textColor: getThemeProperty(textColorDark),
-  fontFamily: getThemeProperty(fontText),
+  borderColor: theme.getThemeProperty(borderColor, form.$component-form-properties),
+  shiftingLabelColor: theme.getThemeProperty(labelColor, form.$component-form-properties),
+  textColor: theme.getThemeProperty(textColorDark),
+  fontFamily: theme.getThemeProperty(fontText),
   fontSizes: (
       desktop: (1em, 1.4),
       tablet: (1em, 1.4),
@@ -16,7 +18,7 @@ $default-component-form-text-properties: (
 // If $component-form-text-properties is set, lets merge into our defaults
 $component-form-text-properties: $default-component-form-text-properties !default;
 @if ($component-form-text-properties) {
-  $component-form-text-properties: recursive-map-merge($default-component-form-text-properties, $component-form-text-properties);
+  $component-form-text-properties: theme.recursive-map-merge($default-component-form-text-properties, $component-form-text-properties);
 }
 
 .fw-form {
@@ -28,7 +30,7 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       transform: translate(20px, 25px);
       transform-origin: left;
       transition: transform .25s ease;
-      color: getThemeProperty(shiftingLabelColor, $component-form-text-properties);
+      color: theme.getThemeProperty(shiftingLabelColor, $component-form-text-properties);
       pointer-events: none;
       margin: 0;
       z-index: 1;
@@ -40,17 +42,17 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       padding: 30px 20px 10px 20px;
       width: 100%;
       box-sizing: border-box;
-      border: 1px solid getThemeProperty(borderColor, $component-form-text-properties);
-      color: getThemeProperty(textColor, $component-form-text-properties);
-      font-family: getThemeProperty(fontFamily, $component-form-text-properties);
-      @include font-size(getThemeProperty(fontSizes, $component-form-text-properties));
+      border: 1px solid theme.getThemeProperty(borderColor, $component-form-text-properties);
+      color: theme.getThemeProperty(textColor, $component-form-text-properties);
+      font-family: theme.getThemeProperty(fontFamily, $component-form-text-properties);
+      @include font-size-mixin.font-size(theme.getThemeProperty(fontSizes, $component-form-text-properties));
       &.labelShrunk {
         padding: 30px 20px 10px 20px;
       }
-      @include focus-style;
+      @include focus.focus-style;
       &.readonly {
         pointer-events: none;
-        background: getThemeProperty(disabledColor, $component-form-properties);
+        background: theme.getThemeProperty(disabledColor, form.$component-form-properties);
       }
     }
   }
@@ -61,7 +63,7 @@ $component-form-text-properties: $default-component-form-text-properties !defaul
       label {
         position: relative;
         transform: none;
-        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
+        margin: theme.getThemeProperty(labelAboveMargin, form.$component-form-properties);
         &.labelShrunk {
           transform: none;
         }

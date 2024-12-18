@@ -1,22 +1,13 @@
 @use "../../variables/theme";
-
-// Components
-@forward 'components/radio';
-@forward 'components/checkbox';
-@forward 'components/text';
-@forward 'components/textarea';
-@forward 'components/text-with-button';
-@forward 'components/select';
-@forward 'components/numeric';
-@forward 'components/form-process';
+@use '../../components/button/button';
 
 // Default form checkbox Properties
 $default-component-form-properties: (
   borderColor: #cccccc,
-  labelColor: getThemeProperty(textColorDark),
-  disabledColor: getThemeProperty(disabledColor, $component-button-properties),
-  disabledTextColor: getThemeProperty(disabledTextColor, $component-button-properties),
-  fieldSpacing: getThemeProperty(layoutSpace),
+  labelColor: theme.getThemeProperty(textColorDark),
+  disabledColor: theme.getThemeProperty(disabledColor, button.$component-button-properties),
+  disabledTextColor: theme.getThemeProperty(disabledTextColor, button.$component-button-properties),
+  fieldSpacing: theme.getThemeProperty(layoutSpace),
   validationErrorTextColor: #ffffff,
   validationErrorBackgroundColor: #cc0000,
   validationSuccessTextColor: #000000,
@@ -35,35 +26,35 @@ $component-form-properties: $default-component-form-properties !default;
 .fw-form {
   // Field Spacing
   .field {
-    margin: getThemeProperty(fieldSpacing, $component-form-properties) 0;
+    margin: theme.getThemeProperty(fieldSpacing, $component-form-properties) 0;
   }
   // Validation/Messages
   .message {
-    padding: getThemeProperty(layoutSpace, $component-form-properties);
+    padding: theme.getThemeProperty(layoutSpace, $component-form-properties);
     display: block;
     &.error,
     &.bad,
     &.validation {
-      color: getThemeProperty(validationErrorTextColor, $component-form-properties);
-      background: getThemeProperty(validationErrorBackgroundColor, $component-form-properties);
+      color: theme.getThemeProperty(validationErrorTextColor, $component-form-properties);
+      background: theme.getThemeProperty(validationErrorBackgroundColor, $component-form-properties);
     }
     &.warning {
-      color: getThemeProperty(validationWarningTextColor, $component-form-properties);
-      background: getThemeProperty(validationWarningBackgroundColor, $component-form-properties);
+      color: theme.getThemeProperty(validationWarningTextColor, $component-form-properties);
+      background: theme.getThemeProperty(validationWarningBackgroundColor, $component-form-properties);
     }
     &.good {
-      color: getThemeProperty(validationSuccessTextColor, $component-form-properties);
-      background: getThemeProperty(validationSuccessBackgroundColor, $component-form-properties);
+      color: theme.getThemeProperty(validationSuccessTextColor, $component-form-properties);
+      background: theme.getThemeProperty(validationSuccessBackgroundColor, $component-form-properties);
     }
   }
 
   // Button Style Applied to input submit
   input[type=submit] {
-    @include button-input-style;
+    @include button.button-input-style;
     &:disabled {
       pointer-events: none;
-      background: getThemeProperty(disabledColor, $component-form-properties) !important;
-      color: getThemeProperty(disabledTextColor, $component-form-properties) !important;
+      background: theme.getThemeProperty(disabledColor, $component-form-properties) !important;
+      color: theme.getThemeProperty(disabledTextColor, $component-form-properties) !important;
     }
   }
 }

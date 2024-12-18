@@ -3,20 +3,6 @@
 
 @use "../../variables/theme";
 
-// Elements
-@forward 'elements/h1';
-@forward 'elements/h2';
-@forward 'elements/h3';
-@forward 'elements/h4';
-@forward 'elements/h5';
-@forward 'elements/h6';
-@forward 'elements/p';
-@forward 'elements/ul';
-@forward 'elements/ol';
-
-// Defaults
-@forward 'defaults/text';
-
 // Default form checkbox Properties
 $default-component-typography-properties: (
     HeadingColor: theme.getThemeProperty(textColorDark),

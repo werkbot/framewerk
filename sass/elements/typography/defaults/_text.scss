@@ -1,4 +1,4 @@
-@use "../../variables/theme";
+@use "../../../variables/theme";
 
 // Default text Properties
 $default-element-text-properties: (
@@ -8,7 +8,7 @@ $default-element-text-properties: (
 // If $default-element-text-properties is set, lets merge into our defaults
 $element-text-properties: $default-element-text-properties !default;
 @if ($element-text-properties) {
-    $element-text-properties: recursive-map-merge($default-element-text-properties, $element-text-properties);
+    $element-text-properties: theme.recursive-map-merge($default-element-text-properties, $element-text-properties);
 }
 
 strong, b {

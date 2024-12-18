@@ -1,17 +1,19 @@
 @use "../../../variables/theme";
+@use  "../../../elements/typography/mixins/font-size-mixin";
+@use "../../../elements/focus/focus";
 @use  "../form";
 
 // Default form select Properties
 $default-component-form-select-properties: (
-  backgroundColor: getThemeProperty(backgroundColorLight),
-  labelColor: getThemeProperty(textColorDark),
+  backgroundColor: theme.getThemeProperty(backgroundColorLight),
+  labelColor: theme.getThemeProperty(textColorDark),
   icon: "\f078",
-  iconFontFamily: getThemeProperty(fontIcon),
-  iconTextColor: getThemeProperty(textColorDark),
-  borderColor: getThemeProperty(borderColor, $component-form-properties),
-  shiftingLabelColor: getThemeProperty(labelColor, $component-form-properties),
-  textColor: getThemeProperty(textColorDark),
-  fontFamily: getThemeProperty(fontText),
+  iconFontFamily: theme.getThemeProperty(fontIcon),
+  iconTextColor: theme.getThemeProperty(textColorDark),
+  borderColor: theme.getThemeProperty(borderColor, form.$component-form-properties),
+  shiftingLabelColor: theme.getThemeProperty(labelColor, form.$component-form-properties),
+  textColor: theme.getThemeProperty(textColorDark),
+  fontFamily: theme.getThemeProperty(fontText),
   fontSizes: (
       desktop: (1em, 1.4),
       tablet: (1em, 1.4),
@@ -21,7 +23,7 @@ $default-component-form-select-properties: (
 // If $component-form-select-properties is set, lets merge into our defaults
 $component-form-select-properties: $default-component-form-select-properties !default;
 @if ($component-form-select-properties) {
-  $component-form-select-properties: recursive-map-merge($default-component-form-select-properties, $component-form-select-properties);
+  $component-form-select-properties: theme.recursive-map-merge($default-component-form-select-properties, $component-form-select-properties);
 }
 
 .fw-form {
@@ -33,7 +35,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       transform: translate(20px, 25px);
       transform-origin: left;
       transition: transform .25s ease;
-      color: getThemeProperty(shiftingLabelColor, $component-form-select-properties);
+      color: theme.getThemeProperty(shiftingLabelColor, $component-form-select-properties);
       pointer-events: none;
       margin: 0;
       z-index: 1;
@@ -48,31 +50,31 @@ $component-form-select-properties: $default-component-form-select-properties !de
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background-color: getThemeProperty(backgroundColor, $component-form-select-properties);
-      border: 1px solid getThemeProperty(borderColor, $component-form-select-properties);
-      color: getThemeProperty(textColor, $component-form-select-properties);
-      font-family: getThemeProperty(fontFamily, $component-form-select-properties);
-      @include font-size(getThemeProperty(fontSizes, $component-form-select-properties));
+      background-color: theme.getThemeProperty(backgroundColor, $component-form-select-properties);
+      border: 1px solid theme.getThemeProperty(borderColor, $component-form-select-properties);
+      color: theme.getThemeProperty(textColor, $component-form-select-properties);
+      font-family: theme.getThemeProperty(fontFamily, $component-form-select-properties);
+      @include font-size-mixin.font-size(theme.getThemeProperty(fontSizes, $component-form-select-properties));
       &.labelShrunk {
         padding: 30px 20px 10px 19px;
-        color: getThemeProperty(labelColor, $component-form-select-properties);
+        color: theme.getThemeProperty(labelColor, $component-form-select-properties);
       }
       optgroup {
-        color: getThemeProperty(labelColor, $component-form-select-properties);
+        color: theme.getThemeProperty(labelColor, $component-form-select-properties);
       }
-      @include focus-style;
+      @include focus.focus-style;
     }
     &.readonly select {
       pointer-events: none;
-      background: getThemeProperty(disabledColor, $component-form-properties);
+      background: theme.getThemeProperty(disabledColor, form.$component-form-properties);
     }
     &:after {
       position: absolute;
       right: 10px;
       top: 50%;
-      content: getThemeProperty(icon, $component-form-select-properties);
-      font-family: getThemeProperty(iconFontFamily, $component-form-select-properties);
-      color: getThemeProperty(iconTextColor, $component-form-select-properties);
+      content: theme.getThemeProperty(icon, $component-form-select-properties);
+      font-family: theme.getThemeProperty(iconFontFamily, $component-form-select-properties);
+      color: theme.getThemeProperty(iconTextColor, $component-form-select-properties);
       pointer-events: none;
     }
   }
@@ -83,7 +85,7 @@ $component-form-select-properties: $default-component-form-select-properties !de
       label {
         position: relative;
         transform: none;
-        margin: getThemeProperty(labelAboveMargin, $component-form-properties);
+        margin: theme.getThemeProperty(labelAboveMargin, form.$component-form-properties);
         &.labelShrunk {
           transform: none;
         }

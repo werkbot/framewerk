@@ -1,15 +1,17 @@
 @use "../../../variables/theme";
+@use "../../../elements/body/body";
+@use "../../../elements/focus/focus";
 @use  "../form";
 
 // Default form checkbox Properties
 $default-component-form-checkbox-properties: (
-  backgroundColor: getThemeProperty(backgroundColorLight),
+  backgroundColor: theme.getThemeProperty(backgroundColorLight),
   checkedIcon: "\f14a",
-  checkedTextColor: getThemeProperty(textColorDark),
+  checkedTextColor: theme.getThemeProperty(textColorDark),
   notCheckedIcon: "\f0c8",
-  notCheckedTextColor: getThemeProperty(textColorDark),
-  iconFontFamily: getThemeProperty(fontIcon),
-  fontWeight: getThemeProperty(fontWeight, $element-body-properties),
+  notCheckedTextColor: theme.getThemeProperty(textColorDark),
+  iconFontFamily: theme.getThemeProperty(fontIcon),
+  fontWeight: theme.getThemeProperty(fontWeight, body.$element-body-properties),
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-checkbox-properties: $default-component-form-checkbox-properties !default;
@@ -28,9 +30,9 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
       width: initial;
       border: none;
       &::before {
-        font-family: getThemeProperty(iconFontFamily, $component-form-checkbox-properties);
-        content: getThemeProperty(notCheckedIcon, $component-form-checkbox-properties);
-        font-weight: getThemeProperty(fontWeight, $component-form-checkbox-properties);
+        font-family: theme.getThemeProperty(iconFontFamily, $component-form-checkbox-properties);
+        content: theme.getThemeProperty(notCheckedIcon, $component-form-checkbox-properties);
+        font-weight: theme.getThemeProperty(fontWeight, $component-form-checkbox-properties);
         position: absolute;
         top: 4px;
         left: 2px;
@@ -39,12 +41,12 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
         cursor: pointer;
         -webkit-transition: all .2s;
         transition: all .2s;
-        color: getThemeProperty(notCheckedTextColor, $component-form-checkbox-properties);
-        background: getThemeProperty(backgroundColor, $component-form-checkbox-properties);
+        color: theme.getThemeProperty(notCheckedTextColor, $component-form-checkbox-properties);
+        background: theme.getThemeProperty(backgroundColor, $component-form-checkbox-properties);
       }
       &:checked::before {
-        content: getThemeProperty(checkedIcon, $component-form-checkbox-properties);
-        color: getThemeProperty(checkedTextColor, $component-form-checkbox-properties);
+        content: theme.getThemeProperty(checkedIcon, $component-form-checkbox-properties);
+        color: theme.getThemeProperty(checkedTextColor, $component-form-checkbox-properties);
       }
       + label {
         display: inline-flex;
@@ -61,7 +63,7 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
         pointer-events: none;
         &::before {
           cursor: default;
-          background: getThemeProperty(disabledColor, $component-form-properties);
+          background: theme.getThemeProperty(disabledColor, form.$component-form-properties);
         }
         + label {
           cursor: default;
@@ -75,6 +77,6 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
   .checkboxset .odd, 
   .checkboxset .even, 
   .field.checkbox {
-    @include focus-within-style;
+    @include focus.focus-within-style;
   }
 }
