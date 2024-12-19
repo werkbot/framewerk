@@ -1,19 +1,30 @@
 @charset "UTF-8";
 
-@use "../../variables/theme";
+@use 'hamburger-theme';
 
 // Base Hamburger (We need this)
 // ==================================================
-@use "hamburgers/_sass/hamburgers/base";
+@use "hamburgers/_sass/hamburgers/base" with (
+  $hamburger-padding-x           : hamburger-theme.$component-hamburger-properties,
+  $hamburger-padding-y           : hamburger-theme.$component-hamburger-properties,
+  $hamburger-layer-width         : hamburger-theme.$component-hamburger-properties,
+  $hamburger-layer-height        : hamburger-theme.$component-hamburger-properties,
+  $hamburger-layer-spacing       : hamburger-theme.$component-hamburger-properties,
+  $hamburger-layer-color         : hamburger-theme.$component-hamburger-properties,
+  $hamburger-layer-border-radius : hamburger-theme.$component-hamburger-properties,
+  $hamburger-hover-opacity       : hamburger-theme.$component-hamburger-properties,
+  $hamburger-active-layer-color  : hamburger-theme.$component-hamburger-properties,
+  $hamburger-active-hover-opacity: hamburger-theme.$component-hamburger-properties,
+);
 
 // Hamburger types
 // ==================================================
-@use "hamburgers/_sass/hamburgers/types/3dx";
-@use "hamburgers/_sass/hamburgers/types/3dx-r";
-@use "hamburgers/_sass/hamburgers/types/3dy";
-@use "hamburgers/_sass/hamburgers/types/3dy-r";
-@use "hamburgers/_sass/hamburgers/types/3dxy";
-@use "hamburgers/_sass/hamburgers/types/3dxy-r";
+@use "hamburgers/_sass/hamburgers/types/3dx" as three-dx;
+@use "hamburgers/_sass/hamburgers/types/3dx-r" as three-dx-r;
+@use "hamburgers/_sass/hamburgers/types/3dy" as three-dy;
+@use "hamburgers/_sass/hamburgers/types/3dy-r" as three-dy-r;
+@use "hamburgers/_sass/hamburgers/types/3dxy" as three-dxy;
+@use "hamburgers/_sass/hamburgers/types/3dxy-r" as three-dxy-r;
 @use "hamburgers/_sass/hamburgers/types/arrow";
 @use "hamburgers/_sass/hamburgers/types/arrow-r";
 @use "hamburgers/_sass/hamburgers/types/arrowalt";
@@ -40,25 +51,6 @@
 @use "hamburgers/_sass/hamburgers/types/vortex";
 @use "hamburgers/_sass/hamburgers/types/vortex-r";
 
-// Default Hamburger Properties
-$default-component-hamburger-properties: (
-  hamburger-padding-x: 15px,
-  hamburger-padding-y: 15px,
-  hamburger-layer-width: 40px,
-  hamburger-layer-height: 4px,
-  hamburger-layer-spacing: 6px,
-  hamburger-layer-color: #000000,
-  hamburger-layer-border-radius: 4px,
-  hamburger-hover-opacity: 0.7,
-  hamburger-active-layer-color: #000000,
-  hamburger-active-hover-opacity: 0.7,
-);
-// If $component-hamburger-properties is set, lets merge into our defaults
-$component-hamburger-properties: $default-component-hamburger-properties !default;
-@if ($component-hamburger-properties) {
-  $component-hamburger-properties: map-merge($default-component-hamburger-properties, $component-hamburger-properties);
-}
-
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -66,19 +58,6 @@ $component-hamburger-properties: $default-component-hamburger-properties !defaul
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-
-// Settings
-// ==================================================
-$hamburger-padding-x           : theme.getThemeProperty(hamburger-padding-x, $component-hamburger-properties) !default;
-$hamburger-padding-y           : theme.getThemeProperty(hamburger-padding-y, $component-hamburger-properties) !default;
-$hamburger-layer-width         : theme.getThemeProperty(hamburger-layer-width, $component-hamburger-properties) !default;
-$hamburger-layer-height        : theme.getThemeProperty(hamburger-layer-height, $component-hamburger-properties) !default;
-$hamburger-layer-spacing       : theme.getThemeProperty(hamburger-layer-spacing , $component-hamburger-properties) !default;
-$hamburger-layer-color         : theme.getThemeProperty(hamburger-layer-color , $component-hamburger-properties) !default;
-$hamburger-layer-border-radius : theme.getThemeProperty(hamburger-layer-border-radius, $component-hamburger-properties) !default;
-$hamburger-hover-opacity       : theme.getThemeProperty(hamburger-hover-opacity, $component-hamburger-properties) !default;
-$hamburger-active-layer-color  : theme.getThemeProperty(hamburger-active-layer-color, $component-hamburger-properties) !default;
-$hamburger-active-hover-opacity: theme.getThemeProperty(hamburger-active-hover-opacity, $component-hamburger-properties) !default;
 
 // To use CSS filters as the hover effect instead of opacity,
 // set $hamburger-hover-use-filter as true and

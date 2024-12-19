@@ -45,6 +45,7 @@
 @forward 'components/form/components/numeric';
 @forward 'components/form/components/form-process';
 
-@forward 'components/hamburger/hamburger';
+// Waiting on Dart Sass 3 syntax in hamburgers sass https://github.com/jonsuh/hamburgers/issues/140
+// @forward 'components/hamburger/hamburger';
 @forward 'components/selection/selection';
 
