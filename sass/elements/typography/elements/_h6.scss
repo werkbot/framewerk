@@ -18,7 +18,8 @@ $element-h6-properties: $default-element-h6-properties !default;
   $element-h6-properties: recursive-map-merge($default-element-h6-properties, $element-h6-properties);
 }
 
-h6{
+h6,
+.fw-heading-6{
   color: getThemeProperty(color, $element-h6-properties);
   font-family: getThemeProperty(fontFamily, $element-h6-properties);
   font-weight: getThemeProperty(fontWeight, $element-h6-properties);
