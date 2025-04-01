@@ -18,7 +18,8 @@ $element-h3-properties: $default-element-h3-properties !default;
   $element-h3-properties: recursive-map-merge($default-element-h3-properties, $element-h3-properties);
 }
 
-h3{
+h3,
+.fw-heading-3{
   color: getThemeProperty(color, $element-h3-properties);
   font-family: getThemeProperty(fontFamily, $element-h3-properties);
   font-weight: getThemeProperty(fontWeight, $element-h3-properties);
