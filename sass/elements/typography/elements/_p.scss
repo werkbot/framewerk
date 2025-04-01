@@ -20,7 +20,8 @@ $element-p-properties: $default-element-p-properties !default;
   $element-p-properties: recursive-map-merge($default-element-p-properties, $element-p-properties);
 }
 
-p{
+p,
+.fw-p{
   color: getThemeProperty(color, $element-p-properties);
   font-family: getThemeProperty(fontFamily, $element-p-properties);
   font-weight: getThemeProperty(fontWeight, $element-p-properties);

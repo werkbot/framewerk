@@ -18,7 +18,8 @@ $element-h5-properties: $default-element-h5-properties !default;
   $element-h5-properties: recursive-map-merge($default-element-h5-properties, $element-h5-properties);
 }
 
-h5{
+h5,
+.fw-heading-5{
   color: getThemeProperty(color, $element-h5-properties);
   font-family: getThemeProperty(fontFamily, $element-h5-properties);
   font-weight: getThemeProperty(fontWeight, $element-h5-properties);
