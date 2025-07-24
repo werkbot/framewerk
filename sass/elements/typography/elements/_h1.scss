@@ -23,7 +23,7 @@ $element-h1-properties: $default-element-h1-properties !default;
 }
 
 h1,
-.fw-heading-1{
+.fw-heading-1 {
   color: theme.getThemeProperty(color, $element-h1-properties);
   font-family: theme.getThemeProperty(fontFamily, $element-h1-properties);
   font-weight: theme.getThemeProperty(fontWeight, $element-h1-properties);
