@@ -1,6 +1,6 @@
 @use "../../../variables/theme";
 @use "../../../elements/focus/focus";
-@use  "../form";
+@use  "../defaults/form";
 
 // Default form numeric Properties
 $default-component-form-numeric-properties: (

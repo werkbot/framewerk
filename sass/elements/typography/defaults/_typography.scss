@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "sass:math";
+
+@use "../../../variables/theme";
+
+// Default form checkbox Properties
+$default-component-typography-properties: (
+    HeadingColor: theme.getThemeProperty(textColorDark),
+    HeadingMargin: 0 0 math.div(theme.getThemeProperty(layoutSpace), 2) 0,
+    HeadingLineHeight: 1,
+    HeadingTextTransform: none,
+    HeadingLetterSpacing: normal,
+
+    // Applies to p, ol, & ul elements
+    TextColor: theme.getThemeProperty(textColorDark), // Does not affect the base "TextColorDark" or "TextColorLight"
+    TextLineHeight: 1.4,
+    TextTextTransform: none,
+    TextLetterSpacing: normal
+);
+// If $component-form-checkbox-properties is set, lets merge into our defaults
+$component-typography-properties: $default-component-typography-properties !default;
+@if ($component-typography-properties) {
+  $component-typography-properties: map.merge($default-component-typography-properties, $component-typography-properties);
+}

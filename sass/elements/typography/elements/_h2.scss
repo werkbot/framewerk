@@ -1,12 +1,12 @@
 @use "../../../variables/theme";
-@use  "../typography";
+@use  "../defaults/typography";
 @use  "../mixins/font-size-mixin";
 
 // Default h2 Properties
 $default-element-h2-properties: (
     color: theme.getThemeProperty(HeadingColor, typography.$component-typography-properties),
     fontFamily: theme.getThemeProperty(fontHeader),
-    fontWeight: 700,
+    fontWeight: 900,
     fontSizes: (
         desktop: (2.250em, theme.getThemeProperty(HeadingLineHeight, typography.$component-typography-properties)),
         tablet: (2.250em, theme.getThemeProperty(HeadingLineHeight, typography.$component-typography-properties)),

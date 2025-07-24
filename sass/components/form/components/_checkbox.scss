@@ -1,7 +1,7 @@
 @use "../../../variables/theme";
 @use "../../../elements/body/body";
 @use "../../../elements/focus/focus";
-@use  "../form";
+@use  "../defaults/form";
 
 // Default form checkbox Properties
 $default-component-form-checkbox-properties: (

@@ -1,7 +1,7 @@
 @use "../../../variables/theme";
 @use  "../../../elements/typography/mixins/font-size-mixin";
 @use "../../../elements/focus/focus";
-@use  "../form";
+@use  "../defaults/form";
 
 // Default form textarea Properties
 $default-component-form-textarea-properties: (
