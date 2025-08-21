@@ -5,22 +5,30 @@
 
 // Default Button Properties
 $default-component-button-properties:(
-  backgroundColor: getThemeProperty(backgroundColorDark),
-  textColor: getThemeProperty(textColorLight),
-  backgroundHoverColor: getThemeProperty(backgroundColorLight),
-  textHoverColor: getThemeProperty(textColorDark),
-  padding: 10px 40px,
-  margin: 5px 0,
+
+  // default css styles
+  background-color: getThemeProperty(backgroundColorDark),
   border: none,
-  borderRadius: 5px,
-  textTransform: initial,
-  fontWeight: 400,
-  fontFamily: getThemeProperty(fontText),
-  fontSize: 1rem,
-  textAlign: center,
-  disabledColor: #dddddd,
-  disabledTextColor: getThemeProperty(textColorLight),
-  lineHeight: inherit,
+  border-radius: 5px,
+  color: getThemeProperty(textColorLight),
+  font-family: getThemeProperty(fontText),
+  font-size: 1rem,
+  font-weight: 400,
+  line-height: inherit,
+  margin: 5px 0,
+  padding: 10px 40px,
+  transition: background-color 0.25s ease-out,
+  text-align: center,
+  text-transform: initial,
+
+  // states
+  states:(
+    hover:(
+      background-color: getThemeProperty(backgroundColorDark),
+    )
+  ),
+
+  // variants
   variants: (
     white-btn: (
       background-color: getThemeProperty(backgroundColorLight),
@@ -29,9 +37,36 @@ $default-component-button-properties:(
         background-color: getThemeProperty(primaryColor),
         color: getThemeProperty(textColorLight),
       )
+    ),
+    disabled:(
+      background-color: #dddddd,
+      color: getThemeProperty(textColorLight),
+      hoverStyle: (
+        color: getThemeProperty(textColorDark),
+      )
     )
   )
 );
+
+// Deprecations will be removed in 3.0
+// Please update your code to use the new property names.
+// old name : new name (css equivalent property)
+$deprecated-properties:(
+  backgroundColor: background-color,
+  textColor: color,
+  borderRadius: border-radius,
+  textTransform: text-transform,
+  fontWeight: font-weight,
+  fontFamily: font-family,
+  fontSize: font-size,
+  textAlign: text-align,
+  lineHeight: line-height,
+);
+$deprecated-state-properties:(
+  backgroundHoverColor: background-color,
+  textHoverColor: color,
+);
+
 // If $component-button-properties is set, lets merge into our defaults
 $component-button-properties: $default-component-button-properties !default;
 @if($component-button-properties){
@@ -40,46 +75,40 @@ $component-button-properties: $default-component-button-properties !default;
 
 // Button Mixin
 @mixin button-input-style() {
-  background-color: getThemeProperty(backgroundColor, $component-button-properties);
-  border-radius: getThemeProperty(borderRadius, $component-button-properties);
-  color: getThemeProperty(textColor, $component-button-properties);
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  padding: getThemeProperty(padding, $component-button-properties);
-  margin: getThemeProperty(margin, $component-button-properties);
-  border: getThemeProperty(border, $component-button-properties);;
-  cursor: pointer;
-  text-transform: getThemeProperty(textTransform, $component-button-properties);
-  font-weight: getThemeProperty(fontWeight, $component-button-properties);
-  font-family: getThemeProperty(fontFamily, $component-button-properties);
-  font-size: getThemeProperty(fontSize, $component-button-properties);
-  line-height: getThemeProperty(lineHeight, $component-button-properties);
-  text-align: getThemeProperty(textAlign, $component-button-properties);
-  -webkit-appearance: none;
-  -webkit-transition: background-color 0.25s ease-out;
-  -moz-transition: background-color 0.25s ease-out;
-  -o-transition: background-color 0.25s ease-out;
-  transition: background-color 0.25s ease-out;
-  &:link,
-  &:visited,
-  &:hover,
-  &:active{
-    color: getThemeProperty(textColor, $component-button-properties);
+  // css properties - loop through each property
+  @each $property, $value in $component-button-properties {
+    // Test for depreciations and replace the name with updated name
+    @if (map-has-key($deprecated-properties, $property)) {
+      @warn "The property '#{$property}' is deprecated.";
+      $value: map-get($deprecated-properties, $property);
+      #{$value}: getThemeProperty(#{$property}, $component-button-properties);
+    } @else if($property!="variants" and $property!="states") {
+      #{$property}: getThemeProperty(#{$property}, $component-button-properties);
+    }
   }
-  &:hover{
-    background-color: getThemeProperty(backgroundHoverColor, $component-button-properties);
-    color: getThemeProperty(textHoverColor, $component-button-properties);
+
+  // States
+  // used for :hover, :link, :active, etc...
+  @each $stateClass, $stateProperties in getThemeProperty(states, $component-button-properties) {
+    &:#{ $stateClass }{
+      @each $styleRule, $styleValue in $stateProperties {
+        // Test for depreciations and replace the name with updated name
+        @if (map-has-key($deprecated-state-properties, $styleRule)) {
+          @warn "The property '#{$styleRule}' is deprecated.";
+          $value: map-get($deprecated-state-properties, $styleRule);
+          #{$value}: getThemeProperty(#{$styleRule}, $component-button-properties);
+        }@else{
+          #{$styleRule}: #{$styleValue};
+        }
+      }
+    }
   }
+
+  // Focus Style - defined here: sass\elements\focus\_focus.scss
   @include focus-style;
 
-  &.disabled {
-    pointer-events: none;
-    background: getThemeProperty(disabledColor, $component-button-properties) !important;
-    color: getThemeProperty(disabledTextColor, $component-button-properties) !important;
-  }
-
-  // Define style rules for button variants
+  // Variants
+  // Used for class variants, .button.white-btn, .button.disabled, etc...
   @each $variantClass, $variantProperties in getThemeProperty(variants, $component-button-properties) {
     &.#{$variantClass}{
       @each $styleRule, $styleValue in $variantProperties {
@@ -96,7 +125,6 @@ $component-button-properties: $default-component-button-properties !default;
 
     }
   }
-
 }
 
 // Applied to `a` elements with the `button` class
@@ -113,4 +141,3 @@ a.button, input.button, button.button{
     }
   }
 */
-

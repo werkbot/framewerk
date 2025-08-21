@@ -1,12 +1,24 @@
 // Default body Properties
 $default-element-body-properties:(
-    background: getThemeProperty(backgroundColorLight),
-    color: getThemeProperty(textColorDark),
-    fontFamily: getThemeProperty(fontHeader),
-    fontWeight: 400,
-    fontSize: 1rem,
-    lineHeight: 1rem
+  // default css styles
+  background: getThemeProperty(backgroundColorLight),
+  color: getThemeProperty(textColorDark),
+  font-family: getThemeProperty(fontHeader),
+  font-weight: 400,
+  font-size: 1rem,
+  line-height: 1rem
 );
+
+// Deprecations will be removed in 3.0
+// Please update your code to use the new property names.
+// old name : new name (css equivalent property)
+$deprecated-properties:(
+  fontFamily: font-family,
+  fontWeight: font-weight,
+  fontSize: font-size,
+  lineHeight: line-height,
+);
+
 // If $element-body-properties is set, lets merge into our defaults
 $element-body-properties: $default-element-body-properties !default;
 @if($element-body-properties){
@@ -14,10 +26,15 @@ $element-body-properties: $default-element-body-properties !default;
 }
 
 body{
-  background: getThemeProperty(background, $element-body-properties);
-  color: getThemeProperty(color, $element-body-properties);
-  font-family: getThemeProperty(fontFamily, $element-body-properties);
-  font-weight: getThemeProperty(fontWeight, $element-body-properties);
-  font-size: getThemeProperty(fontSize, $element-body-properties);
-  line-height: getThemeProperty(lineHeight, $element-body-properties);
+  // css properties - loop through each property
+  @each $property, $value in $component-button-properties {
+    // Test for depreciations and replace the name with updated name
+    @if (map-has-key($deprecated-properties, $property)) {
+      @warn "The property '#{$property}' is deprecated.";
+      $value: map-get($deprecated-properties, $property);
+      #{$value}: getThemeProperty(#{$property}, $component-button-properties);
+    } @else if($property!="variants" and $property!="states") {
+      #{$property}: getThemeProperty(#{$property}, $component-button-properties);
+    }
+  }
 }
