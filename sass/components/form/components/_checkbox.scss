@@ -1,37 +1,43 @@
 // Default form checkbox Properties
-$default-component-form-checkbox-properties:(
+$default-component-form-checkbox-properties: (
   backgroundColor: getThemeProperty(backgroundColorLight),
   checkedIcon: "\f14a",
   checkedTextColor: getThemeProperty(textColorDark),
   notCheckedIcon: "\f0c8",
   notCheckedTextColor: getThemeProperty(textColorDark),
   iconFontFamily: getThemeProperty(fontIcon),
+  iconFontSize: 2rem,
+  iconVerticalOffset: 4px,
+  iconHorizontalOffset: 0,
+  labelPadding: 0 0 0 15px,
+  labelMargin: 10px 0,
   fontWeight: getThemeProperty(fontWeight, $element-body-properties),
 );
 // If $component-form-checkbox-properties is set, lets merge into our defaults
 $component-form-checkbox-properties: $default-component-form-checkbox-properties !default;
-@if($component-form-checkbox-properties){
+@if ($component-form-checkbox-properties) {
   $component-form-checkbox-properties: map-merge($default-component-form-checkbox-properties, $component-form-checkbox-properties);
 }
 
-.fw-form{
+.fw-form {
   .checkboxset li,
   .checkboxset div,
-  .field.checkbox{
+  .field.checkbox {
     position: relative;
-    input{
+    input {
+      appearance: none;
       -moz-appearance: initial; // Enables pseudo elements in FireFox
       min-width: 13px; // Does not inherit width in Firefox. Used for spacing
       width: initial;
       border: none;
-      &::before{
+      &:before {
         font-family: getThemeProperty(iconFontFamily, $component-form-checkbox-properties);
         content: getThemeProperty(notCheckedIcon, $component-form-checkbox-properties);
         font-weight: getThemeProperty(fontWeight, $component-form-checkbox-properties);
         position: absolute;
-        top: 4px;
-        left: 2px;
-        font-size: 2em;
+        top: getThemeProperty(iconVerticalOffset, $component-form-checkbox-properties);
+        left: getThemeProperty(iconHorizontalOffset, $component-form-checkbox-properties);
+        font-size: getThemeProperty(iconFontSize, $component-form-checkbox-properties);
         line-height: 0.8;
         cursor: pointer;
         -webkit-transition: all .2s;
@@ -39,28 +45,28 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
         color: getThemeProperty(notCheckedTextColor, $component-form-checkbox-properties);
         background: getThemeProperty(backgroundColor, $component-form-checkbox-properties);
       }
-      &:checked::before{
+      &:checked:before {
         content: getThemeProperty(checkedIcon, $component-form-checkbox-properties);
         color: getThemeProperty(checkedTextColor, $component-form-checkbox-properties);
       }
-      + label{
+      + label {
         display: inline-flex;
         align-items: center;
-        margin: 10px 0;
-        padding-left: 15px;
+        margin: getThemeProperty(labelMargin, $component-form-checkbox-properties);
+        padding: getThemeProperty(labelPadding, $component-form-checkbox-properties);
         line-height: 1;
         cursor: pointer;
-        + .message.error{
+        + .message.error {
           width: 100%;
         }
       }
-      &.readonly{
+      &.readonly {
         pointer-events: none;
-        &::before{
+        &::before {
           cursor: default;
           background: getThemeProperty(disabledColor, $component-form-properties);
         }
-        + label{
+        + label {
           cursor: default;
           pointer-events: none;
         }
@@ -71,7 +77,7 @@ $component-form-checkbox-properties: $default-component-form-checkbox-properties
   .checkboxset li,
   .checkboxset .odd, 
   .checkboxset .even, 
-  .field.checkbox{
+  .field.checkbox {
     @include focus-within-style;
   }
 }
