@@ -173,6 +173,7 @@ window.addEventListener('load', function() {
         subtractButton.addEventListener('click', function() {
           incrementQuantity(numericFieldContainer, (step * -1));
           field.dispatchEvent(new Event('input'));
+          field.dispatchEvent(new Event('change'));
         });
 
       }
@@ -192,6 +193,7 @@ window.addEventListener('load', function() {
         addButton.addEventListener('click', function() {
           incrementQuantity(numericFieldContainer, step);
           field.dispatchEvent(new Event('input'));
+          field.dispatchEvent(new Event('change'));
         });
 
       }
