@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.4 - 2026-07-16
+## 🔨 Improvements
+- change event when numeric buttons are pressed
+
+
+
 ## 2.2.2 - 2025-04-01
 
 
